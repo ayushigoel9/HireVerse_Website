@@ -143,19 +143,14 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 py-12">
             {/* Motivation Section */}
             <section className="mb-20">
-              <div className="flex items-center gap-3 mb-8">
-                <Target className="w-8 h-8 text-[#6CC0F9]" />
-                <h3 className="text-3xl font-bold text-[#121826]">Motivation</h3>
-              </div>
+              <h3 className="text-3xl font-bold text-[#121826] mb-8 text-center">Motivation</h3>
 
               {/* Intro Text */}
-              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6] mb-8">
-                <p className="text-[#121826] leading-relaxed text-lg">
-                  The current job application process faces significant challenges that affect both candidates and recruiters.
-                  Applicants experience frustration when applying to positions that appear to be perfect matches, only to receive no response.
-                  The core issues include:
-                </p>
-              </div>
+              <p className="text-[#121826] leading-relaxed text-lg text-center max-w-5xl mx-auto mb-8">
+                The current job application process faces significant challenges that affect both candidates and recruiters.
+                Applicants experience frustration when applying to positions that appear to be perfect matches, only to receive no response.
+                The core issues include:
+              </p>
 
               {/* Problem Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -199,12 +194,9 @@ function App() {
 
             {/* Value Proposition Section */}
             <section className="mb-20">
-              <div className="flex items-center gap-3 mb-8">
-                <Sparkles className="w-8 h-8 text-[#8D34F6]" />
-                <h3 className="text-3xl font-bold text-[#121826]">Value Proposition</h3>
-              </div>
-              <div className="bg-gradient-to-br from-[#6CC0F9] via-[#8D34F6] to-[#FF6C5C] rounded-2xl shadow-2xl p-10 text-white border-2 border-[#8D34F6]">
-                <p className="text-xl leading-relaxed font-medium text-center">
+              <h3 className="text-3xl font-bold text-[#121826] mb-8 text-center">Value Proposition</h3>
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-10 border-2 border-[#8D34F6]">
+                <p className="text-xl leading-relaxed text-[#121826] text-center">
                   HireVerse removes the resume fine-tuning problem by allowing candidates to <span className="font-bold">apply blindly</span>.
                   Matching is based purely on <span className="font-bold">who they are</span>, not how well they manipulate keywords.
                   The system combines mathematical scoring with LLM intelligence to identify skills regardless of phrasing,
@@ -215,10 +207,7 @@ function App() {
 
             {/* Market Opportunity Section */}
             <section>
-              <div className="flex items-center gap-3 mb-8">
-                <Target className="w-8 h-8 text-[#FF6C5C]" />
-                <h3 className="text-3xl font-bold text-[#121826]">Impact & Market Opportunity</h3>
-              </div>
+              <h3 className="text-3xl font-bold text-[#121826] mb-8 text-center">Impact & Market Opportunity</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* ATS Market */}
@@ -255,9 +244,9 @@ function App() {
               </div>
 
               {/* Growth Rate Highlight */}
-              <div className="bg-gradient-to-r from-[#FF6C5C] to-[#E8F77B] rounded-xl shadow-lg p-6 text-center">
-                <p className="text-2xl font-bold text-[#121826]">
-                  Average Growth Rate: <span className="text-3xl">8-10% CAGR</span>
+              <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#8D34F6] text-center">
+                <p className="text-xl font-bold text-[#121826]">
+                  Average Growth Rate: <span className="text-2xl text-[#8D34F6]">8-10% CAGR</span>
                 </p>
               </div>
             </section>
