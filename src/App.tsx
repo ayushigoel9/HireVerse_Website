@@ -5,7 +5,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('home');
 
   return (
-    <div className="min-h-screen relative bg-white">
+    <div className="min-h-screen relative bg-white flex flex-col">
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/HireVerse_Website/HireverseAI_background.png)', zIndex: 0 }}
@@ -22,7 +22,7 @@ function App() {
         <source src="/HireVerse_Website/background.mp4" type="video/mp4" />
       </video>
 
-      <div className="relative" style={{ zIndex: 10 }}>
+      <div className="relative flex-1 flex flex-col" style={{ zIndex: 10 }}>
         {/* Tab Navigation - At Very Top */}
         <nav className="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-50 border-b-2 border-[#6CC0F9]">
           <div className="max-w-7xl mx-auto px-6">
@@ -96,10 +96,10 @@ function App() {
           </div>
         </nav>
 
-      <main className="min-h-screen">
-        {/* HOME TAB - Hero section fills entire page */}
+      <main className="flex-1 flex flex-col">
+        {/* HOME TAB - Hero section fills available space */}
         {activeTab === 'home' && (
-          <div className="flex items-center justify-center" style={{ minHeight: 'calc(100vh - 200px)' }}>
+          <div className="flex-1 flex items-center justify-center">
             <div className="text-center px-6">
               <div className="flex items-center justify-center gap-6 mb-8">
                 <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-32" />
