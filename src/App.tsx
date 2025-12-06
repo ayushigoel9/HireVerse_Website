@@ -204,10 +204,106 @@ function App() {
         {activeTab === 'about' && (
           <div className="max-w-7xl mx-auto px-6 py-12">
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">About Our Team</h2>
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-12 border-2 border-[#8D34F6]">
-              <p className="text-[#121826] text-lg text-center mb-4">
-                [Team information will be added here]
+
+            {/* Intro Section */}
+            <div className="text-center mb-12">
+              <p className="text-lg text-[#121826] max-w-3xl mx-auto">
+                We're a team of data science students from <strong>UC Berkeley</strong> who built HireVerse.AI
+                as our final capstone project for <strong>DataSci 210, Fall 2025</strong>.
               </p>
+            </div>
+
+            {/* Team Members Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {/* Ayushi */}
+              <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#8D34F6] text-center hover:shadow-2xl transition-shadow">
+                <img
+                  src="/HireVerse_Website/ayushi.jpg"
+                  alt="Ayushi Goel"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-[#8D34F6]"
+                />
+                <h3 className="text-xl font-bold text-[#121826] mb-2">Ayushi Goel</h3>
+                <p className="text-[#121826] text-sm mb-4">Luxembourg, Europe</p>
+                <a
+                  href="https://www.linkedin.com/in/ayushigoel9/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#8D34F6] text-white px-4 py-2 rounded-lg hover:bg-[#7029d1] transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+
+              {/* Francesca */}
+              <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#FF6C5C] text-center hover:shadow-2xl transition-shadow">
+                <img
+                  src="/HireVerse_Website/francesca.jpg"
+                  alt="Francesca Scipioni"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-[#FF6C5C]"
+                />
+                <h3 className="text-xl font-bold text-[#121826] mb-2">Francesca Scipioni</h3>
+                <p className="text-[#121826] text-sm mb-4">California, USA</p>
+                <a
+                  href="https://www.linkedin.com/in/francesca-scipioni/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#FF6C5C] text-white px-4 py-2 rounded-lg hover:bg-[#ff5544] transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+
+              {/* Omar */}
+              <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#6CC0F9] text-center hover:shadow-2xl transition-shadow">
+                <img
+                  src="/HireVerse_Website/omar.png"
+                  alt="Omar Zubi"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-[#6CC0F9]"
+                />
+                <h3 className="text-xl font-bold text-[#121826] mb-2">Omar Zubi</h3>
+                <p className="text-[#121826] text-sm mb-4">New York, USA</p>
+                <a
+                  href="https://linkedin.com/in/omarzubi/?skipRedirect=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#6CC0F9] text-white px-4 py-2 rounded-lg hover:bg-[#5ab0e8] transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+
+              {/* Richard */}
+              <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#E8F77B] text-center hover:shadow-2xl transition-shadow">
+                <img
+                  src="/HireVerse_Website/richard.png"
+                  alt="Richard Lumpi"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-[#E8F77B]"
+                />
+                <h3 className="text-xl font-bold text-[#121826] mb-2">Richard Lumpi</h3>
+                <p className="text-[#121826] text-sm mb-4">Austria, Europe</p>
+                <a
+                  href="https://www.linkedin.com/in/richard-lumpi-8886a9178/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#E8F77B] text-[#121826] px-4 py-2 rounded-lg hover:bg-[#e0ed60] transition-colors font-semibold"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+
+            {/* Tech Stack Section */}
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#337295]">
+              <h3 className="text-2xl font-bold text-[#121826] mb-6 text-center">Built With</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                <span className="bg-[#8D34F6]/10 border-2 border-[#8D34F6] text-[#121826] px-4 py-2 rounded-lg font-semibold">AWS Bedrock</span>
+                <span className="bg-[#FF6C5C]/10 border-2 border-[#FF6C5C] text-[#121826] px-4 py-2 rounded-lg font-semibold">React</span>
+                <span className="bg-[#6CC0F9]/10 border-2 border-[#6CC0F9] text-[#121826] px-4 py-2 rounded-lg font-semibold">AWS Lambda</span>
+                <span className="bg-[#E8F77B]/10 border-2 border-[#E8F77B] text-[#121826] px-4 py-2 rounded-lg font-semibold">S3</span>
+                <span className="bg-[#337295]/10 border-2 border-[#337295] text-[#121826] px-4 py-2 rounded-lg font-semibold">CDK</span>
+                <span className="bg-[#CAB9D0]/10 border-2 border-[#CAB9D0] text-[#121826] px-4 py-2 rounded-lg font-semibold">Python</span>
+                <span className="bg-[#8D34F6]/10 border-2 border-[#8D34F6] text-[#121826] px-4 py-2 rounded-lg font-semibold">TypeScript</span>
+              </div>
             </div>
           </div>
         )}
