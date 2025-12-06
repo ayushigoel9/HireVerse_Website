@@ -1,6 +1,9 @@
-import { FileText, Sparkles, Zap, Target, Database, Brain } from 'lucide-react';
+import { FileText, Sparkles, Zap, Target, Database, Brain, Users } from 'lucide-react';
+import { useState } from 'react';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('home');
+
   return (
     <div className="min-h-screen relative bg-white">
       <div
@@ -32,19 +35,84 @@ function App() {
           </div>
         </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        <div className="text-center mb-16">
-          <h2 className="text-6xl font-bold text-[#121826] mb-4">
-            HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#E8F77B]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.5)' }}>i</span>
-          </h2>
-          <p className="text-xl text-[#121826] italic mb-6 font-semibold">Precise. Transparent. Fair.</p>
-          <p className="text-lg text-[#121826] max-w-3xl mx-auto leading-relaxed">
-            Connecting talented professionals with their dream opportunities through intelligent AI-powered matching.
-            No more keyword games—just fair, transparent job matching that sees your true potential.
-          </p>
-        </div>
+        {/* Tab Navigation */}
+        <nav className="bg-white/95 backdrop-blur-md shadow-md sticky top-[73px] z-40 border-b-2 border-[#6CC0F9]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex gap-1">
+              <button
+                onClick={() => setActiveTab('home')}
+                className={`px-6 py-4 font-semibold transition-all ${
+                  activeTab === 'home'
+                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
+                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
+                }`}
+              >
+                Home
+              </button>
+              <button
+                onClick={() => setActiveTab('about')}
+                className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
+                  activeTab === 'about'
+                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
+                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
+                }`}
+              >
+                <Users className="w-5 h-5" />
+                About Us
+              </button>
+              <button
+                onClick={() => setActiveTab('demo')}
+                className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
+                  activeTab === 'demo'
+                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
+                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
+                }`}
+              >
+                <Zap className="w-5 h-5" />
+                Demo
+              </button>
+              <button
+                onClick={() => setActiveTab('product')}
+                className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
+                  activeTab === 'product'
+                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
+                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
+                }`}
+              >
+                <FileText className="w-5 h-5" />
+                About Product
+              </button>
+              <button
+                onClick={() => setActiveTab('data')}
+                className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
+                  activeTab === 'data'
+                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
+                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
+                }`}
+              >
+                <Database className="w-5 h-5" />
+                Data
+              </button>
+            </div>
+          </div>
+        </nav>
 
-        <section className="mb-20">
+      <main className="max-w-7xl mx-auto px-6 py-12">
+        {/* HOME TAB */}
+        {activeTab === 'home' && (
+          <>
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-bold text-[#121826] mb-4">
+                HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#E8F77B]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.5)' }}>i</span>
+              </h2>
+              <p className="text-xl text-[#121826] italic mb-6 font-semibold">Precise. Transparent. Fair.</p>
+              <p className="text-lg text-[#121826] max-w-3xl mx-auto leading-relaxed">
+                Connecting talented professionals with their dream opportunities through intelligent AI-powered matching.
+                No more keyword games—just fair, transparent job matching that sees your true potential.
+              </p>
+            </div>
+
+            <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <Target className="w-8 h-8 text-[#6CC0F9]" />
             <h3 className="text-3xl font-bold text-[#121826]">Problem Statement & Motivation</h3>
@@ -100,12 +168,28 @@ function App() {
             </p>
           </div>
         </section>
+          </>
+        )}
 
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Zap className="w-8 h-8 text-[#E8F77B]" />
-            <h3 className="text-3xl font-bold text-[#121826]">Demo</h3>
+        {/* ABOUT US TAB */}
+        {activeTab === 'about' && (
+          <div className="py-8">
+            <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">About Our Team</h2>
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-12 border-2 border-[#8D34F6]">
+              <p className="text-[#121826] text-lg text-center mb-4">
+                [Team information will be added here]
+              </p>
+            </div>
           </div>
+        )}
+
+        {/* DEMO TAB */}
+        {activeTab === 'demo' && (
+          <section className="py-8">
+            <div className="flex items-center gap-3 mb-8">
+              <Zap className="w-8 h-8 text-[#E8F77B]" />
+              <h2 className="text-4xl font-bold text-[#121826]">Demo</h2>
+            </div>
           <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#6CC0F9]">
             <div className="rounded-xl overflow-hidden border-2 border-[#8D34F6]">
               <video
@@ -118,13 +202,17 @@ function App() {
               </video>
             </div>
           </div>
-        </section>
+          </section>
+        )}
 
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <FileText className="w-8 h-8 text-[#6CC0F9]" />
-            <h3 className="text-3xl font-bold text-[#121826]">Product Architecture Description</h3>
-          </div>
+        {/* ABOUT PRODUCT TAB */}
+        {activeTab === 'product' && (
+          <>
+            <section className="mb-12 py-8">
+              <div className="flex items-center gap-3 mb-8">
+                <FileText className="w-8 h-8 text-[#6CC0F9]" />
+                <h2 className="text-4xl font-bold text-[#121826]">Product Architecture</h2>
+              </div>
           <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
             <p className="text-[#121826] leading-relaxed mb-6">
               HireVerse is built entirely on AWS, leveraging Bedrock AgentCore, a state-of-the-art framework that orchestrates
@@ -160,110 +248,114 @@ function App() {
               </a>
             </p>
           </div>
-        </section>
+            </section>
 
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Database className="w-8 h-8 text-[#8D34F6]" />
-            <h3 className="text-3xl font-bold text-[#121826]">Data</h3>
-          </div>
+            <section className="mb-12">
+              <div className="flex items-center gap-3 mb-8">
+                <Brain className="w-8 h-8 text-[#FF6C5C]" />
+                <h2 className="text-4xl font-bold text-[#121826]">Machine Learning Techniques</h2>
+              </div>
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-xl font-semibold text-[#121826] mb-3">Evaluation Framework</h4>
+                    <p className="text-[#121826] leading-relaxed">
+                      To build an effective matching system, the team established a rigorous evaluation framework using 5 real, manually labeled
+                      CVs categorized by job family, paired with 100 job descriptions across three categories: Legal & Accounting, Data Science,
+                      and Software Engineering. This dataset served as the foundation for evaluating all matching iterations. The data preparation
+                      process involved parsing and cleaning both CVs and job descriptions, extracting text, and normalizing structure. The team then
+                      tested three matching approaches: a baseline using CareerBERT embeddings, an improved version using AWS Titan, and finally a
+                      full multi-stage matching pipeline.
+                    </p>
+                  </div>
 
-          <div className="space-y-8">
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#FF6C5C]">
-              <h4 className="text-2xl font-bold text-[#121826] mb-4">Data Sources</h4>
-              <p className="text-[#121826]">CVs</p>
+                  <div>
+                    <h4 className="text-xl font-semibold text-[#121826] mb-3">Evaluation Methods</h4>
+                    <p className="text-[#121826] leading-relaxed mb-4">
+                      The evaluation process used three complementary methods to provide a comprehensive assessment of performance:
+                    </p>
+                    <ul className="space-y-3">
+                      <li className="flex gap-4">
+                        <span className="text-[#6CC0F9] font-bold mt-1">1.</span>
+                        <div>
+                          <strong className="text-[#121826]">Job-Family Classification Accuracy:</strong>
+                          <span className="text-[#121826]"> Tested whether models matched CVs to the correct job families by having each model
+                          produce top 40 recommendations per CV, with accuracy computed across all 40 jobs.</span>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <span className="text-[#8D34F6] font-bold mt-1">2.</span>
+                        <div>
+                          <strong className="text-[#121826]">LLM-as-a-Judge:</strong>
+                          <span className="text-[#121826]"> Used a separate model to score the top 5 recommendations for each candidate, evaluating
+                          seniority, domain alignment, and overall fit.</span>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <span className="text-[#FF6C5C] font-bold mt-1">3.</span>
+                        <div>
+                          <strong className="text-[#121826]">Human Candidate Feedback:</strong>
+                          <span className="text-[#121826]"> Real candidates reviewed their top 5 recommended jobs and rated relevance based on
+                          their career goals and context.</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-[#CAB9D0]/50 via-[#8D34F6]/20 to-[#6CC0F9]/30 rounded-xl p-6 mt-6 border-2 border-[#8D34F6]">
+                    <p className="text-[#121826] italic">[Final results and key learnings will be added here]</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* DATA TAB */}
+        {activeTab === 'data' && (
+          <section className="py-8">
+            <div className="flex items-center gap-3 mb-8">
+              <Database className="w-8 h-8 text-[#8D34F6]" />
+              <h2 className="text-4xl font-bold text-[#121826]">Data</h2>
             </div>
-
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#6CC0F9]">
-              <h4 className="text-2xl font-bold text-[#121826] mb-6">Data Pipeline</h4>
-
-              <div className="mb-8">
-                <h5 className="text-xl font-semibold text-[#121826] mb-3">CV Processing</h5>
-                <p className="text-[#121826] leading-relaxed">
-                  When a candidate uploads their resume, the CV processing pipeline initiates a sophisticated multi-stage workflow
-                  orchestrated by a top-level system coordinator. Apache Tika first converts the PDF into clean, machine-readable text,
-                  which then undergoes a deterministic preprocessing step that normalizes the output into a structured base JSON format.
-                  The intelligence layer follows, deploying six specialized LLM-powered agents, each focused on extracting specific resume
-                  sections: personal information, professional experience, projects, education, technical and soft skills, and certifications
-                  and languages. The orchestrator then merges all agent outputs into a single, rich JSON document that comprehensively
-                  captures the candidate's profile. Finally, this structured result is stored in S3 and returned to the frontend, enabling
-                  instant population of the candidate's profile page with accurately parsed information.
-                </p>
+            <div className="space-y-8">
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#FF6C5C]">
+                <h4 className="text-2xl font-bold text-[#121826] mb-4">Data Sources</h4>
+                <p className="text-[#121826]">CVs</p>
               </div>
 
-              <div>
-                <h5 className="text-xl font-semibold text-[#121826] mb-3">Job Description Processing</h5>
-                <p className="text-[#121826] leading-relaxed">
-                  The job description processing follows a parallel structured approach, beginning with a hand-curated dataset of 100
-                  high-quality job descriptions that have been carefully selected to represent diverse roles and industries. Each job
-                  description is converted into a structured JSON format containing four key sections: the job title, the role description
-                  providing an overview of responsibilities and expectations, the required or minimum competencies that candidates must possess,
-                  and the nice-to-have skills that are preferred but not mandatory when available. All job JSONs are systematically stored in S3,
-                  creating a well-organized repository that is ready for efficient matching against candidate profiles through the matching engine.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#6CC0F9]">
+                <h4 className="text-2xl font-bold text-[#121826] mb-6">Data Pipeline</h4>
 
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Brain className="w-8 h-8 text-[#FF6C5C]" />
-            <h3 className="text-3xl font-bold text-[#121826]">Machine Learning Techniques</h3>
-          </div>
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-xl font-semibold text-[#121826] mb-3">Evaluation Framework</h4>
-                <p className="text-[#121826] leading-relaxed">
-                  To build an effective matching system, the team established a rigorous evaluation framework using 5 real, manually labeled
-                  CVs categorized by job family, paired with 100 job descriptions across three categories: Legal & Accounting, Data Science,
-                  and Software Engineering. This dataset served as the foundation for evaluating all matching iterations. The data preparation
-                  process involved parsing and cleaning both CVs and job descriptions, extracting text, and normalizing structure. The team then
-                  tested three matching approaches: a baseline using CareerBERT embeddings, an improved version using AWS Titan, and finally a
-                  full multi-stage matching pipeline.
-                </p>
-              </div>
+                <div className="mb-8">
+                  <h5 className="text-xl font-semibold text-[#121826] mb-3">CV Processing</h5>
+                  <p className="text-[#121826] leading-relaxed">
+                    When a candidate uploads their resume, the CV processing pipeline initiates a sophisticated multi-stage workflow
+                    orchestrated by a top-level system coordinator. Apache Tika first converts the PDF into clean, machine-readable text,
+                    which then undergoes a deterministic preprocessing step that normalizes the output into a structured base JSON format.
+                    The intelligence layer follows, deploying six specialized LLM-powered agents, each focused on extracting specific resume
+                    sections: personal information, professional experience, projects, education, technical and soft skills, and certifications
+                    and languages. The orchestrator then merges all agent outputs into a single, rich JSON document that comprehensively
+                    captures the candidate's profile. Finally, this structured result is stored in S3 and returned to the frontend, enabling
+                    instant population of the candidate's profile page with accurately parsed information.
+                  </p>
+                </div>
 
-              <div>
-                <h4 className="text-xl font-semibold text-[#121826] mb-3">Evaluation Methods</h4>
-                <p className="text-[#121826] leading-relaxed mb-4">
-                  The evaluation process used three complementary methods to provide a comprehensive assessment of performance:
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex gap-4">
-                    <span className="text-[#6CC0F9] font-bold mt-1">1.</span>
-                    <div>
-                      <strong className="text-[#121826]">Job-Family Classification Accuracy:</strong>
-                      <span className="text-[#121826]"> Tested whether models matched CVs to the correct job families by having each model
-                      produce top 40 recommendations per CV, with accuracy computed across all 40 jobs.</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-4">
-                    <span className="text-[#8D34F6] font-bold mt-1">2.</span>
-                    <div>
-                      <strong className="text-[#121826]">LLM-as-a-Judge:</strong>
-                      <span className="text-[#121826]"> Used a separate model to score the top 5 recommendations for each candidate, evaluating
-                      seniority, domain alignment, and overall fit.</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-4">
-                    <span className="text-[#FF6C5C] font-bold mt-1">3.</span>
-                    <div>
-                      <strong className="text-[#121826]">Human Candidate Feedback:</strong>
-                      <span className="text-[#121826]"> Real candidates reviewed their top 5 recommended jobs and rated relevance based on
-                      their career goals and context.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#CAB9D0]/50 via-[#8D34F6]/20 to-[#6CC0F9]/30 rounded-xl p-6 mt-6 border-2 border-[#8D34F6]">
-                <p className="text-[#121826] italic">[Final results and key learnings will be added here]</p>
+                <div>
+                  <h5 className="text-xl font-semibold text-[#121826] mb-3">Job Description Processing</h5>
+                  <p className="text-[#121826] leading-relaxed">
+                    The job description processing follows a parallel structured approach, beginning with a hand-curated dataset of 100
+                    high-quality job descriptions that have been carefully selected to represent diverse roles and industries. Each job
+                    description is converted into a structured JSON format containing four key sections: the job title, the role description
+                    providing an overview of responsibilities and expectations, the required or minimum competencies that candidates must possess,
+                    and the nice-to-have skills that are preferred but not mandatory when available. All job JSONs are systematically stored in S3,
+                    creating a well-organized repository that is ready for efficient matching against candidate profiles through the matching engine.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </main>
 
       <footer className="bg-white/90 backdrop-blur-md border-t-2 border-[#8D34F6] mt-20">
