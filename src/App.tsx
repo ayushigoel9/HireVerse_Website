@@ -239,36 +239,78 @@ function App() {
         {/* ARCHITECTURE TAB */}
         {activeTab === 'architecture' && (
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <section className="mb-12">
-              <div className="flex items-center gap-3 mb-8">
-                <FileText className="w-8 h-8 text-[#6CC0F9]" />
-                <h2 className="text-4xl font-bold text-[#121826]">Product Architecture</h2>
-              </div>
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
-            <p className="text-[#121826] leading-relaxed mb-6">
-              HireVerse is built entirely on AWS, leveraging Bedrock AgentCore, a state-of-the-art framework that orchestrates
-              specialized AI agents.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-[#6CC0F9]/20 backdrop-blur-sm rounded-xl p-6 border-2 border-[#6CC0F9]">
-                <h4 className="font-bold text-[#121826] mb-2">Isolated Environments</h4>
-                <p className="text-[#121826] text-sm">Each team member gets their own S3 buckets, Lambda functions, and AgentCore agents—no shared resources, no deployment conflicts</p>
-              </div>
-              <div className="bg-[#8D34F6]/20 backdrop-blur-sm rounded-xl p-6 border-2 border-[#8D34F6]">
-                <h4 className="font-bold text-[#121826] mb-2">Cost-Efficient</h4>
-                <p className="text-[#121826] text-sm">Entire system built and tested for approximately the cost of a cup of coffee</p>
-              </div>
-              <div className="bg-[#FF6C5C]/20 backdrop-blur-sm rounded-xl p-6 border-2 border-[#FF6C5C]">
-                <h4 className="font-bold text-[#121826] mb-2">Simple Deployment</h4>
-                <p className="text-[#121826] text-sm">One-command deployment process</p>
-              </div>
-              <div className="bg-[#E8F77B]/30 backdrop-blur-sm rounded-xl p-6 border-2 border-[#E8F77B]">
-                <h4 className="font-bold text-[#121826] mb-2">API Gateway</h4>
-                <p className="text-[#121826] text-sm">Handles incoming API calls and triggers processing pipelines. Easy to integrate with any platform or frontend</p>
+            {/* Intro Section */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-[#121826] mb-6">Product Architecture</h2>
+              <p className="text-lg text-[#121826] max-w-4xl mx-auto leading-relaxed">
+                HireVerse.AI is built entirely on AWS, leveraging Bedrock AgentCore to orchestrate specialized AI agents.
+                Our architecture is designed with key principles in mind: simplicity, cost-efficiency, isolation, and experimentation.
+                Every design decision ensures rapid development, seamless collaboration, and production-ready deployment.
+              </p>
+            </div>
+
+            {/* Architecture Highlights - 4 Icons Horizontal */}
+            <div className="mb-20">
+              <h3 className="text-2xl font-bold text-[#121826] mb-8 text-center">Design Principles</h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                {/* No Shared Resources */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#8D34F6] text-center">
+                  <img src="/HireVerse_Website/resources.png" alt="No shared resources" className="h-24 mx-auto mb-4" />
+                  <h4 className="font-bold text-[#121826] mb-3">Isolated Resources</h4>
+                  <p className="text-[#121826] text-sm">Each team member gets their own S3 buckets, Lambda functions, and AgentCore agents—no shared resources, no deployment conflicts.</p>
+                </div>
+
+                {/* No Deployment Conflicts */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#6CC0F9] text-center">
+                  <img src="/HireVerse_Website/deployment.png" alt="No deployment conflicts" className="h-24 mx-auto mb-4" />
+                  <h4 className="font-bold text-[#121826] mb-3">Conflict-Free Deployment</h4>
+                  <p className="text-[#121826] text-sm">Isolated environments ensure parallel development without interference. Deploy and test independently without breaking others' work.</p>
+                </div>
+
+                {/* Freedom to Experiment */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#FF6C5C] text-center">
+                  <img src="/HireVerse_Website/experiment.png" alt="Freedom to experiment" className="h-24 mx-auto mb-4" />
+                  <h4 className="font-bold text-[#121826] mb-3">Experiment-Friendly</h4>
+                  <p className="text-[#121826] text-sm">Try new approaches, test different models, and iterate rapidly in your own sandbox environment without affecting the team.</p>
+                </div>
+
+                {/* Cost Efficient */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#E8F77B] text-center">
+                  <img src="/HireVerse_Website/cost.png" alt="Cost efficient" className="h-24 mx-auto mb-4" />
+                  <h4 className="font-bold text-[#121826] mb-3">Cost-Efficient</h4>
+                  <p className="text-[#121826] text-sm">Entire system built and tested for under $5—serverless architecture means you only pay for what you use.</p>
+                </div>
               </div>
             </div>
-          </div>
-            </section>
+
+            {/* Simple Deployment Section */}
+            <div className="mb-20">
+              <h3 className="text-2xl font-bold text-[#121826] mb-8 text-center">One-Command Deployment</h3>
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
+                <p className="text-[#121826] text-center mb-6 text-lg">
+                  Deploy the entire HireVerse infrastructure with a single command. No complex setup, no manual configuration.
+                </p>
+                <div className="rounded-xl overflow-hidden border-2 border-[#6CC0F9] mb-6">
+                  <img src="/HireVerse_Website/deploy_colored.png" alt="Simple deployment" className="w-full" />
+                </div>
+                <div className="rounded-xl overflow-hidden border-2 border-[#8D34F6]">
+                  <img src="/HireVerse_Website/command_line.png" alt="Command line deployment" className="w-full" />
+                </div>
+              </div>
+            </div>
+
+            {/* Full Architecture Diagram */}
+            <div>
+              <h3 className="text-2xl font-bold text-[#121826] mb-8 text-center">System Architecture</h3>
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
+                <p className="text-[#121826] text-center mb-6">
+                  Complete end-to-end architecture showing data flow from resume upload through AI-powered matching to candidate recommendations.
+                </p>
+                <div className="rounded-xl overflow-hidden border-2 border-[#6CC0F9]">
+                  <img src="/HireVerse_Website/architecture.png" alt="System architecture diagram" className="w-full" />
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
