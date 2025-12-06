@@ -5,7 +5,7 @@ function App() {
     <div className="min-h-screen relative">
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/HireverseAI_background.png)', zIndex: 0 }}
+        style={{ backgroundImage: 'url(/HireVerse_Website/HireverseAI_background.png)', zIndex: 0 }}
       ></div>
 
       <video
@@ -16,7 +16,7 @@ function App() {
         className="fixed inset-0 w-full h-full object-cover"
         style={{ zIndex: 1 }}
       >
-        <source src="/background.mp4" type="video/mp4" />
+        <source src="/HireVerse_Website/background.mp4" type="video/mp4" />
       </video>
 
       <div className="fixed inset-0 bg-[#121826]/30" style={{ zIndex: 2 }}></div>
@@ -25,7 +25,7 @@ function App() {
         <header className="bg-[#121826]/70 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-[#8D34F6]/30">
           <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="HireVerse.AI" className="h-12" />
+              <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-12" />
               <span className="text-2xl font-bold text-white">HireVerse<span className="text-[#8D34F6]">.AI</span></span>
             </div>
             <div className="flex gap-4">
