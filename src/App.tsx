@@ -2,7 +2,7 @@ import { FileText, Sparkles, Zap, Target, Database, Brain, Users } from 'lucide-
 import { useState } from 'react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('motivation');
+  const [activeTab, setActiveTab] = useState('home');
 
   return (
     <div className="min-h-screen relative bg-white">
@@ -27,6 +27,16 @@ function App() {
         <nav className="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-50 border-b-2 border-[#6CC0F9]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex gap-1">
+              <button
+                onClick={() => setActiveTab('home')}
+                className={`px-6 py-4 font-semibold transition-all ${
+                  activeTab === 'home'
+                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
+                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
+                }`}
+              >
+                Home
+              </button>
               <button
                 onClick={() => setActiveTab('motivation')}
                 className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
@@ -104,6 +114,13 @@ function App() {
         </div>
 
       <main className="max-w-7xl mx-auto px-6 py-12">
+        {/* HOME TAB - Just hero, no content */}
+        {activeTab === 'home' && (
+          <div className="text-center py-20">
+            {/* Empty - hero section above is enough */}
+          </div>
+        )}
+
         {/* MOTIVATION TAB */}
         {activeTab === 'motivation' && (
           <>
