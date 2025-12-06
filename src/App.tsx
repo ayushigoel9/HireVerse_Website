@@ -5,8 +5,19 @@ function App() {
     <div className="min-h-screen relative bg-white">
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/HireVerse_Website/HireverseAI_background.png)' }}
+        style={{ backgroundImage: 'url(/HireVerse_Website/HireverseAI_background.png)', zIndex: 0 }}
       ></div>
+
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover opacity-60"
+        style={{ zIndex: 1 }}
+      >
+        <source src="/HireVerse_Website/background.mp4" type="video/mp4" />
+      </video>
 
       <div className="relative" style={{ zIndex: 10 }}>
         <header className="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b-2 border-[#8D34F6]">
@@ -102,8 +113,15 @@ function App() {
             <h3 className="text-3xl font-bold text-[#121826]">Demo</h3>
           </div>
           <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#6CC0F9]">
-            <div className="aspect-video bg-gradient-to-br from-[#CAB9D0]/50 via-[#8D34F6]/20 to-[#6CC0F9]/30 rounded-xl flex items-center justify-center border-2 border-[#8D34F6]">
-              <p className="text-[#121826] text-lg font-medium">[Demo Video]</p>
+            <div className="rounded-xl overflow-hidden border-2 border-[#8D34F6]">
+              <video
+                controls
+                className="w-full"
+              >
+                <source src="/HireVerse_Website/demo.mov" type="video/quicktime" />
+                <source src="/HireVerse_Website/demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </section>
