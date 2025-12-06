@@ -256,22 +256,19 @@ function App() {
                 {/* No Shared Resources */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#8D34F6] text-center">
                   <img src="/HireVerse_Website/resources.png" alt="No shared resources" className="h-24 mx-auto mb-4" />
-                  <h4 className="font-bold text-[#121826] mb-3">Isolated Resources</h4>
-                  <p className="text-[#121826] text-sm">Team members get their own S3 buckets, Lambda functions, and AgentCore agents—no shared resources, no deployment conflicts.</p>
+                  <p className="text-[#121826] text-sm">Team members get their own S3 buckets, Lambda functions, and AgentCore agents. No shared resources, no deployment conflicts.</p>
                 </div>
 
                 {/* Freedom to Experiment */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#FF6C5C] text-center">
                   <img src="/HireVerse_Website/experiment.png" alt="Freedom to experiment" className="h-24 mx-auto mb-4" />
-                  <h4 className="font-bold text-[#121826] mb-3">Experiment-Friendly</h4>
                   <p className="text-[#121826] text-sm">Team members can try new approaches, test different models, and iterate rapidly in isolated sandbox environments.</p>
                 </div>
 
                 {/* Cost Efficient */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#E8F77B] text-center">
                   <img src="/HireVerse_Website/cost.png" alt="Cost efficient" className="h-24 mx-auto mb-4" />
-                  <h4 className="font-bold text-[#121826] mb-3">Cost-Efficient</h4>
-                  <p className="text-[#121826] text-sm">The entire system is designed with cost efficiency at its core. Each team member can be onboarded and start developing for about the price of a cup of coffee—thanks to serverless architecture that charges only for what you actually use.</p>
+                  <p className="text-[#121826] text-sm">The entire system is designed with cost efficiency at its core. Each team member can be onboarded and start developing for about the price of a cup of coffee.</p>
                 </div>
               </div>
             </div>
