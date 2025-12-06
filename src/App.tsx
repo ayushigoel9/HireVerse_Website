@@ -2,7 +2,7 @@ import { FileText, Sparkles, Zap, Target, Database, Brain, Users } from 'lucide-
 import { useState } from 'react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState('motivation');
 
   return (
     <div className="min-h-screen relative bg-white">
@@ -23,42 +23,20 @@ function App() {
       </video>
 
       <div className="relative" style={{ zIndex: 10 }}>
-        <header className="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b-2 border-[#8D34F6]">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-12" />
-              <span className="text-2xl font-bold text-[#121826]">HireVerse<span className="text-[#8D34F6]">.AI</span></span>
-            </div>
-            <div className="flex gap-4">
-              <a href="https://github.com/ayushigoel9/HireVerse_AWS" target="_blank" rel="noopener noreferrer" className="text-[#337295] hover:text-[#8D34F6] font-medium transition-colors">GitHub</a>
-            </div>
-          </div>
-        </header>
-
         {/* Tab Navigation */}
-        <nav className="bg-white/95 backdrop-blur-md shadow-md sticky top-[73px] z-40 border-b-2 border-[#6CC0F9]">
+        <nav className="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-50 border-b-2 border-[#6CC0F9]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex gap-1">
               <button
-                onClick={() => setActiveTab('home')}
-                className={`px-6 py-4 font-semibold transition-all ${
-                  activeTab === 'home'
-                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
-                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
-                }`}
-              >
-                Home
-              </button>
-              <button
-                onClick={() => setActiveTab('about')}
+                onClick={() => setActiveTab('motivation')}
                 className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'about'
+                  activeTab === 'motivation'
                     ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
                     : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
                 }`}
               >
-                <Users className="w-5 h-5" />
-                About Us
+                <Target className="w-5 h-5" />
+                Motivation
               </button>
               <button
                 onClick={() => setActiveTab('demo')}
@@ -72,6 +50,17 @@ function App() {
                 Demo
               </button>
               <button
+                onClick={() => setActiveTab('data')}
+                className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
+                  activeTab === 'data'
+                    ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
+                    : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
+                }`}
+              >
+                <Database className="w-5 h-5" />
+                Data
+              </button>
+              <button
                 onClick={() => setActiveTab('product')}
                 className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
                   activeTab === 'product'
@@ -83,23 +72,23 @@ function App() {
                 About Product
               </button>
               <button
-                onClick={() => setActiveTab('data')}
+                onClick={() => setActiveTab('about')}
                 className={`px-6 py-4 font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'data'
+                  activeTab === 'about'
                     ? 'text-[#8D34F6] border-b-4 border-[#8D34F6] bg-[#8D34F6]/5'
                     : 'text-[#121826] hover:text-[#8D34F6] hover:bg-[#8D34F6]/5'
                 }`}
               >
-                <Database className="w-5 h-5" />
-                Data
+                <Users className="w-5 h-5" />
+                About Us
               </button>
             </div>
           </div>
         </nav>
 
       <main className="max-w-7xl mx-auto px-6 py-12">
-        {/* HOME TAB */}
-        {activeTab === 'home' && (
+        {/* MOTIVATION TAB */}
+        {activeTab === 'motivation' && (
           <>
             <div className="text-center mb-16">
               <h2 className="text-6xl font-bold text-[#121826] mb-4">
@@ -237,14 +226,14 @@ function App() {
               </div>
             </div>
             <p className="text-[#121826]">
-              For details, see the{' '}
+              For implementation details and source code, visit our{' '}
               <a
                 href="https://github.com/ayushigoel9/HireVerse_AWS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#337295] hover:text-[#8D34F6] font-medium underline transition-colors"
+                className="text-[#337295] hover:text-[#8D34F6] font-bold underline transition-colors"
               >
-                GitHub documentation
+                GitHub Repository
               </a>
             </p>
           </div>
