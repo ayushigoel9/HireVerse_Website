@@ -23,10 +23,10 @@ function App() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-[#121826] mb-4">
-            Hire <span className="bg-gradient-to-r from-[#6CC0F9] via-[#8D34F6] to-[#FF6C5C] bg-clip-text text-transparent">Top Talent</span>
+          <h2 className="text-6xl font-bold text-[#121826] mb-4">
+            HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#E8F77B]">i</span>
           </h2>
-          <p className="text-lg text-[#FF6C5C] italic mb-6 font-semibold">Precise. Transparent. Fair.</p>
+          <p className="text-lg text-[#121826] italic mb-6 font-semibold">Precise. Transparent. Fair.</p>
           <p className="text-xl text-[#121826] max-w-4xl mx-auto leading-relaxed">
             Connect talented professionals with their dream opportunities through our intelligent matching platform.
             Whether you're seeking your next career move or looking for the perfect candidate, we make the process seamless.
