@@ -271,7 +271,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#E8F77B] text-center">
                   <img src="/HireVerse_Website/cost.png" alt="Cost efficient" className="h-24 mx-auto mb-4" />
                   <h4 className="font-bold text-[#121826] mb-3">Cost-Efficient</h4>
-                  <p className="text-[#121826] text-sm">And here's the best part—we built and tested this entire system for about the cost of a cup of coffee. Serverless architecture means you only pay for what you use.</p>
+                  <p className="text-[#121826] text-sm">The entire system is designed with cost efficiency at its core. Each team member can be onboarded and start developing for about the price of a cup of coffee—thanks to serverless architecture that charges only for what you actually use.</p>
                 </div>
               </div>
             </div>
