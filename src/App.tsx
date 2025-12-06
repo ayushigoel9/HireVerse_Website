@@ -208,8 +208,8 @@ function App() {
             {/* Intro Section */}
             <div className="text-center mb-12">
               <p className="text-lg text-[#121826] max-w-3xl mx-auto">
-                We're a team of data science students from <strong>UC Berkeley</strong> who built HireVerse.AI
-                as our final capstone project for <strong>DataSci 210, Fall 2025</strong>.
+                We're a team of data science students in the <strong>Master of Information and Data Science (MIDS)</strong> program
+                at <strong>UC Berkeley</strong>, who built HireVerse.AI as our final capstone project, <strong>Fall 2025</strong>.
               </p>
             </div>
 
@@ -289,6 +289,51 @@ function App() {
                 >
                   LinkedIn
                 </a>
+              </div>
+            </div>
+
+            {/* Acknowledgments Section */}
+            <div className="mt-16">
+              <h3 className="text-3xl font-bold text-[#121826] mb-8 text-center">Acknowledgments</h3>
+
+              {/* Professor Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+                {/* Morgan Ames */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#8D34F6] text-center hover:shadow-2xl transition-shadow">
+                  <h4 className="text-xl font-bold text-[#121826] mb-2">Morgan Ames</h4>
+                  <p className="text-[#121826] text-sm mb-4">Assistant Professor of Practice</p>
+                  <a
+                    href="https://www.ischool.berkeley.edu/about/profiles/morgan-ames"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-[#8D34F6] text-white px-4 py-2 rounded-lg hover:bg-[#7029d1] transition-colors"
+                  >
+                    Profile
+                  </a>
+                </div>
+
+                {/* Zona Kostic */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#8D34F6] text-center hover:shadow-2xl transition-shadow">
+                  <h4 className="text-xl font-bold text-[#121826] mb-2">Zona Kostic</h4>
+                  <p className="text-[#121826] text-sm mb-4">Lecturer</p>
+                  <a
+                    href="https://www.ischool.berkeley.edu/people/zona-kostic"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-[#8D34F6] text-white px-4 py-2 rounded-lg hover:bg-[#7029d1] transition-colors"
+                  >
+                    Profile
+                  </a>
+                </div>
+              </div>
+
+              {/* General Acknowledgments */}
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#6CC0F9]">
+                <p className="text-[#121826] text-center leading-relaxed">
+                  We would also like to thank all the candidates who generously shared their resumes to help us build and test HireVerse.AI,
+                  as well as the recruiters who took the time to speak with us and provide valuable insights into the hiring process.
+                  Your contributions were essential to this project.
+                </p>
               </div>
             </div>
           </div>
