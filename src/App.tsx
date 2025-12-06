@@ -249,22 +249,15 @@ function App() {
               </p>
             </div>
 
-            {/* Architecture Highlights - 4 Icons Horizontal */}
+            {/* Architecture Highlights - 3 Icons Horizontal */}
             <div className="mb-20">
               <h3 className="text-2xl font-bold text-[#121826] mb-8 text-center">Design Principles</h3>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* No Shared Resources */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#8D34F6] text-center">
                   <img src="/HireVerse_Website/resources.png" alt="No shared resources" className="h-24 mx-auto mb-4" />
                   <h4 className="font-bold text-[#121826] mb-3">Isolated Resources</h4>
                   <p className="text-[#121826] text-sm">Team members get their own S3 buckets, Lambda functions, and AgentCore agents—no shared resources, no deployment conflicts.</p>
-                </div>
-
-                {/* No Deployment Conflicts */}
-                <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#6CC0F9] text-center">
-                  <img src="/HireVerse_Website/deployment.png" alt="No deployment conflicts" className="h-24 mx-auto mb-4" />
-                  <h4 className="font-bold text-[#121826] mb-3">Conflict-Free Deployment</h4>
-                  <p className="text-[#121826] text-sm">Team members can deploy and test independently in isolated environments without interfering with each other's work.</p>
                 </div>
 
                 {/* Freedom to Experiment */}
@@ -278,7 +271,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-6 border-2 border-[#E8F77B] text-center">
                   <img src="/HireVerse_Website/cost.png" alt="Cost efficient" className="h-24 mx-auto mb-4" />
                   <h4 className="font-bold text-[#121826] mb-3">Cost-Efficient</h4>
-                  <p className="text-[#121826] text-sm">Team members can build and test the entire system for under $5—serverless architecture means paying only for actual usage.</p>
+                  <p className="text-[#121826] text-sm">And here's the best part—we built and tested this entire system for about the cost of a cup of coffee. Serverless architecture means you only pay for what you use.</p>
                 </div>
               </div>
             </div>
