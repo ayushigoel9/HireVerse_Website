@@ -96,19 +96,19 @@ function App() {
           </div>
         </nav>
 
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        {/* HOME TAB - Hero section only on home */}
+      <main className="min-h-screen">
+        {/* HOME TAB - Hero section fills entire page */}
         {activeTab === 'home' && (
-          <div className="bg-white/95 backdrop-blur-md py-16 rounded-2xl border-2 border-[#8D34F6]">
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-24" />
-                <h1 className="text-7xl font-bold text-[#121826]">
+          <div className="flex items-center justify-center" style={{ minHeight: 'calc(100vh - 200px)' }}>
+            <div className="text-center px-6">
+              <div className="flex items-center justify-center gap-6 mb-8">
+                <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-32" />
+                <h1 className="text-8xl font-bold text-[#121826]">
                   HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#E8F77B]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.5)' }}>i</span>
                 </h1>
               </div>
-              <p className="text-2xl text-[#121826] italic mb-6 font-semibold">Precise. Transparent. Fair.</p>
-              <p className="text-xl text-[#121826] max-w-4xl mx-auto leading-relaxed px-8">
+              <p className="text-3xl text-[#121826] italic mb-8 font-semibold">Precise. Transparent. Fair.</p>
+              <p className="text-2xl text-[#121826] max-w-5xl mx-auto leading-relaxed">
                 Connecting talented professionals with their dream opportunities through intelligent AI-powered matching.
                 No more keyword games—just fair, transparent job matching that sees your true potential.
               </p>
@@ -118,7 +118,7 @@ function App() {
 
         {/* MOTIVATION TAB */}
         {activeTab === 'motivation' && (
-          <>
+          <div className="max-w-7xl mx-auto px-6 py-12">
             <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <Target className="w-8 h-8 text-[#6CC0F9]" />
@@ -175,12 +175,12 @@ function App() {
             </p>
           </div>
         </section>
-          </>
+          </div>
         )}
 
         {/* ABOUT US TAB */}
         {activeTab === 'about' && (
-          <div className="py-8">
+          <div className="max-w-7xl mx-auto px-6 py-12">
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">About Our Team</h2>
             <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-12 border-2 border-[#8D34F6]">
               <p className="text-[#121826] text-lg text-center mb-4">
@@ -192,7 +192,8 @@ function App() {
 
         {/* DEMO TAB */}
         {activeTab === 'demo' && (
-          <section className="py-8">
+          <div className="max-w-7xl mx-auto px-6 py-12">
+          <section>
             <div className="flex items-center gap-3 mb-8">
               <Zap className="w-8 h-8 text-[#E8F77B]" />
               <h2 className="text-4xl font-bold text-[#121826]">Demo</h2>
@@ -210,12 +211,13 @@ function App() {
             </div>
           </div>
           </section>
+          </div>
         )}
 
         {/* ABOUT PRODUCT TAB */}
         {activeTab === 'product' && (
-          <>
-            <section className="mb-12 py-8">
+          <div className="max-w-7xl mx-auto px-6 py-12">
+            <section className="mb-12">
               <div className="flex items-center gap-3 mb-8">
                 <FileText className="w-8 h-8 text-[#6CC0F9]" />
                 <h2 className="text-4xl font-bold text-[#121826]">Product Architecture</h2>
@@ -315,12 +317,13 @@ function App() {
                 </div>
               </div>
             </section>
-          </>
+          </div>
         )}
 
         {/* DATA TAB */}
         {activeTab === 'data' && (
-          <section className="py-8">
+          <div className="max-w-7xl mx-auto px-6 py-12">
+          <section>
             <div className="flex items-center gap-3 mb-8">
               <Database className="w-8 h-8 text-[#8D34F6]" />
               <h2 className="text-4xl font-bold text-[#121826]">Data</h2>
@@ -362,10 +365,11 @@ function App() {
               </div>
             </div>
           </section>
+          </div>
         )}
       </main>
 
-      <footer className="bg-white/90 backdrop-blur-md border-t-2 border-[#8D34F6] mt-20">
+      <footer className="bg-white/90 backdrop-blur-md border-t-2 border-[#8D34F6]">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <p className="text-center text-[#121826]">
             HireVerse.AI - Connecting talent with opportunity through intelligent matching
