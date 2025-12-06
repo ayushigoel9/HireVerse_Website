@@ -96,28 +96,23 @@ function App() {
           </div>
         </nav>
 
-        {/* Hero Section - Always Visible Below Tabs */}
-        <div className="bg-white/95 backdrop-blur-md py-12 border-b-2 border-[#8D34F6]">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-20" />
-              <h1 className="text-6xl font-bold text-[#121826]">
-                HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#E8F77B]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.5)' }}>i</span>
-              </h1>
-            </div>
-            <p className="text-xl text-[#121826] italic mb-4 font-semibold">Precise. Transparent. Fair.</p>
-            <p className="text-lg text-[#121826] max-w-3xl mx-auto leading-relaxed">
-              Connecting talented professionals with their dream opportunities through intelligent AI-powered matching.
-              No more keyword games—just fair, transparent job matching that sees your true potential.
-            </p>
-          </div>
-        </div>
-
       <main className="max-w-7xl mx-auto px-6 py-12">
-        {/* HOME TAB - Just hero, no content */}
+        {/* HOME TAB - Hero section only on home */}
         {activeTab === 'home' && (
-          <div className="text-center py-20">
-            {/* Empty - hero section above is enough */}
+          <div className="bg-white/95 backdrop-blur-md py-16 rounded-2xl border-2 border-[#8D34F6]">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-24" />
+                <h1 className="text-7xl font-bold text-[#121826]">
+                  HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#E8F77B]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.5)' }}>i</span>
+                </h1>
+              </div>
+              <p className="text-2xl text-[#121826] italic mb-6 font-semibold">Precise. Transparent. Fair.</p>
+              <p className="text-xl text-[#121826] max-w-4xl mx-auto leading-relaxed px-8">
+                Connecting talented professionals with their dream opportunities through intelligent AI-powered matching.
+                No more keyword games—just fair, transparent job matching that sees your true potential.
+              </p>
+            </div>
           </div>
         )}
 
