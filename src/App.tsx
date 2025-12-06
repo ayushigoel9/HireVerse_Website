@@ -141,62 +141,126 @@ function App() {
         {/* MOTIVATION TAB */}
         {activeTab === 'motivation' && (
           <div className="max-w-7xl mx-auto px-6 py-12">
+            {/* Motivation Section */}
             <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Target className="w-8 h-8 text-[#6CC0F9]" />
-            <h3 className="text-3xl font-bold text-[#121826]">Problem Statement & Motivation</h3>
-          </div>
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
-            <p className="text-[#121826] leading-relaxed mb-6 text-lg">
-              The job application process is broken. Qualified candidates apply to perfect-match positions and hear nothing back.
-              Meanwhile, recruiters drown in applications they'll never see. Why?
-            </p>
-            <ul className="space-y-4">
-              <li className="flex gap-4">
-                <span className="text-[#6CC0F9] font-bold mt-1 text-2xl">•</span>
-                <div>
-                  <strong className="text-[#121826] text-lg">ATS Dominance:</strong>
-                  <span className="text-[#121826]"> 75% of resumes are filtered out by automated systems before any human sees them.</span>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="text-[#8D34F6] font-bold mt-1 text-2xl">•</span>
-                <div>
-                  <strong className="text-[#121826] text-lg">Keyword Tyranny:</strong>
-                  <span className="text-[#121826]"> Traditional ATS relies on exact keyword matching. Highly qualified candidates get rejected because they wrote "managed" instead of "led."</span>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="text-[#FF6C5C] font-bold mt-1 text-2xl">•</span>
-                <div>
-                  <strong className="text-[#121826] text-lg">Resume Gaming:</strong>
-                  <span className="text-[#121826]"> Job seekers spend hours tailoring each resume to trick the algorithm, turning job hunting into a full-time job itself.</span>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="text-[#E8F77B] font-bold mt-1 text-2xl">•</span>
-                <div>
-                  <strong className="text-[#121826] text-lg">Inconsistent Scoring:</strong>
-                  <span className="text-[#121826]"> The same resume scores wildly different on similar jobs—not due to skill gaps, but phrasing mismatches.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
+              <div className="flex items-center gap-3 mb-8">
+                <Target className="w-8 h-8 text-[#6CC0F9]" />
+                <h3 className="text-3xl font-bold text-[#121826]">Motivation</h3>
+              </div>
 
-        <section className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Sparkles className="w-8 h-8 text-[#8D34F6]" />
-            <h3 className="text-3xl font-bold text-[#121826]">Value Proposition</h3>
-          </div>
-          <div className="bg-gradient-to-br from-[#6CC0F9] via-[#8D34F6] to-[#FF6C5C] rounded-2xl shadow-2xl p-8 text-white border-2 border-[#8D34F6]">
-            <p className="text-xl leading-relaxed font-medium">
-              HireVerse.AI eliminates the resume-gaming problem. Candidates apply once with their authentic profile—no keyword manipulation required.
-              Our system combines semantic understanding with AI intelligence to match skills regardless of phrasing, creating fair,
-              consistent matches that reflect true potential, not resume-writing prowess.
-            </p>
-          </div>
-        </section>
+              {/* Intro Text */}
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6] mb-8">
+                <p className="text-[#121826] leading-relaxed text-lg">
+                  The current job application process faces significant challenges that affect both candidates and recruiters.
+                  Applicants experience frustration when applying to positions that appear to be perfect matches, only to receive no response.
+                  The core issues include:
+                </p>
+              </div>
+
+              {/* Problem Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* ATS Dominance */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#8D34F6] hover:shadow-2xl transition-shadow">
+                  <h4 className="text-xl font-bold text-[#121826] mb-3">Applicant Tracking Systems (ATS) Dominance</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    Almost every company uses ATS software to automate and manage recruitment, which filters out
+                    <span className="font-bold text-[#8D34F6]"> up to 75% of resumes</span> before human recruiters ever review them.
+                  </p>
+                </div>
+
+                {/* Keyword-Driven Filtering */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#6CC0F9] hover:shadow-2xl transition-shadow">
+                  <h4 className="text-xl font-bold text-[#121826] mb-3">Keyword-Driven Filtering</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    Traditional ATS tools rely heavily on exact keyword matching. Even highly qualified candidates can be overlooked
+                    if their resume wording doesn't precisely match the system's expectations.
+                  </p>
+                </div>
+
+                {/* Resume Customization Burden */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#FF6C5C] hover:shadow-2xl transition-shadow">
+                  <h4 className="text-xl font-bold text-[#121826] mb-3">Resume Customization Burden</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    Candidates must customize their CV for every single job application to optimize ATS scores, making job hunting itself
+                    a full-time job. What appears as a strong match in one application scores poorly in another similar position simply due to wording differences.
+                  </p>
+                </div>
+
+                {/* Inconsistent Matching */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#E8F77B] hover:shadow-2xl transition-shadow">
+                  <h4 className="text-xl font-bold text-[#121826] mb-3">Inconsistent Matching</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    Tools that mimic ATS behavior (like Jobscan) reveal that match scores fluctuate dramatically between similar jobs,
+                    not due to skill gaps but because of phrasing mismatches.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Value Proposition Section */}
+            <section className="mb-20">
+              <div className="flex items-center gap-3 mb-8">
+                <Sparkles className="w-8 h-8 text-[#8D34F6]" />
+                <h3 className="text-3xl font-bold text-[#121826]">Value Proposition</h3>
+              </div>
+              <div className="bg-gradient-to-br from-[#6CC0F9] via-[#8D34F6] to-[#FF6C5C] rounded-2xl shadow-2xl p-10 text-white border-2 border-[#8D34F6]">
+                <p className="text-xl leading-relaxed font-medium text-center">
+                  HireVerse removes the resume fine-tuning problem by allowing candidates to <span className="font-bold">apply blindly</span>.
+                  Matching is based purely on <span className="font-bold">who they are</span>, not how well they manipulate keywords.
+                  The system combines mathematical scoring with LLM intelligence to identify skills regardless of phrasing,
+                  creating <span className="font-bold">fair, consistent, and genuinely reflective</span> candidate-job matches.
+                </p>
+              </div>
+            </section>
+
+            {/* Market Opportunity Section */}
+            <section>
+              <div className="flex items-center gap-3 mb-8">
+                <Target className="w-8 h-8 text-[#FF6C5C]" />
+                <h3 className="text-3xl font-bold text-[#121826]">Impact & Market Opportunity</h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* ATS Market */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-8 border-2 border-[#8D34F6] text-center">
+                  <h4 className="text-lg font-bold text-[#121826] mb-4">ATS Market</h4>
+                  <div className="flex items-center justify-center gap-4 mb-3">
+                    <div>
+                      <p className="text-4xl font-bold text-[#8D34F6]">$2.9B</p>
+                      <p className="text-sm text-[#121826]">2024</p>
+                    </div>
+                    <span className="text-3xl text-[#121826]">→</span>
+                    <div>
+                      <p className="text-4xl font-bold text-[#8D34F6]">$6.3B</p>
+                      <p className="text-sm text-[#121826]">2033</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Recruitment Software Market */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-8 border-2 border-[#6CC0F9] text-center">
+                  <h4 className="text-lg font-bold text-[#121826] mb-4">Recruitment Software Market</h4>
+                  <div className="flex items-center justify-center gap-4 mb-3">
+                    <div>
+                      <p className="text-4xl font-bold text-[#6CC0F9]">$3.3B</p>
+                      <p className="text-sm text-[#121826]">2025</p>
+                    </div>
+                    <span className="text-3xl text-[#121826]">→</span>
+                    <div>
+                      <p className="text-4xl font-bold text-[#6CC0F9]">$6.2-17B</p>
+                      <p className="text-sm text-[#121826]">2034</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Growth Rate Highlight */}
+              <div className="bg-gradient-to-r from-[#FF6C5C] to-[#E8F77B] rounded-xl shadow-lg p-6 text-center">
+                <p className="text-2xl font-bold text-[#121826]">
+                  Average Growth Rate: <span className="text-3xl">8-10% CAGR</span>
+                </p>
+              </div>
+            </section>
           </div>
         )}
 
