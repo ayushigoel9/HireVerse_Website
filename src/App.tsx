@@ -2,23 +2,45 @@ import { FileText, Sparkles, Zap, Target, Database, Brain } from 'lucide-react';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-purple-50 to-pink-50">
-      <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <img src="/logo.png" alt="Hireverse.AI" className="h-12" />
-          <div className="flex gap-4">
-            <a href="https://github.com/ayushigoel9/HireVerse_AWS" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-cyan-700 font-medium">GitHub</a>
+    <div className="min-h-screen relative">
+      <div
+        className="fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/HireverseAI_background.png)', zIndex: 0 }}
+      ></div>
+
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover"
+        style={{ zIndex: 1 }}
+      >
+        <source src="/background.mp4" type="video/mp4" />
+      </video>
+
+      <div className="fixed inset-0 bg-[#121826]/30" style={{ zIndex: 2 }}></div>
+
+      <div className="relative" style={{ zIndex: 10 }}>
+        <header className="bg-[#121826]/70 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-[#8D34F6]/30">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="HireVerse.AI" className="h-12" />
+              <span className="text-2xl font-bold text-white">HireVerse<span className="text-[#8D34F6]">.AI</span></span>
+            </div>
+            <div className="flex gap-4">
+              <a href="https://github.com/ayushigoel9/HireVerse_AWS" target="_blank" rel="noopener noreferrer" className="text-[#6CC0F9] hover:text-[#E8F77B] font-medium transition-colors">GitHub</a>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">
-            Hire <span className="bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Top Talent</span>
+          <h2 className="text-5xl font-bold text-white mb-4">
+            Hire <span className="bg-gradient-to-r from-[#6CC0F9] via-[#8D34F6] to-[#FF6C5C] bg-clip-text text-transparent">Top Talent</span>
           </h2>
-          <p className="text-lg text-gray-600 italic mb-6">Precise. Transparent. Fair.</p>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-[#E8F77B] italic mb-6 font-semibold">Precise. Transparent. Fair.</p>
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Connect talented professionals with their dream opportunities through our intelligent matching platform.
             Whether you're seeking your next career move or looking for the perfect candidate, we make the process seamless.
           </p>
@@ -26,46 +48,46 @@ function App() {
 
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
-            <Target className="w-8 h-8 text-cyan-600" />
-            <h3 className="text-3xl font-bold text-gray-900">Problem Statement & Motivation</h3>
+            <Target className="w-8 h-8 text-[#6CC0F9]" />
+            <h3 className="text-3xl font-bold text-white">Problem Statement & Motivation</h3>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-purple-100">
-            <p className="text-gray-700 leading-relaxed mb-6">
+          <div className="bg-[#121826]/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-[#8D34F6]/40">
+            <p className="text-white/80 leading-relaxed mb-6">
               The current job application process faces significant challenges that affect both candidates and recruiters.
               Applicants experience frustration when applying to positions that appear to be perfect matches, only to receive
               no response. The core issues include:
             </p>
             <ul className="space-y-4">
               <li className="flex gap-4">
-                <span className="text-cyan-600 font-bold mt-1">•</span>
+                <span className="text-[#6CC0F9] font-bold mt-1">•</span>
                 <div>
-                  <strong className="text-gray-900">Applicant Tracking Systems (ATS) Dominance:</strong>
-                  <span className="text-gray-700"> Almost every company uses ATS software to automate and manage recruitment,
+                  <strong className="text-white">Applicant Tracking Systems (ATS) Dominance:</strong>
+                  <span className="text-white/80"> Almost every company uses ATS software to automate and manage recruitment,
                   which filters out up to 75% of resumes before human recruiters ever review them.</span>
                 </div>
               </li>
               <li className="flex gap-4">
-                <span className="text-purple-600 font-bold mt-1">•</span>
+                <span className="text-[#8D34F6] font-bold mt-1">•</span>
                 <div>
-                  <strong className="text-gray-900">Keyword-Driven Filtering:</strong>
-                  <span className="text-gray-700"> Traditional ATS tools rely heavily on exact keyword matching. Even highly
+                  <strong className="text-white">Keyword-Driven Filtering:</strong>
+                  <span className="text-white/80"> Traditional ATS tools rely heavily on exact keyword matching. Even highly
                   qualified candidates can be overlooked if their resume wording doesn't precisely match the system's expectations.</span>
                 </div>
               </li>
               <li className="flex gap-4">
-                <span className="text-pink-600 font-bold mt-1">•</span>
+                <span className="text-[#FF6C5C] font-bold mt-1">•</span>
                 <div>
-                  <strong className="text-gray-900">Resume Customization Burden:</strong>
-                  <span className="text-gray-700"> Candidates must customize their CV for every single job application to optimize
+                  <strong className="text-white">Resume Customization Burden:</strong>
+                  <span className="text-white/80"> Candidates must customize their CV for every single job application to optimize
                   ATS scores, making job hunting itself a full-time job. What appears as a strong match in one application scores
                   poorly in another similar position simply due to wording differences.</span>
                 </div>
               </li>
               <li className="flex gap-4">
-                <span className="text-orange-500 font-bold mt-1">•</span>
+                <span className="text-[#E8F77B] font-bold mt-1">•</span>
                 <div>
-                  <strong className="text-gray-900">Inconsistent Matching:</strong>
-                  <span className="text-gray-700"> Tools that mimic ATS behavior (like Jobscan) reveal that match scores fluctuate
+                  <strong className="text-white">Inconsistent Matching:</strong>
+                  <span className="text-white/80"> Tools that mimic ATS behavior (like Jobscan) reveal that match scores fluctuate
                   dramatically between similar jobs, not due to skill gaps but because of phrasing mismatches.</span>
                 </div>
               </li>
@@ -75,11 +97,11 @@ function App() {
 
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
-            <Sparkles className="w-8 h-8 text-purple-600" />
-            <h3 className="text-3xl font-bold text-gray-900">Value Proposition</h3>
+            <Sparkles className="w-8 h-8 text-[#8D34F6]" />
+            <h3 className="text-3xl font-bold text-white">Value Proposition</h3>
           </div>
-          <div className="bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 rounded-2xl shadow-lg p-8 text-white">
-            <p className="text-lg leading-relaxed">
+          <div className="bg-gradient-to-br from-[#6CC0F9] via-[#8D34F6] to-[#FF6C5C] rounded-2xl shadow-2xl p-8 text-white">
+            <p className="text-lg leading-relaxed font-medium">
               HireVerse removes the resume fine-tuning problem by allowing candidates to apply blindly, matching is based purely
               on who they are, not how well they manipulate keywords. The system combines mathematical scoring with LLM intelligence
               to identify skills regardless of phrasing, creating fair, consistent, and genuinely reflective candidate-job matches.
@@ -89,51 +111,51 @@ function App() {
 
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
-            <Zap className="w-8 h-8 text-pink-600" />
-            <h3 className="text-3xl font-bold text-gray-900">Demo</h3>
+            <Zap className="w-8 h-8 text-[#E8F77B]" />
+            <h3 className="text-3xl font-bold text-white">Demo</h3>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-purple-100">
-            <div className="aspect-video bg-gradient-to-br from-yellow-100 via-purple-100 to-pink-100 rounded-xl flex items-center justify-center">
-              <p className="text-gray-500 text-lg">[Demo Video]</p>
+          <div className="bg-[#121826]/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-[#8D34F6]/40">
+            <div className="aspect-video bg-gradient-to-br from-[#6CC0F9]/20 via-[#8D34F6]/20 to-[#FF6C5C]/20 rounded-xl flex items-center justify-center border border-[#8D34F6]/30">
+              <p className="text-white/70 text-lg">[Demo Video]</p>
             </div>
           </div>
         </section>
 
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
-            <FileText className="w-8 h-8 text-cyan-600" />
-            <h3 className="text-3xl font-bold text-gray-900">Product Architecture Description</h3>
+            <FileText className="w-8 h-8 text-[#6CC0F9]" />
+            <h3 className="text-3xl font-bold text-white">Product Architecture Description</h3>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-purple-100">
-            <p className="text-gray-700 leading-relaxed mb-6">
+          <div className="bg-[#121826]/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-[#8D34F6]/40">
+            <p className="text-white/80 leading-relaxed mb-6">
               HireVerse is built entirely on AWS, leveraging Bedrock AgentCore, a state-of-the-art framework that orchestrates
               specialized AI agents.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl p-6 border border-cyan-200">
-                <h4 className="font-bold text-gray-900 mb-2">Isolated Environments</h4>
-                <p className="text-gray-700 text-sm">Each team member gets their own S3 buckets, Lambda functions, and AgentCore agents—no shared resources, no deployment conflicts</p>
+              <div className="bg-[#6CC0F9]/20 backdrop-blur-sm rounded-xl p-6 border border-[#6CC0F9]/40">
+                <h4 className="font-bold text-white mb-2">Isolated Environments</h4>
+                <p className="text-white/80 text-sm">Each team member gets their own S3 buckets, Lambda functions, and AgentCore agents—no shared resources, no deployment conflicts</p>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
-                <h4 className="font-bold text-gray-900 mb-2">Cost-Efficient</h4>
-                <p className="text-gray-700 text-sm">Entire system built and tested for approximately the cost of a cup of coffee</p>
+              <div className="bg-[#8D34F6]/20 backdrop-blur-sm rounded-xl p-6 border border-[#8D34F6]/40">
+                <h4 className="font-bold text-white mb-2">Cost-Efficient</h4>
+                <p className="text-white/80 text-sm">Entire system built and tested for approximately the cost of a cup of coffee</p>
               </div>
-              <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-6 border border-pink-200">
-                <h4 className="font-bold text-gray-900 mb-2">Simple Deployment</h4>
-                <p className="text-gray-700 text-sm">One-command deployment process</p>
+              <div className="bg-[#FF6C5C]/20 backdrop-blur-sm rounded-xl p-6 border border-[#FF6C5C]/40">
+                <h4 className="font-bold text-white mb-2">Simple Deployment</h4>
+                <p className="text-white/80 text-sm">One-command deployment process</p>
               </div>
-              <div className="bg-gradient-to-br from-yellow-50 to-orange-100 rounded-xl p-6 border border-orange-200">
-                <h4 className="font-bold text-gray-900 mb-2">API Gateway</h4>
-                <p className="text-gray-700 text-sm">Handles incoming API calls and triggers processing pipelines. Easy to integrate with any platform or frontend</p>
+              <div className="bg-[#E8F77B]/20 backdrop-blur-sm rounded-xl p-6 border border-[#E8F77B]/40">
+                <h4 className="font-bold text-white mb-2">API Gateway</h4>
+                <p className="text-white/80 text-sm">Handles incoming API calls and triggers processing pipelines. Easy to integrate with any platform or frontend</p>
               </div>
             </div>
-            <p className="text-gray-700">
+            <p className="text-white/80">
               For details, see the{' '}
               <a
                 href="https://github.com/ayushigoel9/HireVerse_AWS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan-600 hover:text-cyan-700 font-medium underline"
+                className="text-[#6CC0F9] hover:text-[#E8F77B] font-medium underline transition-colors"
               >
                 GitHub documentation
               </a>
@@ -143,22 +165,22 @@ function App() {
 
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
-            <Database className="w-8 h-8 text-purple-600" />
-            <h3 className="text-3xl font-bold text-gray-900">Data</h3>
+            <Database className="w-8 h-8 text-[#8D34F6]" />
+            <h3 className="text-3xl font-bold text-white">Data</h3>
           </div>
 
           <div className="space-y-8">
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-purple-100">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">Data Sources</h4>
-              <p className="text-gray-700">CVs</p>
+            <div className="bg-[#121826]/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-[#8D34F6]/40">
+              <h4 className="text-2xl font-bold text-white mb-4">Data Sources</h4>
+              <p className="text-white/80">CVs</p>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-purple-100">
-              <h4 className="text-2xl font-bold text-gray-900 mb-6">Data Pipeline</h4>
+            <div className="bg-[#121826]/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-[#8D34F6]/40">
+              <h4 className="text-2xl font-bold text-white mb-6">Data Pipeline</h4>
 
               <div className="mb-8">
-                <h5 className="text-xl font-semibold text-gray-900 mb-3">CV Processing</h5>
-                <p className="text-gray-700 leading-relaxed">
+                <h5 className="text-xl font-semibold text-white mb-3">CV Processing</h5>
+                <p className="text-white/80 leading-relaxed">
                   When a candidate uploads their resume, the CV processing pipeline initiates a sophisticated multi-stage workflow
                   orchestrated by a top-level system coordinator. Apache Tika first converts the PDF into clean, machine-readable text,
                   which then undergoes a deterministic preprocessing step that normalizes the output into a structured base JSON format.
@@ -171,8 +193,8 @@ function App() {
               </div>
 
               <div>
-                <h5 className="text-xl font-semibold text-gray-900 mb-3">Job Description Processing</h5>
-                <p className="text-gray-700 leading-relaxed">
+                <h5 className="text-xl font-semibold text-white mb-3">Job Description Processing</h5>
+                <p className="text-white/80 leading-relaxed">
                   The job description processing follows a parallel structured approach, beginning with a hand-curated dataset of 100
                   high-quality job descriptions that have been carefully selected to represent diverse roles and industries. Each job
                   description is converted into a structured JSON format containing four key sections: the job title, the role description
@@ -187,14 +209,14 @@ function App() {
 
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
-            <Brain className="w-8 h-8 text-pink-600" />
-            <h3 className="text-3xl font-bold text-gray-900">Machine Learning Techniques</h3>
+            <Brain className="w-8 h-8 text-[#FF6C5C]" />
+            <h3 className="text-3xl font-bold text-white">Machine Learning Techniques</h3>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-purple-100">
+          <div className="bg-[#121826]/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-[#8D34F6]/40">
             <div className="space-y-6">
               <div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-3">Evaluation Framework</h4>
-                <p className="text-gray-700 leading-relaxed">
+                <h4 className="text-xl font-semibold text-white mb-3">Evaluation Framework</h4>
+                <p className="text-white/80 leading-relaxed">
                   To build an effective matching system, the team established a rigorous evaluation framework using 5 real, manually labeled
                   CVs categorized by job family, paired with 100 job descriptions across three categories: Legal & Accounting, Data Science,
                   and Software Engineering. This dataset served as the foundation for evaluating all matching iterations. The data preparation
@@ -205,53 +227,54 @@ function App() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-3">Evaluation Methods</h4>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <h4 className="text-xl font-semibold text-white mb-3">Evaluation Methods</h4>
+                <p className="text-white/80 leading-relaxed mb-4">
                   The evaluation process used three complementary methods to provide a comprehensive assessment of performance:
                 </p>
                 <ul className="space-y-3">
                   <li className="flex gap-4">
-                    <span className="text-cyan-600 font-bold mt-1">1.</span>
+                    <span className="text-[#6CC0F9] font-bold mt-1">1.</span>
                     <div>
-                      <strong className="text-gray-900">Job-Family Classification Accuracy:</strong>
-                      <span className="text-gray-700"> Tested whether models matched CVs to the correct job families by having each model
+                      <strong className="text-white">Job-Family Classification Accuracy:</strong>
+                      <span className="text-white/80"> Tested whether models matched CVs to the correct job families by having each model
                       produce top 40 recommendations per CV, with accuracy computed across all 40 jobs.</span>
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="text-purple-600 font-bold mt-1">2.</span>
+                    <span className="text-[#8D34F6] font-bold mt-1">2.</span>
                     <div>
-                      <strong className="text-gray-900">LLM-as-a-Judge:</strong>
-                      <span className="text-gray-700"> Used a separate model to score the top 5 recommendations for each candidate, evaluating
+                      <strong className="text-white">LLM-as-a-Judge:</strong>
+                      <span className="text-white/80"> Used a separate model to score the top 5 recommendations for each candidate, evaluating
                       seniority, domain alignment, and overall fit.</span>
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="text-pink-600 font-bold mt-1">3.</span>
+                    <span className="text-[#FF6C5C] font-bold mt-1">3.</span>
                     <div>
-                      <strong className="text-gray-900">Human Candidate Feedback:</strong>
-                      <span className="text-gray-700"> Real candidates reviewed their top 5 recommended jobs and rated relevance based on
+                      <strong className="text-white">Human Candidate Feedback:</strong>
+                      <span className="text-white/80"> Real candidates reviewed their top 5 recommended jobs and rated relevance based on
                       their career goals and context.</span>
                     </div>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-yellow-50 via-purple-50 to-pink-50 rounded-xl p-6 mt-6 border border-purple-200">
-                <p className="text-gray-700 italic">[Final results and key learnings will be added here]</p>
+              <div className="bg-gradient-to-br from-[#6CC0F9]/20 via-[#8D34F6]/20 to-[#FF6C5C]/20 rounded-xl p-6 mt-6 border border-[#8D34F6]/40">
+                <p className="text-white/70 italic">[Final results and key learnings will be added here]</p>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 mt-20">
+      <footer className="bg-[#121826]/70 backdrop-blur-md border-t border-[#8D34F6]/30 mt-20">
         <div className="max-w-7xl mx-auto px-6 py-8">
-          <p className="text-center text-gray-600">
-            Hireverse.AI - Connecting talent with opportunity through intelligent matching
+          <p className="text-center text-white/80">
+            HireVerse.AI - Connecting talent with opportunity through intelligent matching
           </p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
