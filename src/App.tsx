@@ -630,7 +630,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
                   <h4 className="text-xl font-semibold text-[#121826] mb-4">CareerBERT</h4>
                   <p className="text-[#121826] leading-relaxed mb-4">
-                    From our literature review and online research, we identified CareerBERT as a promising model to get started with. It is both computationally efficient and experimentally well-validated, outperforming multiple prior approaches in earlier studies (<a href="#" className="text-[#8D34F6] hover:underline">Link</a>). However, CareerBERT has important limitations. It was trained primarily on German job postings, and prior work suggests it can struggle to differentiate closely related roles.
+                    From our literature review and online research, we identified CareerBERT as a promising model to get started with. It is both computationally efficient and experimentally well-validated, outperforming multiple prior approaches in earlier studies (<a href="https://www.sciencedirect.com/science/article/pii/S0957417425006657" target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline">Link</a>). However, CareerBERT has important limitations. It was trained primarily on German job postings, and prior work suggests it can struggle to differentiate closely related roles.
                   </p>
                   <p className="text-[#121826] leading-relaxed">
                     Our first set of experiments therefore focused on assessing how well CareerBERT generalizes, specifically, whether a model fine-tuned on German job data could still perform effectively on English CVs and job descriptions. We used CareerBERT to generate semantic embeddings for each CV and job description, then compared pairs using cosine similarity to retrieve a match score.
@@ -641,7 +641,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
                   <h4 className="text-xl font-semibold text-[#121826] mb-4">Amazon Titan Embeddings</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    In the second stage, we tested whether a more general-purpose embedding model could rival or surpass CareerBERT. We used Amazon Titan Embeddings on Bedrock to create CV and job embeddings, again ranking roles using cosine similarity (<a href="#" className="text-[#6CC0F9] hover:underline">Link</a>). Titan offered strong operational advantages as a native cloud model, including tighter integration with S3, Lambda, and Bedrock security and compliance frameworks.
+                    In the second stage, we tested whether a more general-purpose embedding model could rival or surpass CareerBERT. We used Amazon Titan Embeddings on Bedrock to create CV and job embeddings, again ranking roles using cosine similarity (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank" rel="noopener noreferrer" className="text-[#6CC0F9] hover:underline">Link</a>). Titan offered strong operational advantages as a native cloud model, including tighter integration with S3, Lambda, and Bedrock security and compliance frameworks.
                   </p>
                 </div>
               </div>
