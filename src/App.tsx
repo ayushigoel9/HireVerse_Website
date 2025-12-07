@@ -1,10 +1,20 @@
 import { FileText, Sparkles, Zap, Target, Database, Brain, Users, ChevronDown, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [expandedCategories, setExpandedCategories] = useState({});
   const [expandedJobs, setExpandedJobs] = useState({});
+  const [expandedCVs, setExpandedCVs] = useState({});
+  const [jobsData, setJobsData] = useState([]);
+
+  useEffect(() => {
+    // Load jobs data
+    fetch('/HireVerse_Website/jobs_new_format.json')
+      .then(res => res.json())
+      .then(data => setJobsData(data))
+      .catch(err => console.error('Error loading jobs:', err));
+  }, []);
 
   const toggleCategory = (category) => {
     setExpandedCategories(prev => ({ ...prev, [category]: !prev[category] }));
@@ -13,6 +23,26 @@ function App() {
   const toggleJob = (jobId) => {
     setExpandedJobs(prev => ({ ...prev, [jobId]: !prev[jobId] }));
   };
+
+  const toggleCV = (cvId) => {
+    setExpandedCVs(prev => ({ ...prev, [cvId]: !prev[cvId] }));
+  };
+
+  // Group jobs by category
+  const jobsByCategory = {
+    'Data Science': jobsData.filter(job => job.category === 'Data Science'),
+    'Software Engineer': jobsData.filter(job => job.category === 'Software Engineer'),
+    'Accounting': jobsData.filter(job => job.category === 'Accounting'),
+    'Legal': jobsData.filter(job => job.category === 'Legal'),
+  };
+
+  const cvSamples = [
+    { id: 'cv_1', name: 'Carla Jensen', file: 'CarlaJensenResume.pdf' },
+    { id: 'cv_2', name: 'Carter Andrade', file: 'CarterAndradeResume.pdf' },
+    { id: 'cv_3', name: 'Ethan Smith', file: 'EthanSmithResume.pdf' },
+    { id: 'cv_4', name: 'Jackson Miller', file: 'JacksonMillerResume.pdf' },
+    { id: 'cv_5', name: 'Mason Thomas', file: 'MasonThomasResume.pdf' },
+  ];
 
   return (
     <div className="min-h-screen relative bg-white flex flex-col">
@@ -595,11 +625,9 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 py-12">
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Data</h2>
 
-            {/* Dataset Overview Image */}
+            {/* Dataset Overview Image - No border */}
             <div className="mb-12">
-              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#8D34F6]">
-                <img src="/HireVerse_Website/data.png" alt="Dataset Overview" className="w-full rounded-lg" />
-              </div>
+              <img src="/HireVerse_Website/data.png" alt="Dataset Overview" className="w-full" />
             </div>
 
             {/* CV and JD Cards Side by Side */}
@@ -619,7 +647,7 @@ function App() {
               <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#6CC0F9]">
                 <h3 className="text-2xl font-bold text-[#121826] mb-4">Job Descriptions</h3>
                 <p className="text-[#121826] leading-relaxed mb-4">
-                  On the job description side, we concentrated on our two priority domains, namely <strong>Software Engineering</strong> and <strong>Data Science</strong> roles.
+                  On the job description side, we concentrated on our two priority domains, namely <strong>Software Engineering</strong> and <strong>Data Science</strong> roles (40 each).
                   To evaluate how well models handle unrelated or less relevant opportunities, we supplemented the dataset with an additional set of <strong>10 Accounting</strong> and{' '}
                   <strong>10 Legal</strong> positions. All job descriptions were sourced from publicly available LinkedIn postings and manually cleaned to ensure consistency and reduce noise.
                 </p>
@@ -648,46 +676,55 @@ function App() {
                 {/* Data Science Jobs */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#8D34F6]">
                   <button
-                    onClick={() => toggleCategory('datascience')}
+                    onClick={() => toggleCategory('Data Science')}
                     className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#8D34F6]/5 transition-colors rounded-xl"
                   >
-                    <span className="text-xl font-bold text-[#121826]">Data Science (25 roles)</span>
-                    {expandedCategories['datascience'] ? <ChevronDown className="w-6 h-6 text-[#8D34F6]" /> : <ChevronRight className="w-6 h-6 text-[#8D34F6]" />}
+                    <span className="text-xl font-bold text-[#121826]">Data Science ({jobsByCategory['Data Science'].length} roles)</span>
+                    {expandedCategories['Data Science'] ? <ChevronDown className="w-6 h-6 text-[#8D34F6]" /> : <ChevronRight className="w-6 h-6 text-[#8D34F6]" />}
                   </button>
-                  {expandedCategories['datascience'] && (
+                  {expandedCategories['Data Science'] && (
                     <div className="px-6 pb-4 space-y-2">
-                      <div className="border-2 border-[#6CC0F9] rounded-lg">
-                        <button
-                          onClick={() => toggleJob('job_1')}
-                          className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#6CC0F9]/5 transition-colors"
-                        >
-                          <span className="font-semibold text-[#121826]">Data Scientist - Platform & Partner Experience (Spotify)</span>
-                          {expandedJobs['job_1'] ? <ChevronDown className="w-5 h-5 text-[#6CC0F9]" /> : <ChevronRight className="w-5 h-5 text-[#6CC0F9]" />}
-                        </button>
-                        {expandedJobs['job_1'] && (
-                          <div className="px-4 pb-4 space-y-3 text-sm">
-                            <div>
-                              <p className="font-semibold text-[#121826]">Company:</p>
-                              <p className="text-[#121826]">Spotify</p>
+                      {jobsByCategory['Data Science'].map((job) => (
+                        <div key={job.job_id} className="border-2 border-[#6CC0F9] rounded-lg">
+                          <button
+                            onClick={() => toggleJob(job.job_id)}
+                            className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#6CC0F9]/5 transition-colors"
+                          >
+                            <span className="font-semibold text-[#121826] text-left">{job.job_title} ({job.company})</span>
+                            {expandedJobs[job.job_id] ? <ChevronDown className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" /> : <ChevronRight className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" />}
+                          </button>
+                          {expandedJobs[job.job_id] && (
+                            <div className="px-4 pb-4 space-y-3 text-sm">
+                              <div>
+                                <p className="font-semibold text-[#121826]">Company:</p>
+                                <p className="text-[#121826]">{job.company}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Location:</p>
+                                <p className="text-[#121826]">{job.location}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Description:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_description}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Requirements:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_requirements}</p>
+                              </div>
+                              {job.job_preferred_skills && (
+                                <div>
+                                  <p className="font-semibold text-[#121826]">Preferred Skills:</p>
+                                  <p className="text-[#121826] whitespace-pre-line">{job.job_preferred_skills}</p>
+                                </div>
+                              )}
+                              <div>
+                                <p className="font-semibold text-[#121826]">Link:</p>
+                                <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline break-all">View on LinkedIn</a>
+                              </div>
                             </div>
-                            <div>
-                              <p className="font-semibold text-[#121826]">Location:</p>
-                              <p className="text-[#121826]">London</p>
-                            </div>
-                            <div>
-                              <p className="font-semibold text-[#121826]">Description:</p>
-                              <p className="text-[#121826]">• You will collaborate with fellow Data Scientists and Data Engineers, and co-operate with cross-functional teams of product managers, engineers, designers and user researchers who are passionate about our consumer experience, to identify and answer key product questions via data.</p>
-                              <p className="text-[#121826]">• You will be a key partner in our work to build out and deliver innovative product features that create valuable and engaging listening moments in the daily lives of Spotify users.</p>
-                            </div>
-                            <div>
-                              <p className="font-semibold text-[#121826]">Requirements:</p>
-                              <p className="text-[#121826]">• You have relevant experience or a degree in statistics, mathematics, computer science, engineering, economics or another quantitative subject area.</p>
-                              <p className="text-[#121826]">• You have proficiency with Python, or similar programming languages, experience with Google BigQuery & expertise in SQL.</p>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                      <p className="text-[#121826] text-sm italic px-4 py-2">+ 24 more Data Science roles...</p>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -695,15 +732,55 @@ function App() {
                 {/* Software Engineering Jobs */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#FF6C5C]">
                   <button
-                    onClick={() => toggleCategory('softwareeng')}
+                    onClick={() => toggleCategory('Software Engineer')}
                     className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#FF6C5C]/5 transition-colors rounded-xl"
                   >
-                    <span className="text-xl font-bold text-[#121826]">Software Engineering (55 roles)</span>
-                    {expandedCategories['softwareeng'] ? <ChevronDown className="w-6 h-6 text-[#FF6C5C]" /> : <ChevronRight className="w-6 h-6 text-[#FF6C5C]" />}
+                    <span className="text-xl font-bold text-[#121826]">Software Engineering ({jobsByCategory['Software Engineer'].length} roles)</span>
+                    {expandedCategories['Software Engineer'] ? <ChevronDown className="w-6 h-6 text-[#FF6C5C]" /> : <ChevronRight className="w-6 h-6 text-[#FF6C5C]" />}
                   </button>
-                  {expandedCategories['softwareeng'] && (
-                    <div className="px-6 pb-4">
-                      <p className="text-[#121826] text-sm italic px-4 py-2">55 Software Engineering roles available (similar expandable format)</p>
+                  {expandedCategories['Software Engineer'] && (
+                    <div className="px-6 pb-4 space-y-2">
+                      {jobsByCategory['Software Engineer'].map((job) => (
+                        <div key={job.job_id} className="border-2 border-[#6CC0F9] rounded-lg">
+                          <button
+                            onClick={() => toggleJob(job.job_id)}
+                            className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#6CC0F9]/5 transition-colors"
+                          >
+                            <span className="font-semibold text-[#121826] text-left">{job.job_title} ({job.company})</span>
+                            {expandedJobs[job.job_id] ? <ChevronDown className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" /> : <ChevronRight className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" />}
+                          </button>
+                          {expandedJobs[job.job_id] && (
+                            <div className="px-4 pb-4 space-y-3 text-sm">
+                              <div>
+                                <p className="font-semibold text-[#121826]">Company:</p>
+                                <p className="text-[#121826]">{job.company}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Location:</p>
+                                <p className="text-[#121826]">{job.location}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Description:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_description}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Requirements:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_requirements}</p>
+                              </div>
+                              {job.job_preferred_skills && (
+                                <div>
+                                  <p className="font-semibold text-[#121826]">Preferred Skills:</p>
+                                  <p className="text-[#121826] whitespace-pre-line">{job.job_preferred_skills}</p>
+                                </div>
+                              )}
+                              <div>
+                                <p className="font-semibold text-[#121826]">Link:</p>
+                                <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline break-all">View on LinkedIn</a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -711,15 +788,55 @@ function App() {
                 {/* Accounting Jobs */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#E8F77B]">
                   <button
-                    onClick={() => toggleCategory('accounting')}
+                    onClick={() => toggleCategory('Accounting')}
                     className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#E8F77B]/5 transition-colors rounded-xl"
                   >
-                    <span className="text-xl font-bold text-[#121826]">Accounting (10 roles)</span>
-                    {expandedCategories['accounting'] ? <ChevronDown className="w-6 h-6 text-[#121826]" /> : <ChevronRight className="w-6 h-6 text-[#121826]" />}
+                    <span className="text-xl font-bold text-[#121826]">Accounting ({jobsByCategory['Accounting'].length} roles)</span>
+                    {expandedCategories['Accounting'] ? <ChevronDown className="w-6 h-6 text-[#121826]" /> : <ChevronRight className="w-6 h-6 text-[#121826]" />}
                   </button>
-                  {expandedCategories['accounting'] && (
-                    <div className="px-6 pb-4">
-                      <p className="text-[#121826] text-sm italic px-4 py-2">10 Accounting roles available (similar expandable format)</p>
+                  {expandedCategories['Accounting'] && (
+                    <div className="px-6 pb-4 space-y-2">
+                      {jobsByCategory['Accounting'].map((job) => (
+                        <div key={job.job_id} className="border-2 border-[#6CC0F9] rounded-lg">
+                          <button
+                            onClick={() => toggleJob(job.job_id)}
+                            className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#6CC0F9]/5 transition-colors"
+                          >
+                            <span className="font-semibold text-[#121826] text-left">{job.job_title} ({job.company})</span>
+                            {expandedJobs[job.job_id] ? <ChevronDown className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" /> : <ChevronRight className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" />}
+                          </button>
+                          {expandedJobs[job.job_id] && (
+                            <div className="px-4 pb-4 space-y-3 text-sm">
+                              <div>
+                                <p className="font-semibold text-[#121826]">Company:</p>
+                                <p className="text-[#121826]">{job.company}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Location:</p>
+                                <p className="text-[#121826]">{job.location}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Description:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_description}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Requirements:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_requirements}</p>
+                              </div>
+                              {job.job_preferred_skills && (
+                                <div>
+                                  <p className="font-semibold text-[#121826]">Preferred Skills:</p>
+                                  <p className="text-[#121826] whitespace-pre-line">{job.job_preferred_skills}</p>
+                                </div>
+                              )}
+                              <div>
+                                <p className="font-semibold text-[#121826]">Link:</p>
+                                <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline break-all">View on LinkedIn</a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -727,28 +844,90 @@ function App() {
                 {/* Legal Jobs */}
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#CAB9D0]">
                   <button
-                    onClick={() => toggleCategory('legal')}
+                    onClick={() => toggleCategory('Legal')}
                     className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#CAB9D0]/5 transition-colors rounded-xl"
                   >
-                    <span className="text-xl font-bold text-[#121826]">Legal (10 roles)</span>
-                    {expandedCategories['legal'] ? <ChevronDown className="w-6 h-6 text-[#121826]" /> : <ChevronRight className="w-6 h-6 text-[#121826]" />}
+                    <span className="text-xl font-bold text-[#121826]">Legal ({jobsByCategory['Legal'].length} roles)</span>
+                    {expandedCategories['Legal'] ? <ChevronDown className="w-6 h-6 text-[#121826]" /> : <ChevronRight className="w-6 h-6 text-[#121826]" />}
                   </button>
-                  {expandedCategories['legal'] && (
-                    <div className="px-6 pb-4">
-                      <p className="text-[#121826] text-sm italic px-4 py-2">10 Legal roles available (similar expandable format)</p>
+                  {expandedCategories['Legal'] && (
+                    <div className="px-6 pb-4 space-y-2">
+                      {jobsByCategory['Legal'].map((job) => (
+                        <div key={job.job_id} className="border-2 border-[#6CC0F9] rounded-lg">
+                          <button
+                            onClick={() => toggleJob(job.job_id)}
+                            className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#6CC0F9]/5 transition-colors"
+                          >
+                            <span className="font-semibold text-[#121826] text-left">{job.job_title} ({job.company})</span>
+                            {expandedJobs[job.job_id] ? <ChevronDown className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" /> : <ChevronRight className="w-5 h-5 text-[#6CC0F9] flex-shrink-0" />}
+                          </button>
+                          {expandedJobs[job.job_id] && (
+                            <div className="px-4 pb-4 space-y-3 text-sm">
+                              <div>
+                                <p className="font-semibold text-[#121826]">Company:</p>
+                                <p className="text-[#121826]">{job.company}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Location:</p>
+                                <p className="text-[#121826]">{job.location}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Description:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_description}</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-[#121826]">Requirements:</p>
+                                <p className="text-[#121826] whitespace-pre-line">{job.job_requirements}</p>
+                              </div>
+                              {job.job_preferred_skills && (
+                                <div>
+                                  <p className="font-semibold text-[#121826]">Preferred Skills:</p>
+                                  <p className="text-[#121826] whitespace-pre-line">{job.job_preferred_skills}</p>
+                                </div>
+                              )}
+                              <div>
+                                <p className="font-semibold text-[#121826]">Link:</p>
+                                <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline break-all">View on LinkedIn</a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
               </div>
             </div>
 
-            {/* CV Privacy Note */}
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#8D34F6]">
-              <h3 className="text-2xl font-bold text-[#121826] mb-4 text-center">Candidate CVs</h3>
-              <p className="text-[#121826] text-center leading-relaxed">
-                For privacy reasons, we do not publicly release the candidate CVs used in the evaluation framework.
-                The dataset includes <strong>76 total CVs</strong> (47 synthetic + 29 real) used for testing and validation.
+            {/* Sample CVs Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-[#121826] mb-4 text-center">Sample CVs</h3>
+              <p className="text-[#121826] text-center mb-6">
+                Below are 5 synthetic CV samples from our dataset. For privacy reasons, real candidate CVs are not publicly shared.
               </p>
+
+              <div className="space-y-2">
+                {cvSamples.map((cv) => (
+                  <div key={cv.id} className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#8D34F6]">
+                    <button
+                      onClick={() => toggleCV(cv.id)}
+                      className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#8D34F6]/5 transition-colors rounded-xl"
+                    >
+                      <span className="text-lg font-semibold text-[#121826]">{cv.name}</span>
+                      {expandedCVs[cv.id] ? <ChevronDown className="w-6 h-6 text-[#8D34F6]" /> : <ChevronRight className="w-6 h-6 text-[#8D34F6]" />}
+                    </button>
+                    {expandedCVs[cv.id] && (
+                      <div className="px-6 pb-4">
+                        <iframe
+                          src={`/HireVerse_Website/${cv.file}`}
+                          className="w-full h-96 border-2 border-[#6CC0F9] rounded-lg"
+                          title={`${cv.name} Resume`}
+                        />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
