@@ -1,8 +1,18 @@
-import { FileText, Sparkles, Zap, Target, Database, Brain, Users } from 'lucide-react';
+import { FileText, Sparkles, Zap, Target, Database, Brain, Users, ChevronDown, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
+  const [expandedCategories, setExpandedCategories] = useState({});
+  const [expandedJobs, setExpandedJobs] = useState({});
+
+  const toggleCategory = (category) => {
+    setExpandedCategories(prev => ({ ...prev, [category]: !prev[category] }));
+  };
+
+  const toggleJob = (jobId) => {
+    setExpandedJobs(prev => ({ ...prev, [jobId]: !prev[jobId] }));
+  };
 
   return (
     <div className="min-h-screen relative bg-white flex flex-col">
@@ -545,26 +555,11 @@ function App() {
                 </div>
               </div>
             </section>
-          </div>
-        )}
 
-        {/* DATA TAB */}
-        {activeTab === 'data' && (
-          <div className="max-w-7xl mx-auto px-6 py-12">
-          <section>
-            <div className="flex items-center gap-3 mb-8">
-              <Database className="w-8 h-8 text-[#8D34F6]" />
-              <h2 className="text-4xl font-bold text-[#121826]">Data</h2>
-            </div>
-            <div className="space-y-8">
-              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#FF6C5C]">
-                <h4 className="text-2xl font-bold text-[#121826] mb-4">Data Sources</h4>
-                <p className="text-[#121826]">CVs</p>
-              </div>
-
+            {/* Data Pipeline Section */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold text-[#121826] mb-8 text-center">Data Pipeline</h2>
               <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#6CC0F9]">
-                <h4 className="text-2xl font-bold text-[#121826] mb-6">Data Pipeline</h4>
-
                 <div className="mb-8">
                   <h5 className="text-xl font-semibold text-[#121826] mb-3">CV Processing</h5>
                   <p className="text-[#121826] leading-relaxed">
@@ -591,8 +586,162 @@ function App() {
                   </p>
                 </div>
               </div>
+            </section>
+          </div>
+        )}
+
+        {/* DATA TAB */}
+        {activeTab === 'data' && (
+          <div className="max-w-7xl mx-auto px-6 py-12">
+            <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Data</h2>
+
+            {/* Dataset Overview with Image */}
+            <div className="mb-12">
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#8D34F6]">
+                <img src="/HireVerse_Website/data.png" alt="Dataset Overview" className="w-full rounded-lg" />
+              </div>
             </div>
-          </section>
+
+            {/* Dataset Description */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-[#121826] mb-6 text-center">Dataset Overview</h3>
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#6CC0F9]">
+                <p className="text-[#121826] leading-relaxed mb-4">
+                  To assess the effectiveness of our agent-based parsing and matching pipelines, we assembled a dataset consisting of <strong>47 synthetic CVs</strong> (sourced from{' '}
+                  <a href="https://enhancv.com/resume-examples/data-scientist/" target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline">Enhancv</a>)
+                  along with <strong>29 real CVs</strong> provided directly by candidates. Because the upload and parsing in the product first iteration focused primarily on the CV extraction pipeline,
+                  all CVs were used in their original PDF format to ensure realistic preprocessing and parsing challenges.
+                </p>
+                <p className="text-[#121826] leading-relaxed mb-4">
+                  On the job description side, we concentrated on our two priority domains, namely <strong>Software Engineering</strong> and <strong>Data Science</strong> roles.
+                  To evaluate how well models handle unrelated or less relevant opportunities, we supplemented the dataset with an additional set of <strong>10 Accounting</strong> and{' '}
+                  <strong>10 Legal</strong> positions. All job descriptions were sourced from publicly available LinkedIn postings and manually cleaned to ensure consistency and reduce noise.
+                  Each role was standardized into four structured components:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-[#121826] ml-6 mb-4">
+                  <li>Job title</li>
+                  <li>Role description outlining responsibilities</li>
+                  <li>Required or minimum competencies</li>
+                  <li>Additional "nice-to-have" skills, when available</li>
+                </ul>
+                <p className="text-[#121826] leading-relaxed">
+                  Both CVs and job descriptions were hand-labeled by the team, with candidate feedback incorporated into the labeling of real CVs.
+                  This ground-truth labeling enabled us to benchmark performance and evaluate how well different matching strategies replicated real-world candidate judgment.
+                </p>
+              </div>
+            </div>
+
+            {/* Sample Job Descriptions */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-[#121826] mb-6 text-center">Sample Job Descriptions</h3>
+              <p className="text-[#121826] text-center mb-6">Click on each category to explore the job descriptions</p>
+
+              <div className="space-y-4">
+                {/* Data Science Jobs */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#8D34F6]">
+                  <button
+                    onClick={() => toggleCategory('datascience')}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#8D34F6]/5 transition-colors rounded-xl"
+                  >
+                    <span className="text-xl font-bold text-[#121826]">Data Science (25 roles)</span>
+                    {expandedCategories['datascience'] ? <ChevronDown className="w-6 h-6 text-[#8D34F6]" /> : <ChevronRight className="w-6 h-6 text-[#8D34F6]" />}
+                  </button>
+                  {expandedCategories['datascience'] && (
+                    <div className="px-6 pb-4 space-y-2">
+                      <div className="border-2 border-[#6CC0F9] rounded-lg">
+                        <button
+                          onClick={() => toggleJob('job_1')}
+                          className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#6CC0F9]/5 transition-colors"
+                        >
+                          <span className="font-semibold text-[#121826]">Data Scientist - Platform & Partner Experience (Spotify)</span>
+                          {expandedJobs['job_1'] ? <ChevronDown className="w-5 h-5 text-[#6CC0F9]" /> : <ChevronRight className="w-5 h-5 text-[#6CC0F9]" />}
+                        </button>
+                        {expandedJobs['job_1'] && (
+                          <div className="px-4 pb-4 space-y-3 text-sm">
+                            <div>
+                              <p className="font-semibold text-[#121826]">Company:</p>
+                              <p className="text-[#121826]">Spotify</p>
+                            </div>
+                            <div>
+                              <p className="font-semibold text-[#121826]">Location:</p>
+                              <p className="text-[#121826]">London</p>
+                            </div>
+                            <div>
+                              <p className="font-semibold text-[#121826]">Description:</p>
+                              <p className="text-[#121826]">• You will collaborate with fellow Data Scientists and Data Engineers, and co-operate with cross-functional teams of product managers, engineers, designers and user researchers who are passionate about our consumer experience, to identify and answer key product questions via data.</p>
+                              <p className="text-[#121826]">• You will be a key partner in our work to build out and deliver innovative product features that create valuable and engaging listening moments in the daily lives of Spotify users.</p>
+                            </div>
+                            <div>
+                              <p className="font-semibold text-[#121826]">Requirements:</p>
+                              <p className="text-[#121826]">• You have relevant experience or a degree in statistics, mathematics, computer science, engineering, economics or another quantitative subject area.</p>
+                              <p className="text-[#121826]">• You have proficiency with Python, or similar programming languages, experience with Google BigQuery & expertise in SQL.</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <p className="text-[#121826] text-sm italic px-4 py-2">+ 24 more Data Science roles...</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Software Engineering Jobs */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#FF6C5C]">
+                  <button
+                    onClick={() => toggleCategory('softwareeng')}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#FF6C5C]/5 transition-colors rounded-xl"
+                  >
+                    <span className="text-xl font-bold text-[#121826]">Software Engineering (55 roles)</span>
+                    {expandedCategories['softwareeng'] ? <ChevronDown className="w-6 h-6 text-[#FF6C5C]" /> : <ChevronRight className="w-6 h-6 text-[#FF6C5C]" />}
+                  </button>
+                  {expandedCategories['softwareeng'] && (
+                    <div className="px-6 pb-4">
+                      <p className="text-[#121826] text-sm italic px-4 py-2">55 Software Engineering roles available (similar expandable format)</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Accounting Jobs */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#E8F77B]">
+                  <button
+                    onClick={() => toggleCategory('accounting')}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#E8F77B]/5 transition-colors rounded-xl"
+                  >
+                    <span className="text-xl font-bold text-[#121826]">Accounting (10 roles)</span>
+                    {expandedCategories['accounting'] ? <ChevronDown className="w-6 h-6 text-[#121826]" /> : <ChevronRight className="w-6 h-6 text-[#121826]" />}
+                  </button>
+                  {expandedCategories['accounting'] && (
+                    <div className="px-6 pb-4">
+                      <p className="text-[#121826] text-sm italic px-4 py-2">10 Accounting roles available (similar expandable format)</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Legal Jobs */}
+                <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#CAB9D0]">
+                  <button
+                    onClick={() => toggleCategory('legal')}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#CAB9D0]/5 transition-colors rounded-xl"
+                  >
+                    <span className="text-xl font-bold text-[#121826]">Legal (10 roles)</span>
+                    {expandedCategories['legal'] ? <ChevronDown className="w-6 h-6 text-[#121826]" /> : <ChevronRight className="w-6 h-6 text-[#121826]" />}
+                  </button>
+                  {expandedCategories['legal'] && (
+                    <div className="px-6 pb-4">
+                      <p className="text-[#121826] text-sm italic px-4 py-2">10 Legal roles available (similar expandable format)</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* CV Privacy Note */}
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#8D34F6]">
+              <h3 className="text-2xl font-bold text-[#121826] mb-4 text-center">Candidate CVs</h3>
+              <p className="text-[#121826] text-center leading-relaxed">
+                For privacy reasons, we do not publicly release the candidate CVs used in the evaluation framework.
+                The dataset includes <strong>76 total CVs</strong> (47 synthetic + 29 real) used for testing and validation.
+              </p>
+            </div>
           </div>
         )}
       </main>
