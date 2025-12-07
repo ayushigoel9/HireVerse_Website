@@ -625,77 +625,85 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 py-12">
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Data</h2>
 
-            {/* Dataset Overview Stats - Horizontal Layout */}
+            {/* Dataset Overview Stats */}
             <div className="mb-12">
-              <div className="flex items-center justify-center gap-8 overflow-x-auto pb-4">
-                {/* CV Icon */}
-                <div className="flex-shrink-0">
-                  <img src="/HireVerse_Website/cv_icon.png" alt="CV Icon" className="w-24 h-24" />
-                </div>
+              {/* Top Row: CV and Job Boxes */}
+              <div className="flex justify-center gap-8 mb-8">
+                {/* CV Large Box */}
+                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border-2 border-[#8D34F6] shadow-xl">
+                  <div className="flex items-center gap-6">
+                    {/* CV Icon */}
+                    <img src="/HireVerse_Website/cv_icon.png" alt="CV Icon" className="w-20 h-20" />
 
-                {/* CV Stats Boxes */}
-                <div className="flex gap-4 flex-shrink-0">
-                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#8D34F6] shadow-lg min-w-[140px]">
-                    <div className="text-center">
-                      <p className="text-4xl font-bold text-[#8D34F6] mb-2">47</p>
-                      <p className="text-sm font-semibold text-[#121826]">Synthetic CVs</p>
+                    {/* CV Stats - 3 Small Boxes */}
+                    <div className="flex gap-4">
+                      <div className="bg-[#FFE4E1] rounded-2xl p-4 border-2 border-[#FFA07A] min-w-[120px]">
+                        <div className="text-center">
+                          <p className="text-3xl font-bold text-[#121826] mb-1">47</p>
+                          <p className="text-xs font-semibold text-[#121826]">Synthetic CVs</p>
+                        </div>
+                      </div>
+                      <div className="bg-[#FFE4E1] rounded-2xl p-4 border-2 border-[#FFA07A] min-w-[120px]">
+                        <div className="text-center">
+                          <p className="text-3xl font-bold text-[#121826] mb-1">20</p>
+                          <p className="text-xs font-semibold text-[#121826]">Real CVs</p>
+                        </div>
+                      </div>
+                      <div className="bg-[#FFE4E1] rounded-2xl p-4 border-2 border-[#FF6347] min-w-[120px]">
+                        <div className="text-center">
+                          <p className="text-3xl font-bold text-[#FF6347] mb-1">9</p>
+                          <p className="text-xs font-semibold text-[#121826]">Golden Real CVs</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#6CC0F9] shadow-lg min-w-[140px]">
-                    <div className="text-center">
-                      <p className="text-4xl font-bold text-[#6CC0F9] mb-2">29</p>
-                      <p className="text-sm font-semibold text-[#121826]">Real CVs</p>
+                </div>
+
+                {/* Job Large Box */}
+                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border-2 border-[#6CC0F9] shadow-xl">
+                  <div className="flex items-center gap-6">
+                    {/* Job Stats - 3 Small Boxes */}
+                    <div className="flex gap-4">
+                      <div className="bg-[#E0F7FF] rounded-2xl p-4 border-2 border-[#87CEEB] min-w-[120px]">
+                        <div className="text-center">
+                          <p className="text-3xl font-bold text-[#121826] mb-1">40</p>
+                          <p className="text-xs font-semibold text-[#121826]">Data Science</p>
+                        </div>
+                      </div>
+                      <div className="bg-[#E0F7FF] rounded-2xl p-4 border-2 border-[#87CEEB] min-w-[120px]">
+                        <div className="text-center">
+                          <p className="text-3xl font-bold text-[#121826] mb-1">40</p>
+                          <p className="text-xs font-semibold text-[#121826]">Software Engineer</p>
+                        </div>
+                      </div>
+                      <div className="bg-[#E0F7FF] rounded-2xl p-4 border-2 border-[#87CEEB] min-w-[120px]">
+                        <div className="text-center">
+                          <p className="text-3xl font-bold text-[#121826] mb-1">20</p>
+                          <p className="text-xs font-semibold text-[#121826]">Legal & Accounting</p>
+                        </div>
+                      </div>
                     </div>
+
+                    {/* Job Icon */}
+                    <img src="/HireVerse_Website/job_icon.png" alt="Job Icon" className="w-20 h-20" />
                   </div>
                 </div>
+              </div>
 
-                {/* Arrow */}
-                <div className="flex-shrink-0">
-                  <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
+              {/* Arrow Down */}
+              <div className="flex justify-center mb-4">
+                <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
 
-                {/* Workflow Icon with Text */}
-                <div className="flex-shrink-0">
+              {/* Bottom: Workflow Circle */}
+              <div className="flex justify-center">
+                <div className="bg-white/90 backdrop-blur-md rounded-full p-8 border-2 border-[#8D34F6] shadow-xl">
                   <div className="text-center">
-                    <img src="/HireVerse_Website/cv_jd_workflow_icon.png" alt="Workflow" className="w-32 h-32 mx-auto mb-2" />
-                    <p className="text-sm font-bold text-[#121826]">CV-JDs<br/>E2E<br/>workflow</p>
+                    <img src="/HireVerse_Website/cv_jd_workflow_icon.png" alt="Workflow" className="w-24 h-24 mx-auto mb-2" />
+                    <p className="text-sm font-bold text-[#121826] leading-tight">CV-JDs<br/>E2E<br/>workflow</p>
                   </div>
-                </div>
-
-                {/* Arrow */}
-                <div className="flex-shrink-0">
-                  <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-
-                {/* Job Stats Boxes */}
-                <div className="flex gap-4 flex-shrink-0">
-                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#8D34F6] shadow-lg min-w-[140px]">
-                    <div className="text-center">
-                      <p className="text-4xl font-bold text-[#8D34F6] mb-2">40</p>
-                      <p className="text-sm font-semibold text-[#121826]">Data Science</p>
-                    </div>
-                  </div>
-                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#6CC0F9] shadow-lg min-w-[140px]">
-                    <div className="text-center">
-                      <p className="text-4xl font-bold text-[#6CC0F9] mb-2">40</p>
-                      <p className="text-sm font-semibold text-[#121826]">Software<br/>Engineer</p>
-                    </div>
-                  </div>
-                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#E8F77B] shadow-lg min-w-[140px]">
-                    <div className="text-center">
-                      <p className="text-4xl font-bold text-[#121826] mb-2">20</p>
-                      <p className="text-sm font-semibold text-[#121826]">Legal &<br/>Accounting</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Job Icon */}
-                <div className="flex-shrink-0">
-                  <img src="/HireVerse_Website/job_icon.png" alt="Job Icon" className="w-24 h-24" />
                 </div>
               </div>
             </div>
