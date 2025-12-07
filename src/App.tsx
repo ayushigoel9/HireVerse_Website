@@ -737,13 +737,13 @@ function App() {
                       <td className="px-6 py-4 font-semibold text-[#121826]">Amazon Titan</td>
                       <td className="px-6 py-4 text-center text-[#121826]">90.56%</td>
                       <td className="px-6 py-4 text-center text-[#121826]">55.56% (5/9)</td>
-                      <td className="px-6 py-4 text-center text-[#121826]">5/9 cases</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">5/9 (55.56%)</td>
                     </tr>
                     <tr className="border-t-2 border-[#CAB9D0]/20">
                       <td className="px-6 py-4 font-semibold text-[#121826]">Multi-stage Pipeline</td>
                       <td className="px-6 py-4 text-center text-[#121826]">82.78%</td>
                       <td className="px-6 py-4 text-center text-[#121826]">33.33% (3/9)</td>
-                      <td className="px-6 py-4 text-center text-[#121826]">2/9 full alignment</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">2/9 (22.22%)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -997,12 +997,12 @@ function App() {
                     </button>
                     {expandedEvals.eval2 && (
                       <div className="px-6 pb-4">
-                        <img src="/HireVerse_Website/evaluation_2_output.png" alt="Evaluation 2 Output" className="w-full h-auto rounded-lg border-2 border-[#8D34F6]" />
+                        <embed src="/HireVerse_Website/Candidate_Evaluation_LLM.pdf" type="application/pdf" className="w-full h-[600px] rounded-lg border-2 border-[#8D34F6]" />
                       </div>
                     )}
                   </div>
 
-                  {/* Evaluation 3 Output (2 pages) */}
+                  {/* Evaluation 3 Output */}
                   <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#FF6C5C]">
                     <button
                       onClick={() => setExpandedEvals({...expandedEvals, eval3: !expandedEvals.eval3})}
@@ -1015,9 +1015,8 @@ function App() {
                       }
                     </button>
                     {expandedEvals.eval3 && (
-                      <div className="px-6 pb-4 space-y-4">
-                        <img src="/HireVerse_Website/evaluation_3_output_page1.png" alt="Evaluation 3 Output Page 1" className="w-full h-auto rounded-lg border-2 border-[#FF6C5C]" />
-                        <img src="/HireVerse_Website/evaluation_3_output_page2.png" alt="Evaluation 3 Output Page 2" className="w-full h-auto rounded-lg border-2 border-[#FF6C5C]" />
+                      <div className="px-6 pb-4">
+                        <embed src="/HireVerse_Website/Candidate_Questionnaire_anonymized.pdf" type="application/pdf" className="w-full h-[800px] rounded-lg border-2 border-[#FF6C5C]" />
                       </div>
                     )}
                   </div>
