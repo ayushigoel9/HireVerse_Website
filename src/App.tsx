@@ -696,7 +696,7 @@ function App() {
                         Job descriptions follow a parallel flow in which key skills are mapped to a canonical ontology and tagged by importance, while profile features such as seniority expectations, years of experience, and leadership requirements are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 -mt-16">
                       <img src="/HireVerse_Website/model_3.png" alt="Multi-stage Pipeline Model" className="max-w-2xl h-auto rounded-xl shadow-lg" />
                     </div>
                   </div>
