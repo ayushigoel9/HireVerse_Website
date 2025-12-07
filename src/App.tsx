@@ -585,45 +585,53 @@ function App() {
 
               {/* Two Processing Boxes */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {/* CV Processing Box */}
-                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
-                  <h4 className="text-xl font-semibold text-[#121826] mb-4">CV Processing</h4>
-                  <p className="text-[#121826] leading-relaxed">
-                    When a candidate uploads their résumé, the CV processing pipeline initiates a multi-stage workflow orchestrated by a system-level coordinator. Apache Tika first converts the PDF into clean, machine-readable text, which then undergoes deterministic preprocessing to normalize the output into a structured base JSON format. The intelligence layer follows, deploying six specialized, LLM-powered agents, each focused on extracting a specific résumé section: personal information, resume summary, education, professional experience, technical and soft skills, and extra information like certifications and languages. The orchestrator then merges all agent outputs into a single, rich JSON document that comprehensively captures the candidate's profile. These steps are detailed in Fig 1.
-                  </p>
+                {/* CV Processing Column */}
+                <div className="flex flex-col gap-6">
+                  {/* CV Processing Box */}
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
+                    <h4 className="text-xl font-semibold text-[#121826] mb-4">CV Processing</h4>
+                    <p className="text-[#121826] leading-relaxed">
+                      When a candidate uploads their résumé, the CV processing pipeline initiates a multi-stage workflow orchestrated by a system-level coordinator. Apache Tika first converts the PDF into clean, machine-readable text, which then undergoes deterministic preprocessing to normalize the output into a structured base JSON format. The intelligence layer follows, deploying six specialized, LLM-powered agents, each focused on extracting a specific résumé section: personal information, resume summary, education, professional experience, technical and soft skills, and extra information like certifications and languages. The orchestrator then merges all agent outputs into a single, rich JSON document that comprehensively captures the candidate's profile.
+                    </p>
+                  </div>
+                  {/* CV Parser Image */}
+                  <div className="flex flex-col items-center">
+                    <img src="/HireVerse_Website/cv_parser.png" alt="CV Parser" className="max-w-full h-auto rounded-xl shadow-lg border-2 border-[#8D34F6]" />
+                  </div>
                 </div>
 
-                {/* JD Processing Box */}
-                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
-                  <h4 className="text-xl font-semibold text-[#121826] mb-4">Job Description Processing</h4>
-                  <p className="text-[#121826] leading-relaxed mb-4">
-                    The job description processing follows a similarly structured approach, beginning with a hand-curated dataset of 100 high-quality job descriptions selected to represent diverse roles within our focus industries. Each job description is converted into a structured JSON format containing four key sections:
-                  </p>
-                  <ul className="space-y-2 text-[#121826] leading-relaxed ml-5">
-                    <li className="flex gap-2">
-                      <span className="text-[#6CC0F9] mt-1">•</span>
-                      <span>The job title</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#6CC0F9] mt-1">•</span>
-                      <span>The role description outlining responsibilities and expectations</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#6CC0F9] mt-1">•</span>
-                      <span>Required or minimum competencies</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-[#6CC0F9] mt-1">•</span>
-                      <span>Nice-to-have skills when available</span>
-                    </li>
-                  </ul>
+                {/* JD Processing Column */}
+                <div className="flex flex-col gap-6">
+                  {/* JD Processing Box */}
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
+                    <h4 className="text-xl font-semibold text-[#121826] mb-4">Job Description Processing</h4>
+                    <p className="text-[#121826] leading-relaxed mb-4">
+                      The job description processing follows a similarly structured approach, beginning with a hand-curated dataset of 100 high-quality job descriptions selected to represent diverse roles within our focus industries. Each job description is converted into a structured JSON format containing four key sections:
+                    </p>
+                    <ul className="space-y-2 text-[#121826] leading-relaxed ml-5">
+                      <li className="flex gap-2">
+                        <span className="text-[#6CC0F9] mt-1">•</span>
+                        <span>The job title</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[#6CC0F9] mt-1">•</span>
+                        <span>The role description outlining responsibilities and expectations</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[#6CC0F9] mt-1">•</span>
+                        <span>Required or minimum competencies</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[#6CC0F9] mt-1">•</span>
+                        <span>Nice-to-have skills when available</span>
+                      </li>
+                    </ul>
+                  </div>
+                  {/* Job Parser Image */}
+                  <div className="flex flex-col items-center">
+                    <img src="/HireVerse_Website/job_parser.png" alt="Job Parser" className="max-w-full h-auto rounded-xl shadow-lg border-2 border-[#6CC0F9]" />
+                  </div>
                 </div>
-              </div>
-
-              {/* CV Pipeline Figure */}
-              <div className="flex flex-col items-center">
-                <img src="/HireVerse_Website/cv_pipeline.png" alt="CV Processing Pipeline" className="max-w-full h-auto rounded-xl shadow-lg border-2 border-[#8D34F6]" />
-                <p className="text-[#121826] text-sm font-semibold mt-3">Fig 1: CV Processing Pipeline</p>
               </div>
             </section>
 
