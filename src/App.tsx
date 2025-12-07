@@ -625,63 +625,77 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 py-12">
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Data</h2>
 
-            {/* Dataset Overview Stats */}
+            {/* Dataset Overview Stats - Horizontal Layout */}
             <div className="mb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* CVs Stats */}
-                <div className="bg-gradient-to-br from-[#8D34F6]/10 to-[#6CC0F9]/10 rounded-2xl p-8 border-2 border-[#8D34F6]">
-                  <h3 className="text-3xl font-bold text-[#121826] mb-6 text-center">Candidate CVs</h3>
-                  <div className="space-y-4">
-                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#8D34F6]">
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-semibold text-[#121826]">Synthetic CVs</span>
-                        <span className="text-3xl font-bold text-[#8D34F6]">47</span>
-                      </div>
+              <div className="flex items-center justify-center gap-8 overflow-x-auto pb-4">
+                {/* CV Icon */}
+                <div className="flex-shrink-0">
+                  <img src="/HireVerse_Website/cv_icon.png" alt="CV Icon" className="w-24 h-24" />
+                </div>
+
+                {/* CV Stats Boxes */}
+                <div className="flex gap-4 flex-shrink-0">
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#8D34F6] shadow-lg min-w-[140px]">
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-[#8D34F6] mb-2">47</p>
+                      <p className="text-sm font-semibold text-[#121826]">Synthetic CVs</p>
                     </div>
-                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#6CC0F9]">
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-semibold text-[#121826]">Real CVs</span>
-                        <span className="text-3xl font-bold text-[#6CC0F9]">29</span>
-                      </div>
-                    </div>
-                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#121826]">
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-bold text-[#121826]">Total CVs</span>
-                        <span className="text-3xl font-bold text-[#121826]">76</span>
-                      </div>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#6CC0F9] shadow-lg min-w-[140px]">
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-[#6CC0F9] mb-2">29</p>
+                      <p className="text-sm font-semibold text-[#121826]">Real CVs</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Jobs Stats */}
-                <div className="bg-gradient-to-br from-[#FF6C5C]/10 to-[#E8F77B]/10 rounded-2xl p-8 border-2 border-[#FF6C5C]">
-                  <h3 className="text-3xl font-bold text-[#121826] mb-6 text-center">Job Descriptions</h3>
-                  <div className="space-y-4">
-                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#8D34F6]">
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-semibold text-[#121826]">Data Science</span>
-                        <span className="text-3xl font-bold text-[#8D34F6]">40</span>
-                      </div>
-                    </div>
-                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#FF6C5C]">
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-semibold text-[#121826]">Software Engineering</span>
-                        <span className="text-3xl font-bold text-[#FF6C5C]">40</span>
-                      </div>
-                    </div>
-                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#E8F77B]">
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-semibold text-[#121826]">Accounting + Legal</span>
-                        <span className="text-3xl font-bold text-[#121826]">20</span>
-                      </div>
-                    </div>
-                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#121826]">
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-bold text-[#121826]">Total Jobs</span>
-                        <span className="text-3xl font-bold text-[#121826]">100</span>
-                      </div>
+                {/* Arrow */}
+                <div className="flex-shrink-0">
+                  <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+
+                {/* Workflow Icon with Text */}
+                <div className="flex-shrink-0">
+                  <div className="text-center">
+                    <img src="/HireVerse_Website/cv_jd_workflow_icon.png" alt="Workflow" className="w-32 h-32 mx-auto mb-2" />
+                    <p className="text-sm font-bold text-[#121826]">CV-JDs<br/>E2E<br/>workflow</p>
+                  </div>
+                </div>
+
+                {/* Arrow */}
+                <div className="flex-shrink-0">
+                  <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+
+                {/* Job Stats Boxes */}
+                <div className="flex gap-4 flex-shrink-0">
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#8D34F6] shadow-lg min-w-[140px]">
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-[#8D34F6] mb-2">40</p>
+                      <p className="text-sm font-semibold text-[#121826]">Data Science</p>
                     </div>
                   </div>
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#6CC0F9] shadow-lg min-w-[140px]">
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-[#6CC0F9] mb-2">40</p>
+                      <p className="text-sm font-semibold text-[#121826]">Software<br/>Engineer</p>
+                    </div>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-2 border-[#E8F77B] shadow-lg min-w-[140px]">
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-[#121826] mb-2">20</p>
+                      <p className="text-sm font-semibold text-[#121826]">Legal &<br/>Accounting</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Job Icon */}
+                <div className="flex-shrink-0">
+                  <img src="/HireVerse_Website/job_icon.png" alt="Job Icon" className="w-24 h-24" />
                 </div>
               </div>
             </div>
