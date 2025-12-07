@@ -774,180 +774,189 @@ function App() {
               {/* LLM vs Human Rankings Table */}
               <div className="mb-8">
                 <h4 className="text-2xl font-bold text-[#121826] mb-4 text-center">Detailed Results: LLM vs Human Reviewers</h4>
-                <div className="overflow-x-auto">
-                  <table className="w-full bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border-2 border-[#CAB9D0]">
-                    <thead>
-                      <tr className="bg-[#CAB9D0] text-white">
-                        <th className="px-4 py-3 text-center font-semibold border-r-2 border-white/20">CV</th>
-                        <th className="px-4 py-3 text-center font-semibold border-r-2 border-white/20">Rank</th>
-                        <th className="px-4 py-3 text-center font-semibold border-r-2 border-white/20">LLM</th>
-                        <th className="px-4 py-3 text-center font-semibold">Owner of CV</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {/* Golden CV 1 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
+                <div className="space-y-4">
+                  {/* Row 1: CVs 1-3 */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#CAB9D0]">
+                      <thead>
+                        <tr className="bg-[#CAB9D0] text-white">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 text-sm">RANK</th>
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 1</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 2</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                          <th className="px-3 py-2 text-center font-semibold" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 3</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-t-2 border-[#CAB9D0]/20">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">1</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Baseline</td>
+                        </tr>
+                        <tr className="border-t border-[#CAB9D0]/10">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">2</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Titan</td>
+                        </tr>
+                        <tr className="border-t border-[#CAB9D0]/10">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">3</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Extended</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
 
-                      {/* Golden CV 2 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
+                  {/* Row 2: CVs 4-6 */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#CAB9D0]">
+                      <thead>
+                        <tr className="bg-[#CAB9D0] text-white">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 text-sm">RANK</th>
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 4</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 5</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                          <th className="px-3 py-2 text-center font-semibold" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 6</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-t-2 border-[#CAB9D0]/20">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">1</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Baseline</td>
+                        </tr>
+                        <tr className="border-t border-[#CAB9D0]/10">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">2</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Extended</td>
+                        </tr>
+                        <tr className="border-t border-[#CAB9D0]/10">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">3</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Titan</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
 
-                      {/* Golden CV 3 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-
-                      {/* Golden CV 4 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 4</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-
-                      {/* Golden CV 5 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 5</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-
-                      {/* Golden CV 6 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 6</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-
-                      {/* Golden CV 7 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 7</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-
-                      {/* Golden CV 8 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 8</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10 bg-[#CAB9D0]/5">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-
-                      {/* Golden CV 9 */}
-                      <tr className="border-t-2 border-[#CAB9D0]/20">
-                        <td className="px-4 py-3 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20" rowSpan="3">Golden CV 9</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">1</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Baseline</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Extended</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">2</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Extended</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Baseline</td>
-                      </tr>
-                      <tr className="border-t border-[#CAB9D0]/10">
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">3</td>
-                        <td className="px-4 py-3 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20">Titan</td>
-                        <td className="px-4 py-3 text-center text-[#121826]">Titan</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  {/* Row 3: CVs 7-9 */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#CAB9D0]">
+                      <thead>
+                        <tr className="bg-[#CAB9D0] text-white">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 text-sm">RANK</th>
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 7</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 8</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                          <th className="px-3 py-2 text-center font-semibold" colSpan="2">
+                            <div className="text-sm mb-1">Golden CV 9</div>
+                            <div className="flex justify-between text-xs">
+                              <span className="flex-1 border-r border-white/20 px-2">LLM</span>
+                              <span className="flex-1 px-2">Owner of CV</span>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-t-2 border-[#CAB9D0]/20">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">1</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Extended</td>
+                        </tr>
+                        <tr className="border-t border-[#CAB9D0]/10">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">2</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Baseline</td>
+                        </tr>
+                        <tr className="border-t border-[#CAB9D0]/10">
+                          <td className="px-3 py-2 text-center font-semibold text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">3</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Extended</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r-2 border-[#CAB9D0]/20 text-sm">Baseline</td>
+                          <td className="px-3 py-2 text-center text-[#121826] border-r border-[#CAB9D0]/20 text-sm">Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm">Titan</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
 
