@@ -625,9 +625,65 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 py-12">
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Data</h2>
 
-            {/* Dataset Overview Image - No border */}
+            {/* Dataset Overview Stats */}
             <div className="mb-12">
-              <img src="/HireVerse_Website/data.png" alt="Dataset Overview" className="w-full" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* CVs Stats */}
+                <div className="bg-gradient-to-br from-[#8D34F6]/10 to-[#6CC0F9]/10 rounded-2xl p-8 border-2 border-[#8D34F6]">
+                  <h3 className="text-3xl font-bold text-[#121826] mb-6 text-center">Candidate CVs</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#8D34F6]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-semibold text-[#121826]">Synthetic CVs</span>
+                        <span className="text-3xl font-bold text-[#8D34F6]">47</span>
+                      </div>
+                    </div>
+                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#6CC0F9]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-semibold text-[#121826]">Real CVs</span>
+                        <span className="text-3xl font-bold text-[#6CC0F9]">29</span>
+                      </div>
+                    </div>
+                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#121826]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-bold text-[#121826]">Total CVs</span>
+                        <span className="text-3xl font-bold text-[#121826]">76</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Jobs Stats */}
+                <div className="bg-gradient-to-br from-[#FF6C5C]/10 to-[#E8F77B]/10 rounded-2xl p-8 border-2 border-[#FF6C5C]">
+                  <h3 className="text-3xl font-bold text-[#121826] mb-6 text-center">Job Descriptions</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#8D34F6]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-semibold text-[#121826]">Data Science</span>
+                        <span className="text-3xl font-bold text-[#8D34F6]">40</span>
+                      </div>
+                    </div>
+                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#FF6C5C]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-semibold text-[#121826]">Software Engineering</span>
+                        <span className="text-3xl font-bold text-[#FF6C5C]">40</span>
+                      </div>
+                    </div>
+                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#E8F77B]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-semibold text-[#121826]">Accounting + Legal</span>
+                        <span className="text-3xl font-bold text-[#121826]">20</span>
+                      </div>
+                    </div>
+                    <div className="bg-white/80 rounded-xl p-4 border-2 border-[#121826]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-lg font-bold text-[#121826]">Total Jobs</span>
+                        <span className="text-3xl font-bold text-[#121826]">100</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* CV and JD Cards Side by Side */}
