@@ -644,12 +644,12 @@ function App() {
               <div className="space-y-6">
                 {/* CareerBERT Box - Text Left, Image Right */}
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
-                  <div className="flex items-center gap-3 mb-4">
-                    <img src="/HireVerse_Website/careerBert.png" alt="CareerBERT" className="w-10 h-10" />
-                    <h4 className="text-xl font-semibold text-[#121826]">CareerBERT</h4>
-                  </div>
-                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
                     <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-4">
+                        <img src="/HireVerse_Website/careerBert.png" alt="CareerBERT" className="w-10 h-10" />
+                        <h4 className="text-xl font-semibold text-[#121826]">CareerBERT</h4>
+                      </div>
                       <p className="text-[#121826] leading-relaxed mb-4">
                         From our literature review and online research, we identified CareerBERT as a promising model to get started with. It is both computationally efficient and experimentally well-validated, outperforming multiple prior approaches in earlier studies (<a href="https://www.sciencedirect.com/science/article/pii/S0957417425006657" target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline">Link</a>). However, CareerBERT has important limitations. It was trained primarily on German job postings, and prior work suggests it can struggle to differentiate closely related roles.
                       </p>
@@ -665,12 +665,12 @@ function App() {
 
                 {/* Titan Box - Text Left, Image Right */}
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
-                  <div className="flex items-center gap-3 mb-4">
-                    <img src="/HireVerse_Website/titian.png" alt="Titan" className="w-10 h-10" />
-                    <h4 className="text-xl font-semibold text-[#121826]">Amazon Titan Embeddings</h4>
-                  </div>
-                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
                     <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-4">
+                        <img src="/HireVerse_Website/titian.png" alt="Titan" className="w-10 h-10" />
+                        <h4 className="text-xl font-semibold text-[#121826]">Amazon Titan Embeddings</h4>
+                      </div>
                       <p className="text-[#121826] leading-relaxed">
                         In the second stage, we tested whether a more general-purpose embedding model could rival or surpass CareerBERT. We used Amazon Titan Embeddings on Bedrock to create CV and job embeddings, again ranking roles using cosine similarity (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank" rel="noopener noreferrer" className="text-[#6CC0F9] hover:underline">Link</a>). Titan offered strong operational advantages as a native cloud model, including tighter integration with S3, Lambda, and Bedrock security and compliance frameworks.
                       </p>
@@ -681,26 +681,27 @@ function App() {
                   </div>
                 </div>
 
-                {/* Multi-stage Matching Pipeline Box */}
-                <div className="space-y-6">
-                  <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#FF6C5C]">
-                    <div className="flex items-center gap-3 mb-4">
-                      <img src="/HireVerse_Website/careerBert.png" alt="Multi-stage Pipeline" className="w-10 h-10" />
-                      <h4 className="text-xl font-semibold text-[#121826]">Multi-stage Matching Pipeline</h4>
+                {/* Multi-stage Matching Pipeline Box - Text Left, Image Right */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#FF6C5C]">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-4">
+                        <img src="/HireVerse_Website/careerBert.png" alt="Multi-stage Pipeline" className="w-10 h-10" />
+                        <h4 className="text-xl font-semibold text-[#121826]">Multi-stage Matching Pipeline</h4>
+                      </div>
+                      <p className="text-[#121826] leading-relaxed mb-4">
+                        In the full matching model, both CVs and job descriptions undergo an additional enrichment stage to produce standardized, interpretable profiles. For CVs, the Profile Enricher infers a candidate's macroarea (e.g., TECH, ACCOUNTING, LEGAL), seniority level (JUNIOR, MID, SENIOR), and a primary title such as "Senior Data Scientist,". These profile attributes later guide seniority pre-filters, skill relevance scoring, and explainability.
+                      </p>
+                      <p className="text-[#121826] leading-relaxed mb-4">
+                        Job descriptions follow a parallel flow in which key skills are mapped to a canonical ontology and tagged by importance, while profile features such as seniority expectations, years of experience, and leadership requirements are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
+                      </p>
+                      <p className="text-[#121826] leading-relaxed">
+                        Once enriched, the CV embedding is compared with all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores with clear, human-readable reasoning.
+                      </p>
                     </div>
-                    <p className="text-[#121826] leading-relaxed mb-4">
-                      In the full matching model, both CVs and job descriptions undergo an additional enrichment stage to produce standardized, interpretable profiles. For CVs, the Profile Enricher infers a candidate's macroarea (e.g., TECH, ACCOUNTING, LEGAL), seniority level (JUNIOR, MID, SENIOR), and a primary title such as "Senior Data Scientist,". These profile attributes later guide seniority pre-filters, skill relevance scoring, and explainability.
-                    </p>
-                    <p className="text-[#121826] leading-relaxed mb-4">
-                      Job descriptions follow a parallel flow in which key skills are mapped to a canonical ontology and tagged by importance, while profile features such as seniority expectations, years of experience, and leadership requirements are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
-                    </p>
-                    <p className="text-[#121826] leading-relaxed">
-                      Once enriched, the CV embedding is compared with all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores with clear, human-readable reasoning.
-                    </p>
-                  </div>
-                  {/* Model 3 Image Below Box */}
-                  <div className="flex justify-center">
-                    <img src="/HireVerse_Website/model_3.png" alt="Multi-stage Pipeline Model" className="max-w-full h-auto rounded-xl shadow-lg border-2 border-[#FF6C5C]" />
+                    <div className="flex-shrink-0">
+                      <img src="/HireVerse_Website/model_3.png" alt="Multi-stage Pipeline Model" className="max-w-md h-auto rounded-xl shadow-lg" />
+                    </div>
                   </div>
                 </div>
               </div>
