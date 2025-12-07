@@ -527,61 +527,42 @@ function App() {
         {/* METHODOLOGY TAB */}
         {activeTab === 'methodology' && (
           <div className="max-w-7xl mx-auto px-6 py-12">
+            <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Methodology</h2>
+
+            {/* Evaluation Criteria Section */}
             <section className="mb-12">
-              <div className="flex items-center gap-3 mb-8">
-                <Brain className="w-8 h-8 text-[#FF6C5C]" />
-                <h2 className="text-4xl font-bold text-[#121826]">Methodology</h2>
-              </div>
-              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-xl font-semibold text-[#121826] mb-3">Evaluation Framework</h4>
-                    <p className="text-[#121826] leading-relaxed">
-                      To build an effective matching system, the team established a rigorous evaluation framework using 5 real, manually labeled
-                      CVs categorized by job family, paired with 100 job descriptions across three categories: Legal & Accounting, Data Science,
-                      and Software Engineering. This dataset served as the foundation for evaluating all matching iterations. The data preparation
-                      process involved parsing and cleaning both CVs and job descriptions, extracting text, and normalizing structure. The team then
-                      tested three matching approaches: a baseline using CareerBERT embeddings, an improved version using AWS Titan, and finally a
-                      full multi-stage matching pipeline.
-                    </p>
-                  </div>
+              <h3 className="text-3xl font-bold text-[#121826] mb-4 text-center">Evaluation Criteria</h3>
+              <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
+                To build an effective matching system, the team established a rigorous evaluation framework using nine real, manually labeled CVs categorized by job family, paired with 100 job descriptions across three categories: Legal & Accounting, Data Science, and Software Engineering (for details, see the Data section).
+              </p>
+              <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
+                The evaluation process used three complementary methods to provide a comprehensive assessment of performance.
+              </p>
 
-                  <div>
-                    <h4 className="text-xl font-semibold text-[#121826] mb-3">Evaluation Methods</h4>
-                    <p className="text-[#121826] leading-relaxed mb-4">
-                      The evaluation process used three complementary methods to provide a comprehensive assessment of performance:
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex gap-4">
-                        <span className="text-[#6CC0F9] font-bold mt-1">1.</span>
-                        <div>
-                          <strong className="text-[#121826]">Job-Family Classification Accuracy:</strong>
-                          <span className="text-[#121826]"> Tested whether models matched CVs to the correct job families by having each model
-                          produce top 40 recommendations per CV, with accuracy computed across all 40 jobs.</span>
-                        </div>
-                      </li>
-                      <li className="flex gap-4">
-                        <span className="text-[#8D34F6] font-bold mt-1">2.</span>
-                        <div>
-                          <strong className="text-[#121826]">LLM-as-a-Judge:</strong>
-                          <span className="text-[#121826]"> Used a separate model to score the top 5 recommendations for each candidate, evaluating
-                          seniority, domain alignment, and overall fit.</span>
-                        </div>
-                      </li>
-                      <li className="flex gap-4">
-                        <span className="text-[#FF6C5C] font-bold mt-1">3.</span>
-                        <div>
-                          <strong className="text-[#121826]">Human Candidate Feedback:</strong>
-                          <span className="text-[#121826]"> Real candidates reviewed their top 5 recommended jobs and rated relevance based on
-                          their career goals and context.</span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+              {/* 3 Evaluation Type Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Card 1: Job-Family Classification Accuracy */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
+                  <h4 className="text-xl font-semibold text-[#121826] mb-4">Job-Family Classification Accuracy</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    Tested whether models matched CVs to the correct job families by having each model produce the top 40 recommendations per CV, with accuracy computed across all 40 jobs.
+                  </p>
+                </div>
 
-                  <div className="bg-gradient-to-br from-[#CAB9D0]/50 via-[#8D34F6]/20 to-[#6CC0F9]/30 rounded-xl p-6 mt-6 border-2 border-[#8D34F6]">
-                    <p className="text-[#121826] italic">[Final results and key learnings will be added here]</p>
-                  </div>
+                {/* Card 2: LLM-as-a-Judge */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
+                  <h4 className="text-xl font-semibold text-[#121826] mb-4">LLM-as-a-Judge</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    Used a separate model to score the top five recommendations for each candidate and rank each model's bucket of top-five results. This enabled more granular evaluation, including seniority, domain alignment, and overall fit. <span className="text-[#8D34F6] font-semibold">[WHICH MODEL WAS USED?]</span>
+                  </p>
+                </div>
+
+                {/* Card 3: Human Candidate Feedback */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#FF6C5C]">
+                  <h4 className="text-xl font-semibold text-[#121826] mb-4">Human Candidate Feedback</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    Involved real candidates reviewing their top-five recommended jobs from each model and rating relevance based on their career goals and context. This allowed us to benchmark each model's performance individually and evaluate how closely the LLM aligns with real candidate judgment.
+                  </p>
                 </div>
               </div>
             </section>
