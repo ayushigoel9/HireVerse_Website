@@ -626,9 +626,9 @@ function App() {
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Data</h2>
 
             {/* Dataset Overview Stats */}
-            <div className="mb-12">
+            <div className="mb-12 flex flex-col items-center">
               {/* Top Row: CV and Job Boxes */}
-              <div className="flex justify-center gap-8 mb-8">
+              <div className="flex gap-8 mb-8">
                 {/* CV Large Box */}
                 <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border-2 border-[#8D34F6] shadow-xl">
                   <div className="flex items-center gap-6">
@@ -691,14 +691,14 @@ function App() {
               </div>
 
               {/* Arrow Down */}
-              <div className="flex justify-center mb-4">
+              <div className="mb-4">
                 <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
               </div>
 
               {/* Bottom: Workflow Circle */}
-              <div className="flex justify-center">
+              <div>
                 <div className="bg-white/90 backdrop-blur-md rounded-full p-8 border-2 border-[#8D34F6] shadow-xl">
                   <div className="text-center">
                     <img src="/HireVerse_Website/cv_jd_workflow_icon.png" alt="Workflow" className="w-24 h-24 mx-auto mb-2" />
