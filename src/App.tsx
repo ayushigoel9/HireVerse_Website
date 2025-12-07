@@ -595,36 +595,44 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 py-12">
             <h2 className="text-4xl font-bold text-[#121826] mb-8 text-center">Data</h2>
 
-            {/* Dataset Overview with Image */}
+            {/* Dataset Overview Image */}
             <div className="mb-12">
               <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#8D34F6]">
                 <img src="/HireVerse_Website/data.png" alt="Dataset Overview" className="w-full rounded-lg" />
               </div>
             </div>
 
-            {/* Dataset Description */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-[#121826] mb-6 text-center">Dataset Overview</h3>
-              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#6CC0F9]">
-                <p className="text-[#121826] leading-relaxed mb-4">
+            {/* CV and JD Cards Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* CV Card */}
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#8D34F6]">
+                <h3 className="text-2xl font-bold text-[#121826] mb-4">Candidate CVs</h3>
+                <p className="text-[#121826] leading-relaxed">
                   To assess the effectiveness of our agent-based parsing and matching pipelines, we assembled a dataset consisting of <strong>47 synthetic CVs</strong> (sourced from{' '}
                   <a href="https://enhancv.com/resume-examples/data-scientist/" target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline">Enhancv</a>)
                   along with <strong>29 real CVs</strong> provided directly by candidates. Because the upload and parsing in the product first iteration focused primarily on the CV extraction pipeline,
                   all CVs were used in their original PDF format to ensure realistic preprocessing and parsing challenges.
                 </p>
+              </div>
+
+              {/* JD Card */}
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#6CC0F9]">
+                <h3 className="text-2xl font-bold text-[#121826] mb-4">Job Descriptions</h3>
                 <p className="text-[#121826] leading-relaxed mb-4">
                   On the job description side, we concentrated on our two priority domains, namely <strong>Software Engineering</strong> and <strong>Data Science</strong> roles.
                   To evaluate how well models handle unrelated or less relevant opportunities, we supplemented the dataset with an additional set of <strong>10 Accounting</strong> and{' '}
                   <strong>10 Legal</strong> positions. All job descriptions were sourced from publicly available LinkedIn postings and manually cleaned to ensure consistency and reduce noise.
-                  Each role was standardized into four structured components:
                 </p>
-                <ul className="list-disc list-inside space-y-2 text-[#121826] ml-6 mb-4">
-                  <li>Job title</li>
-                  <li>Role description outlining responsibilities</li>
-                  <li>Required or minimum competencies</li>
-                  <li>Additional "nice-to-have" skills, when available</li>
-                </ul>
                 <p className="text-[#121826] leading-relaxed">
+                  Each role was standardized into four structured components: job title, role description outlining responsibilities, required or minimum competencies, and additional "nice-to-have" skills when available.
+                </p>
+              </div>
+            </div>
+
+            {/* Labeling Card */}
+            <div className="mb-12">
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-8 border-2 border-[#FF6C5C]">
+                <p className="text-[#121826] leading-relaxed text-center">
                   Both CVs and job descriptions were hand-labeled by the team, with candidate feedback incorporated into the labeling of real CVs.
                   This ground-truth labeling enabled us to benchmark performance and evaluate how well different matching strategies replicated real-world candidate judgment.
                 </p>
