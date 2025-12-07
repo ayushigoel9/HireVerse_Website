@@ -6,6 +6,7 @@ function App() {
   const [expandedCategories, setExpandedCategories] = useState({});
   const [expandedJobs, setExpandedJobs] = useState({});
   const [expandedCVs, setExpandedCVs] = useState({});
+  const [expandedEvals, setExpandedEvals] = useState({});
   const [jobsData, setJobsData] = useState([]);
 
   useEffect(() => {
@@ -703,6 +704,142 @@ function App() {
                   <p className="text-[#121826] leading-relaxed">
                     Once enriched, the CV embedding is compared with all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores with clear, human-readable reasoning.
                   </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Results Section */}
+            <section className="mb-12">
+              <h3 className="text-3xl font-bold text-[#121826] mb-4 text-center">Results</h3>
+              <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
+                To assess the performance of the different matching strategies, we evaluated each model using our three-part evaluation framework: Job-Family Classification Accuracy, LLM-as-a-Judge, and Human Candidate Feedback.
+              </p>
+
+              {/* Performance Summary Table */}
+              <div className="mb-8 overflow-x-auto">
+                <table className="w-full bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border-2 border-[#8D34F6]">
+                  <thead>
+                    <tr className="bg-[#8D34F6] text-white">
+                      <th className="px-6 py-4 text-left font-semibold">Model</th>
+                      <th className="px-6 py-4 text-center font-semibold">Classification Accuracy</th>
+                      <th className="px-6 py-4 text-center font-semibold">LLM Score</th>
+                      <th className="px-6 py-4 text-center font-semibold">Human Agreement</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-t-2 border-[#8D34F6]/20">
+                      <td className="px-6 py-4 font-semibold text-[#121826]">CareerBERT</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">76.67%</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">11.11% (1/9)</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">-</td>
+                    </tr>
+                    <tr className="border-t-2 border-[#8D34F6]/20 bg-[#8D34F6]/5">
+                      <td className="px-6 py-4 font-semibold text-[#121826]">Amazon Titan</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">90.56%</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">55.56% (5/9)</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">5/9 cases</td>
+                    </tr>
+                    <tr className="border-t-2 border-[#8D34F6]/20">
+                      <td className="px-6 py-4 font-semibold text-[#121826]">Multi-stage Pipeline</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">82.78%</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">33.33% (3/9)</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">2/9 full alignment</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Detailed Results Text */}
+              <div className="space-y-6 mb-8">
+                <p className="text-[#121826] leading-relaxed">
+                  In the first test, each model produced the top 40 job recommendations per candidate and was evaluated on whether the correct job family appeared within those results. This yielded baseline performance from CareerBERT at 76.67%. Amazon Titan achieved a clear improvement with 90.56%, demonstrating that a general-purpose model without domain fine-tuning performs better than CareerBERT's embeddings. The Extended multi-stage model reached 82.78%, showing that the richer preprocessing and reasoning pipeline improves quality beyond CareerBERT but does not surpass the general-purpose embeddings, leaving room for optimization in the early filtering stage.
+                </p>
+                <p className="text-[#121826] leading-relaxed">
+                  For the LLM-as-a-Judge evaluation, we asked a separate model to score the top five recommendations produced by each pipeline. Titan again ranked highest with 55.56% of top selections (five candidates), followed by the Extended model at 33.33% (three candidates), and CareerBERT at 11.11% (one candidate). These findings reinforce the strong performance of embedding-driven semantic matching when evaluated purely on job-to-CV relevance.
+                </p>
+                <p className="text-[#121826] leading-relaxed">
+                  To explore whether these rankings aligned with candidate needs in practice, we ran a Human Candidate Feedback study. Although the overall scoring trends were consistent between humans and the LLM, agreement on the top-performing pipeline occurred in only 5 out of 9 cases. Full ranking alignment across all pipelines was observed in just 2 out of 9 cases, indicating that while LLMs show promise as evaluators, key inputs are still missing.
+                </p>
+                <p className="text-[#121826] leading-relaxed">
+                  Human feedback revealed critical nuances that CVs and job descriptions alone cannot represent. Candidates expressed preferences tied to personal priorities, such as avoiding large corporations or actively pursuing early-stage, high-intensity environments, which the LLM could not infer from the CVs. This strongly supports our initial goal of integrating explicit career-intent signals into the matching process.
+                </p>
+                <p className="text-[#121826] leading-relaxed">
+                  We also identified recurring points of misalignment in how seniority and skills are interpreted. The LLM tended to assume that total years of experience equate to seniority, while career-switching candidates often view experience in a new field as effectively resetting their level. Conversely, transferable skills may exist without the confidence or desire to pursue senior roles immediately. These disconnects show that reasoning about career progression requires more than semantic similarity.
+                </p>
+                <p className="text-[#121826] leading-relaxed">
+                  Together, these insights point clearly to the next steps: enriching the matching logic with direct candidate intent, improving cross-domain understanding of seniority and skill maturity, and ensuring human-centric alignment throughout the decision-making pipeline.
+                </p>
+              </div>
+
+              {/* LLM vs Human Rankings Image */}
+              <div className="mb-8">
+                <h4 className="text-2xl font-bold text-[#121826] mb-4 text-center">Detailed Results: LLM vs Human Reviewers</h4>
+                <div className="flex justify-center">
+                  <img src="/HireVerse_Website/llm_human_ranking.png" alt="LLM vs Human Rankings" className="max-w-full h-auto rounded-xl shadow-lg border-2 border-[#8D34F6]" />
+                </div>
+              </div>
+
+              {/* Evaluation Output Examples - Expandable Dropdowns */}
+              <div>
+                <h4 className="text-2xl font-bold text-[#121826] mb-6 text-center">Evaluation Output Examples</h4>
+                <div className="space-y-4">
+                  {/* Evaluation 1 Output */}
+                  <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#6CC0F9]">
+                    <button
+                      onClick={() => setExpandedEvals({...expandedEvals, eval1: !expandedEvals.eval1})}
+                      className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#6CC0F9]/5 transition-colors rounded-xl"
+                    >
+                      <span className="text-lg font-semibold text-[#121826]">Job-Family Classification Accuracy Output</span>
+                      {expandedEvals.eval1 ?
+                        <ChevronDown className="w-6 h-6 text-[#6CC0F9]" /> :
+                        <ChevronRight className="w-6 h-6 text-[#6CC0F9]" />
+                      }
+                    </button>
+                    {expandedEvals.eval1 && (
+                      <div className="px-6 pb-4">
+                        <img src="/HireVerse_Website/evaluation_1_output.png" alt="Evaluation 1 Output" className="w-full h-auto rounded-lg border-2 border-[#6CC0F9]" />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Evaluation 2 Output */}
+                  <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#8D34F6]">
+                    <button
+                      onClick={() => setExpandedEvals({...expandedEvals, eval2: !expandedEvals.eval2})}
+                      className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#8D34F6]/5 transition-colors rounded-xl"
+                    >
+                      <span className="text-lg font-semibold text-[#121826]">LLM-as-a-Judge Output</span>
+                      {expandedEvals.eval2 ?
+                        <ChevronDown className="w-6 h-6 text-[#8D34F6]" /> :
+                        <ChevronRight className="w-6 h-6 text-[#8D34F6]" />
+                      }
+                    </button>
+                    {expandedEvals.eval2 && (
+                      <div className="px-6 pb-4">
+                        <img src="/HireVerse_Website/evaluation_2_output.png" alt="Evaluation 2 Output" className="w-full h-auto rounded-lg border-2 border-[#8D34F6]" />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Evaluation 3 Output (2 pages) */}
+                  <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#FF6C5C]">
+                    <button
+                      onClick={() => setExpandedEvals({...expandedEvals, eval3: !expandedEvals.eval3})}
+                      className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#FF6C5C]/5 transition-colors rounded-xl"
+                    >
+                      <span className="text-lg font-semibold text-[#121826]">Human Candidate Feedback Output</span>
+                      {expandedEvals.eval3 ?
+                        <ChevronDown className="w-6 h-6 text-[#FF6C5C]" /> :
+                        <ChevronRight className="w-6 h-6 text-[#FF6C5C]" />
+                      }
+                    </button>
+                    {expandedEvals.eval3 && (
+                      <div className="px-6 pb-4 space-y-4">
+                        <img src="/HireVerse_Website/evaluation_3_output_page1.png" alt="Evaluation 3 Output Page 1" className="w-full h-auto rounded-lg border-2 border-[#FF6C5C]" />
+                        <img src="/HireVerse_Website/evaluation_3_output_page2.png" alt="Evaluation 3 Output Page 2" className="w-full h-auto rounded-lg border-2 border-[#FF6C5C]" />
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </section>
