@@ -8,6 +8,7 @@ function App() {
   const [expandedCVs, setExpandedCVs] = useState({});
   const [expandedEvals, setExpandedEvals] = useState({});
   const [jobsData, setJobsData] = useState([]);
+  const [accuracyContent, setAccuracyContent] = useState('');
 
   useEffect(() => {
     // Load jobs data
@@ -15,6 +16,12 @@ function App() {
       .then(res => res.json())
       .then(data => setJobsData(data))
       .catch(err => console.error('Error loading jobs:', err));
+
+    // Load accuracy evaluation markdown
+    fetch('/HireVerse_Website/Candidate_Evaluation_Accuracy.md')
+      .then(res => res.text())
+      .then(data => setAccuracyContent(data))
+      .catch(err => console.error('Error loading accuracy eval:', err));
   }, []);
 
   const toggleCategory = (category) => {
@@ -978,7 +985,9 @@ function App() {
                     </button>
                     {expandedEvals.eval1 && (
                       <div className="px-6 pb-4">
-                        <img src="/HireVerse_Website/evaluation_1_output.png" alt="Evaluation 1 Output" className="w-full h-auto rounded-lg border-2 border-[#6CC0F9]" />
+                        <pre className="bg-gray-50 p-4 rounded-lg border-2 border-[#6CC0F9] overflow-x-auto text-sm font-mono whitespace-pre text-[#121826]">
+                          {accuracyContent}
+                        </pre>
                       </div>
                     )}
                   </div>
