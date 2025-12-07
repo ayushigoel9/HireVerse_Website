@@ -611,6 +611,50 @@ function App() {
                 </div>
               </div>
             </section>
+
+            {/* Models Section */}
+            <section className="mb-12">
+              <h3 className="text-3xl font-bold text-[#121826] mb-4 text-center">Models</h3>
+              <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
+                The team tested three matching approaches to identify the most effective solution for pairing candidates with relevant job opportunities.
+              </p>
+
+              {/* CareerBERT and Titan - Two Boxes */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* CareerBERT Box */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
+                  <h4 className="text-xl font-semibold text-[#121826] mb-4">CareerBERT</h4>
+                  <p className="text-[#121826] leading-relaxed mb-4">
+                    From our literature review and online research, we identified CareerBERT as a promising model to get started with. It is both computationally efficient and experimentally well-validated, outperforming multiple prior approaches in earlier studies (<a href="#" className="text-[#8D34F6] hover:underline">Link</a>). However, CareerBERT has important limitations. It was trained primarily on German job postings, and prior work suggests it can struggle to differentiate closely related roles.
+                  </p>
+                  <p className="text-[#121826] leading-relaxed">
+                    Our first set of experiments therefore focused on assessing how well CareerBERT generalizes, specifically, whether a model fine-tuned on German job data could still perform effectively on English CVs and job descriptions. We used CareerBERT to generate semantic embeddings for each CV and job description, then compared pairs using cosine similarity to retrieve a match score.
+                  </p>
+                </div>
+
+                {/* Titan Box */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
+                  <h4 className="text-xl font-semibold text-[#121826] mb-4">Amazon Titan Embeddings</h4>
+                  <p className="text-[#121826] leading-relaxed">
+                    In the second stage, we tested whether a more general-purpose embedding model could rival or surpass CareerBERT. We used Amazon Titan Embeddings on Bedrock to create CV and job embeddings, again ranking roles using cosine similarity (<a href="#" className="text-[#6CC0F9] hover:underline">Link</a>). Titan offered strong operational advantages as a native cloud model, including tighter integration with S3, Lambda, and Bedrock security and compliance frameworks.
+                  </p>
+                </div>
+              </div>
+
+              {/* Multi-stage Matching Pipeline - Full Width Box */}
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#FF6C5C]">
+                <h4 className="text-xl font-semibold text-[#121826] mb-4">Multi-stage Matching Pipeline</h4>
+                <p className="text-[#121826] leading-relaxed mb-4">
+                  In the full matching model, both CVs and job descriptions undergo an additional enrichment stage to produce standardized, interpretable profiles. For CVs, the Profile Enricher infers a candidate's macroarea (e.g., TECH, ACCOUNTING, LEGAL), seniority level (JUNIOR, MID, SENIOR), and a primary title such as "Senior Data Scientist,". These profile attributes later guide seniority pre-filters, skill relevance scoring, and explainability.
+                </p>
+                <p className="text-[#121826] leading-relaxed mb-4">
+                  Job descriptions follow a parallel flow in which key skills are mapped to a canonical ontology and tagged by importance, while profile features such as seniority expectations, years of experience, and leadership requirements are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
+                </p>
+                <p className="text-[#121826] leading-relaxed">
+                  Once enriched, the CV embedding is compared with all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores with clear, human-readable reasoning.
+                </p>
+              </div>
+            </section>
           </div>
         )}
 
