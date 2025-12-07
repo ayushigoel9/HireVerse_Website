@@ -683,26 +683,26 @@ function App() {
 
                 {/* Multi-stage Matching Pipeline Box - Text Left, Image Right */}
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#FF6C5C]">
-                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="flex items-center gap-3 mb-4">
+                    <img src="/HireVerse_Website/careerBert.png" alt="Multi-stage Pipeline" className="w-10 h-10" />
+                    <h4 className="text-xl font-semibold text-[#121826]">Multi-stage Matching Pipeline</h4>
+                  </div>
+                  <div className="flex flex-col md:flex-row gap-6 items-start mb-4">
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-4">
-                        <img src="/HireVerse_Website/careerBert.png" alt="Multi-stage Pipeline" className="w-10 h-10" />
-                        <h4 className="text-xl font-semibold text-[#121826]">Multi-stage Matching Pipeline</h4>
-                      </div>
                       <p className="text-[#121826] leading-relaxed mb-4">
                         In the full matching model, both CVs and job descriptions undergo an additional enrichment stage to produce standardized, interpretable profiles. For CVs, the Profile Enricher infers a candidate's macroarea (e.g., TECH, ACCOUNTING, LEGAL), seniority level (JUNIOR, MID, SENIOR), and a primary title such as "Senior Data Scientist,". These profile attributes later guide seniority pre-filters, skill relevance scoring, and explainability.
                       </p>
-                      <p className="text-[#121826] leading-relaxed mb-4">
-                        Job descriptions follow a parallel flow in which key skills are mapped to a canonical ontology and tagged by importance, while profile features such as seniority expectations, years of experience, and leadership requirements are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
-                      </p>
                       <p className="text-[#121826] leading-relaxed">
-                        Once enriched, the CV embedding is compared with all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores with clear, human-readable reasoning.
+                        Job descriptions follow a parallel flow in which key skills are mapped to a canonical ontology and tagged by importance, while profile features such as seniority expectations, years of experience, and leadership requirements are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
                       </p>
                     </div>
                     <div className="flex-shrink-0">
                       <img src="/HireVerse_Website/model_3.png" alt="Multi-stage Pipeline Model" className="max-w-2xl h-auto rounded-xl shadow-lg" />
                     </div>
                   </div>
+                  <p className="text-[#121826] leading-relaxed">
+                    Once enriched, the CV embedding is compared with all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores with clear, human-readable reasoning.
+                  </p>
                 </div>
               </div>
             </section>
