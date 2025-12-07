@@ -72,7 +72,7 @@ function App() {
 
       <div className="relative flex-1 flex flex-col" style={{ zIndex: 10 }}>
         {/* Tab Navigation - At Very Top */}
-        <nav className="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-50 border-b-2 border-[#6CC0F9]">
+        <nav className="bg-white/60 backdrop-blur-md shadow-md sticky top-0 z-50 border-b-2 border-[#6CC0F9]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex gap-1">
               <button
@@ -174,7 +174,7 @@ function App() {
               <div className="flex items-center justify-center gap-6 mb-8">
                 <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-32" />
                 <h1 className="text-8xl font-bold text-[#121826]">
-                  HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#E8F77B]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.5)' }}>i</span>
+                  HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#FF6C5C]">A</span><span className="text-[#121826]">i</span>
                 </h1>
               </div>
               <p className="text-3xl text-[#121826] italic mb-8 font-semibold">Precise. Transparent. Fair.</p>
@@ -1426,7 +1426,7 @@ function App() {
         )}
       </main>
 
-      <footer className="bg-white/90 backdrop-blur-md border-t-2 border-[#8D34F6]">
+      <footer className="bg-white/60 backdrop-blur-md border-t-2 border-[#8D34F6]">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <p className="text-center text-[#121826]">
             HireVerse.AI - Connecting talent with opportunity through intelligent matching
