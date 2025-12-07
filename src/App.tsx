@@ -553,7 +553,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
                   <h4 className="text-xl font-semibold text-[#121826] mb-4">LLM-as-a-Judge</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    Used a separate model to score the top five recommendations for each candidate and rank each model's bucket of top-five results. This enabled more granular evaluation, including seniority, domain alignment, and overall fit. <span className="text-[#8D34F6] font-semibold">[WHICH MODEL WAS USED?]</span>
+                    Claude Sonnet 3.7 was used to score and rank the top five recommendations for each candidate across all models. This evaluation assessed seniority alignment, domain relevance, and overall match quality, enabling granular comparison of model performance beyond simple classification metrics.
                   </p>
                 </div>
 
