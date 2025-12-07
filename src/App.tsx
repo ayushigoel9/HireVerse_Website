@@ -585,25 +585,26 @@ function App() {
 
               {/* Two Processing Boxes Stacked */}
               <div className="space-y-6">
-                {/* CV Processing Box with Text and Image Side by Side */}
+                {/* CV Processing Box - Image Left, Text Right */}
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
-                  <h4 className="text-xl font-semibold text-[#121826] mb-4">CV Processing</h4>
                   <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="flex-shrink-0">
+                      <img src="/HireVerse_Website/cv_parser.png" alt="CV Parser" className="max-w-md h-auto rounded-xl shadow-lg" />
+                    </div>
                     <div className="flex-1">
                       <p className="text-[#121826] leading-relaxed">
                         When a candidate uploads their résumé, the CV processing pipeline initiates a multi-stage workflow orchestrated by a system-level coordinator. Apache Tika first converts the PDF into clean, machine-readable text, which then undergoes deterministic preprocessing to normalize the output into a structured base JSON format. The intelligence layer follows, deploying six specialized, LLM-powered agents, each focused on extracting a specific résumé section: personal information, resume summary, education, professional experience, technical and soft skills, and extra information like certifications and languages. The orchestrator then merges all agent outputs into a single, rich JSON document that comprehensively captures the candidate's profile.
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
-                      <img src="/HireVerse_Website/cv_parser.png" alt="CV Parser" className="max-w-md h-auto rounded-xl shadow-lg" />
-                    </div>
                   </div>
                 </div>
 
-                {/* Job Description Processing Box with Text and Image Side by Side */}
+                {/* Job Description Processing Box - Image Left, Text Right */}
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
-                  <h4 className="text-xl font-semibold text-[#121826] mb-4">Job Description Processing</h4>
                   <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="flex-shrink-0">
+                      <img src="/HireVerse_Website/job_parser.png" alt="Job Parser" className="max-w-md h-auto rounded-xl shadow-lg" />
+                    </div>
                     <div className="flex-1">
                       <p className="text-[#121826] leading-relaxed mb-4">
                         The job description processing follows a similarly structured approach, beginning with a hand-curated dataset of 100 high-quality job descriptions selected to represent diverse roles within our focus industries. Each job description is converted into a structured JSON format containing four key sections:
@@ -626,9 +627,6 @@ function App() {
                           <span>Nice-to-have skills when available</span>
                         </li>
                       </ul>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <img src="/HireVerse_Website/job_parser.png" alt="Job Parser" className="max-w-md h-auto rounded-xl shadow-lg" />
                     </div>
                   </div>
                 </div>
