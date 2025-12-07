@@ -700,7 +700,7 @@ function App() {
                       </p>
                     </div>
                     <div className="flex-shrink-0">
-                      <img src="/HireVerse_Website/model_3.png" alt="Multi-stage Pipeline Model" className="max-w-md h-auto rounded-xl shadow-lg" />
+                      <img src="/HireVerse_Website/model_3.png" alt="Multi-stage Pipeline Model" className="max-w-2xl h-auto rounded-xl shadow-lg" />
                     </div>
                   </div>
                 </div>
