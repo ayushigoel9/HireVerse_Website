@@ -615,9 +615,14 @@ function App() {
             {/* Models Section */}
             <section className="mb-12">
               <h3 className="text-3xl font-bold text-[#121826] mb-4 text-center">Models</h3>
-              <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
-                The team tested three matching approaches to identify the most effective solution for pairing candidates with relevant job opportunities.
+              <p className="text-[#121826] leading-relaxed mb-4 text-center max-w-5xl mx-auto">
+                To evaluate different strategies for job–candidate matching, the team tested three approaches:
               </p>
+              <ul className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto space-y-1">
+                <li>A baseline using CareerBERT embeddings</li>
+                <li>A cloud-native approach using AWS Titan Embeddings</li>
+                <li>A full multi-stage matching pipeline powered by LLMs</li>
+              </ul>
 
               {/* CareerBERT and Titan - Two Boxes */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
