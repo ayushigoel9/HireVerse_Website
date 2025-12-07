@@ -660,7 +660,7 @@ function App() {
                 </div>
 
                 {/* Job Large Box */}
-                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border-2 border-[#6CC0F9] shadow-xl">
+                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border-2 border-[#6CC0F9] shadow-xl ml-12">
                   <div className="flex items-center gap-6">
                     {/* Job Stats - 3 Small Boxes */}
                     <div className="flex gap-4">
