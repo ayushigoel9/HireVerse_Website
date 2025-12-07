@@ -587,9 +587,27 @@ function App() {
                 {/* JD Processing Box */}
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
                   <h4 className="text-xl font-semibold text-[#121826] mb-4">Job Description Processing</h4>
-                  <p className="text-[#121826] leading-relaxed">
-                    The job description processing follows a similarly structured approach, beginning with a hand-curated dataset of 100 high-quality job descriptions selected to represent diverse roles within our focus industries. Each job description is converted into a structured JSON format containing four key sections: the job title, the role description outlining responsibilities and expectations, required or minimum competencies, and any nice-to-have skills when available.
+                  <p className="text-[#121826] leading-relaxed mb-4">
+                    The job description processing follows a similarly structured approach, beginning with a hand-curated dataset of 100 high-quality job descriptions selected to represent diverse roles within our focus industries. Each job description is converted into a structured JSON format containing four key sections:
                   </p>
+                  <ul className="space-y-2 text-[#121826] leading-relaxed ml-5">
+                    <li className="flex gap-2">
+                      <span className="text-[#6CC0F9] mt-1">•</span>
+                      <span>The job title</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#6CC0F9] mt-1">•</span>
+                      <span>The role description outlining responsibilities and expectations</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#6CC0F9] mt-1">•</span>
+                      <span>Required or minimum competencies</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[#6CC0F9] mt-1">•</span>
+                      <span>Nice-to-have skills when available</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </section>
