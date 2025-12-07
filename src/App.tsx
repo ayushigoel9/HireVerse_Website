@@ -569,31 +569,26 @@ function App() {
 
             {/* Data Pipeline Section */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-[#121826] mb-8 text-center">Data Pipeline</h2>
-              <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#6CC0F9]">
-                <div className="mb-8">
-                  <h5 className="text-xl font-semibold text-[#121826] mb-3">CV Processing</h5>
+              <h3 className="text-3xl font-bold text-[#121826] mb-4 text-center">Data Pipeline</h3>
+              <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
+                Before the data was fed into any matching logic, it underwent a preparation process to reduce noise and standardize structure. This involved parsing and cleaning both CVs and job descriptions, extracting text, and normalizing formatting.
+              </p>
+
+              {/* Two Processing Boxes */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* CV Processing Box */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#8D34F6]">
+                  <h4 className="text-xl font-semibold text-[#121826] mb-4">CV Processing</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    When a candidate uploads their resume, the CV processing pipeline initiates a sophisticated multi-stage workflow
-                    orchestrated by a top-level system coordinator. Apache Tika first converts the PDF into clean, machine-readable text,
-                    which then undergoes a deterministic preprocessing step that normalizes the output into a structured base JSON format.
-                    The intelligence layer follows, deploying six specialized LLM-powered agents, each focused on extracting specific resume
-                    sections: personal information, professional experience, projects, education, technical and soft skills, and certifications
-                    and languages. The orchestrator then merges all agent outputs into a single, rich JSON document that comprehensively
-                    captures the candidate's profile. Finally, this structured result is stored in S3 and returned to the frontend, enabling
-                    instant population of the candidate's profile page with accurately parsed information.
+                    When a candidate uploads their résumé, the CV processing pipeline initiates a multi-stage workflow orchestrated by a system-level coordinator. Apache Tika first converts the PDF into clean, machine-readable text, which then undergoes deterministic preprocessing to normalize the output into a structured base JSON format. The intelligence layer follows, deploying six specialized, LLM-powered agents, each focused on extracting a specific résumé section: personal information, resume summary, education, professional experience, technical and soft skills, and extra information like certifications and languages. The orchestrator then merges all agent outputs into a single, rich JSON document that comprehensively captures the candidate's profile.
                   </p>
                 </div>
 
-                <div>
-                  <h5 className="text-xl font-semibold text-[#121826] mb-3">Job Description Processing</h5>
+                {/* JD Processing Box */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#6CC0F9]">
+                  <h4 className="text-xl font-semibold text-[#121826] mb-4">Job Description Processing</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    The job description processing follows a parallel structured approach, beginning with a hand-curated dataset of 100
-                    high-quality job descriptions that have been carefully selected to represent diverse roles and industries. Each job
-                    description is converted into a structured JSON format containing four key sections: the job title, the role description
-                    providing an overview of responsibilities and expectations, the required or minimum competencies that candidates must possess,
-                    and the nice-to-have skills that are preferred but not mandatory when available. All job JSONs are systematically stored in S3,
-                    creating a well-organized repository that is ready for efficient matching against candidate profiles through the matching engine.
+                    The job description processing follows a similarly structured approach, beginning with a hand-curated dataset of 100 high-quality job descriptions selected to represent diverse roles within our focus industries. Each job description is converted into a structured JSON format containing four key sections: the job title, the role description outlining responsibilities and expectations, required or minimum competencies, and any nice-to-have skills when available.
                   </p>
                 </div>
               </div>
