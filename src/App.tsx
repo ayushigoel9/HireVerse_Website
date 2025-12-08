@@ -446,27 +446,6 @@ function App() {
               <h2 className="text-4xl font-bold text-[#121826]">Demo</h2>
             </div>
 
-            {/* Demo Description */}
-            <div className="mb-8 space-y-6">
-              <p className="text-[#121826] leading-relaxed text-lg">
-                To assess the effectiveness of our agent-based parsing and matching pipelines, we assembled a dataset consisting of 47 synthetic CVs (https://enhancv.com/) and 20 real CVs provided directly by candidates. Because the first iteration of the product focused primarily on the CV extraction pipeline, all CVs were kept in their original PDF format to preserve realistic preprocessing and parsing challenges.
-              </p>
-              <p className="text-[#121826] leading-relaxed text-lg">
-                On the job-description side, we concentrated on our two priority domains: Software Engineering and Data Science. To evaluate how well the models behave when exposed to unrelated or less relevant opportunities, we supplemented the dataset with 10 Accounting and 10 Legal positions. All job descriptions were collected from publicly available LinkedIn postings and manually cleaned to ensure consistency and minimize noise. Each role was normalized into four structured components:
-              </p>
-              <ul className="list-disc list-inside text-[#121826] text-lg space-y-2 ml-4">
-                <li>Job title</li>
-                <li>Role description, outlining responsibilities</li>
-                <li>Required (minimum) competencies</li>
-                <li>Nice-to-have skills, when available</li>
-              </ul>
-              <p className="text-[#121826] leading-relaxed text-lg">
-                Both the CVs and job descriptions were hand-labeled by the team, with real candidate feedback incorporated into the labeling of actual CVs. This ground-truth annotation enabled us to benchmark performance and evaluate how closely different matching strategies align with real-world candidate judgment.
-              </p>
-              <p className="text-[#121826] leading-relaxed text-lg">
-                Below, we provide the complete set of job descriptions used in our evaluation. For privacy reasons, we do not release the candidate CVs used in the assessment framework.
-              </p>
-            </div>
 
             <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#6CC0F9]">
               <div className="rounded-xl overflow-hidden border-2 border-[#8D34F6]">
