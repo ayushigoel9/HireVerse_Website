@@ -791,7 +791,7 @@ function App() {
 
               {/* LLM vs Human Rankings Table */}
               <div className="mb-8">
-                <h4 className="text-2xl font-bold text-[#121826] mb-4 text-center">Detailed Results: LLM vs Human Reviewers</h4>
+                <h4 className="text-2xl font-bold text-[#121826] mb-4 text-center">Detailed Results: Human Reviewers vs LLM</h4>
                 <div className="space-y-4">
                   {/* Row 1: CVs 1-3 */}
                   <div className="overflow-x-auto">
@@ -802,22 +802,22 @@ function App() {
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#E8F77B]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 1</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#6CC0F9]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 2</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 3</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                         </tr>
@@ -863,22 +863,22 @@ function App() {
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 4</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#E8F77B]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 5</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#6CC0F9]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 6</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                         </tr>
@@ -924,22 +924,22 @@ function App() {
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 7</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#E8F77B]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 8</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                           <th className="px-3 py-2 text-center font-semibold text-[#121826] bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 9</div>
                             <div className="flex justify-between text-xs">
-                              <span className="flex-1 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
+                              <span className="flex-1 px-2">LLM</span>
                             </div>
                           </th>
                         </tr>
