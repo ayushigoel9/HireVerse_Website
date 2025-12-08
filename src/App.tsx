@@ -506,7 +506,7 @@ function App() {
               <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 border-2 border-[#8D34F6]">
                 <p className="text-[#121826] text-center mb-6 text-lg">
                   New team members can deploy their own complete HireVerse infrastructure with a single command.
-                  No complex setup, no manual configuration—just instant access to a fully functional development environment.
+                  No complex setup, no manual configuration, just instant access to a fully functional development environment.
                 </p>
                 <div className="rounded-xl overflow-hidden border-2 border-[#6CC0F9]">
                   <img src="/HireVerse_Website/deploy_colored2.png" alt="Simple deployment" className="w-full" />
