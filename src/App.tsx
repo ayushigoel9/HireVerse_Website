@@ -182,7 +182,7 @@ function App() {
               </div>
               <p className="text-2xl text-[#121826] max-w-5xl mx-auto leading-relaxed">
                 Connecting talented professionals with their dream opportunities through intelligent AI-powered matching.
-                No more keyword games—just fair, transparent job matching that sees your true potential.
+                No more keyword games. Just fair, transparent job matching that sees your true potential.
               </p>
             </div>
           </div>
