@@ -234,7 +234,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#E8F77B] hover:shadow-2xl transition-shadow">
                   <h4 className="text-xl font-bold text-[#121826] mb-3">Inconsistent Matching</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    Tools designed to mimic ATS behavior (such as Jobscan) often show dramatic fluctuations in match scores between similar jobs—not because a candidate lacks the relevant skills, but because of minor wording discrepancies.
+                    Tools designed to mimic ATS behavior (such as Jobscan) often show dramatic fluctuations in match scores between similar jobs. These inconsistencies occur not because a candidate lacks the relevant skills, but because of minor wording discrepancies.
                   </p>
                 </div>
               </div>
@@ -245,7 +245,7 @@ function App() {
               <h3 className="text-3xl font-bold text-[#121826] mb-8 text-center">Value Proposition</h3>
               <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-10 border-2 border-[#8D34F6]">
                 <p className="text-xl leading-relaxed text-[#121826] text-center">
-                  HireVerse eliminates the resume fine-tuning problem by allowing candidates to <span className="font-bold">apply blindly</span>, meaning they don't need to know which specific jobs are on the platform, nor tailor their resume to any particular posting. Instead of rewarding keyword manipulation, HireVerse evaluates candidates based solely on <span className="font-bold">who they are and what they can do</span>. The matching engine combines mathematical scoring with LLM-driven semantic understanding to recognize skills regardless of how they are phrased. This creates a system where matches are <span className="font-bold">fair, consistent, and genuinely reflective</span> of the candidate's abilities—not their ability to game an ATS.
+                  HireVerse eliminates the resume fine-tuning problem by allowing candidates to <span className="font-bold">apply blindly</span>, meaning they don't need to know which specific jobs are on the platform, nor tailor their resume to any particular posting. Instead of rewarding keyword manipulation, HireVerse evaluates candidates based solely on <span className="font-bold">who they are and what they can do</span>. The matching engine combines mathematical scoring with LLM-driven semantic understanding to recognize skills regardless of how they are phrased. This creates a system where matches are <span className="font-bold">fair, consistent, and genuinely reflective</span> of the candidate's abilities, not their ability to game an ATS.
                 </p>
               </div>
             </section>
