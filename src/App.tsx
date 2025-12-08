@@ -196,10 +196,11 @@ function App() {
               <h3 className="text-3xl font-bold text-[#121826] mb-8 text-center">Motivation</h3>
 
               {/* Intro Text */}
+              <p className="text-[#121826] leading-relaxed text-lg text-center max-w-5xl mx-auto mb-4">
+                The current job application process faces significant challenges that impact both candidates and recruiters. Many applicants experience frustration when applying to roles that seem like perfect fits, only to receive no response at all. Much of this problem centers around Applicant Tracking systems (ATS), which create a vicious cycle: candidates must continually fine tune their resume for every job they apply to in order to have a chance of being considered.
+              </p>
               <p className="text-[#121826] leading-relaxed text-lg text-center max-w-5xl mx-auto mb-8">
-                The current job application process faces significant challenges that affect both candidates and recruiters.
-                Applicants experience frustration when applying to positions that appear to be perfect matches, only to receive no response.
-                The core issues include:
+                A closer look at the job application path reveals several key issues:
               </p>
 
               {/* Problem Cards Grid */}
@@ -208,8 +209,8 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#8D34F6] hover:shadow-2xl transition-shadow">
                   <h4 className="text-xl font-bold text-[#121826] mb-3">Applicant Tracking Systems (ATS) Dominance</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    Almost every company uses ATS software to automate and manage recruitment, which filters out
-                    <span className="font-bold text-[#8D34F6]"> up to 75% of resumes</span> before human recruiters ever review them.
+                    Nearly all companies now rely on ATS software to automate and manage recruitment. These systems filter out
+                    <span className="font-bold text-[#8D34F6]"> up to 75% of resumes</span> before a human recruiter ever sees them.
                   </p>
                 </div>
 
@@ -217,8 +218,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#6CC0F9] hover:shadow-2xl transition-shadow">
                   <h4 className="text-xl font-bold text-[#121826] mb-3">Keyword-Driven Filtering</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    Traditional ATS tools rely heavily on exact keyword matching. Even highly qualified candidates can be overlooked
-                    if their resume wording doesn't precisely match the system's expectations.
+                    Traditional ATS tools depend heavily on exact keyword matching. As a result, even highly qualified candidates may be overlooked simply because their resume doesn't use the precise wording the system expects.
                   </p>
                 </div>
 
@@ -226,8 +226,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#FF6C5C] hover:shadow-2xl transition-shadow">
                   <h4 className="text-xl font-bold text-[#121826] mb-3">Resume Customization Burden</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    Candidates must customize their CV for every single job application to optimize ATS scores, making job hunting itself
-                    a full-time job. What appears as a strong match in one application scores poorly in another similar position simply due to wording differences.
+                    To improve their chances, candidates must tailor their resume for every single job application, effectively turning job hunting into a full-time job. A resume that scores well for one role may score poorly for a nearly identical role solely due to slight differences in phrasing.
                   </p>
                 </div>
 
@@ -235,8 +234,7 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#E8F77B] hover:shadow-2xl transition-shadow">
                   <h4 className="text-xl font-bold text-[#121826] mb-3">Inconsistent Matching</h4>
                   <p className="text-[#121826] leading-relaxed">
-                    Tools that mimic ATS behavior (like Jobscan) reveal that match scores fluctuate dramatically between similar jobs,
-                    not due to skill gaps but because of phrasing mismatches.
+                    Tools designed to mimic ATS behavior (such as Jobscan) often show dramatic fluctuations in match scores between similar jobs—not because a candidate lacks the relevant skills, but because of minor wording discrepancies.
                   </p>
                 </div>
               </div>
@@ -247,10 +245,7 @@ function App() {
               <h3 className="text-3xl font-bold text-[#121826] mb-8 text-center">Value Proposition</h3>
               <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-10 border-2 border-[#8D34F6]">
                 <p className="text-xl leading-relaxed text-[#121826] text-center">
-                  HireVerse removes the resume fine-tuning problem by allowing candidates to <span className="font-bold">apply blindly</span>.
-                  Matching is based purely on <span className="font-bold">who they are</span>, not how well they manipulate keywords.
-                  The system combines mathematical scoring with LLM intelligence to identify skills regardless of phrasing,
-                  creating <span className="font-bold">fair, consistent, and genuinely reflective</span> candidate-job matches.
+                  HireVerse eliminates the resume fine-tuning problem by allowing candidates to <span className="font-bold">apply blindly</span>, meaning they don't need to know which specific jobs are on the platform, nor tailor their resume to any particular posting. Instead of rewarding keyword manipulation, HireVerse evaluates candidates based solely on <span className="font-bold">who they are and what they can do</span>. The matching engine combines mathematical scoring with LLM-driven semantic understanding to recognize skills regardless of how they are phrased. This creates a system where matches are <span className="font-bold">fair, consistent, and genuinely reflective</span> of the candidate's abilities—not their ability to game an ATS.
                 </p>
               </div>
             </section>
