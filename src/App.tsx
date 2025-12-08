@@ -813,21 +813,21 @@ function App() {
                       <thead>
                         <tr className="bg-[#CAB9D0] text-white">
                           <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 text-sm">RANK</th>
-                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 bg-[#E8F77B]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 1</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
                             </div>
                           </th>
-                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 bg-[#6CC0F9]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 2</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
                             </div>
                           </th>
-                          <th className="px-3 py-2 text-center font-semibold" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 3</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
@@ -874,21 +874,21 @@ function App() {
                       <thead>
                         <tr className="bg-[#CAB9D0] text-white">
                           <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 text-sm">RANK</th>
-                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 4</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
                             </div>
                           </th>
-                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 bg-[#E8F77B]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 5</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
                             </div>
                           </th>
-                          <th className="px-3 py-2 text-center font-semibold" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold bg-[#6CC0F9]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 6</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
@@ -935,21 +935,21 @@ function App() {
                       <thead>
                         <tr className="bg-[#CAB9D0] text-white">
                           <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 text-sm">RANK</th>
-                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 7</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
                             </div>
                           </th>
-                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold border-r-2 border-white/20 bg-[#E8F77B]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 8</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
                               <span className="flex-1 px-2">Owner of CV</span>
                             </div>
                           </th>
-                          <th className="px-3 py-2 text-center font-semibold" colSpan="2">
+                          <th className="px-3 py-2 text-center font-semibold bg-[#CAB9D0]" colSpan="2">
                             <div className="text-sm mb-1">Golden CV 9</div>
                             <div className="flex justify-between text-xs">
                               <span className="flex-1 border-r border-white/20 px-2">LLM</span>
@@ -988,6 +988,22 @@ function App() {
                         </tr>
                       </tbody>
                     </table>
+                  </div>
+                </div>
+
+                {/* Legend */}
+                <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-[#E8F77B]"></div>
+                    <span className="text-sm text-[#121826]">Human-LLM reviewers total agreement</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-[#6CC0F9]"></div>
+                    <span className="text-sm text-[#121826]">Human-LLM reviewers partial, top agreement</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-[#CAB9D0]"></div>
+                    <span className="text-sm text-[#121826]">Human-LLM reviewers no agreement</span>
                   </div>
                 </div>
               </div>
