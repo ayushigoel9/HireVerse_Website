@@ -663,8 +663,11 @@ function App() {
                         <img src="/HireVerse_Website/careerBert.png" alt="CareerBERT" className="w-10 h-10" />
                         <h4 className="text-xl font-semibold text-[#121826]">CareerBERT</h4>
                       </div>
+                      <p className="text-[#121826] leading-relaxed mb-4">
+                        From our literature review and online research, we identified CareerBERT as a promising model to get started with. It is both computationally efficient and experimentally well-validated, outperforming multiple prior approaches in earlier studies (<a href="https://aclanthology.org/2021.nuse-1.6/" target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline">Link</a>). However, CareerBERT comes with important limitations. It was trained primarily on German job postings, and existing research suggests it can struggle to differentiate closely related or highly specialized roles.
+                      </p>
                       <p className="text-[#121826] leading-relaxed">
-                        CareerBERT is a domain-specific BERT model fine-tuned explicitly for job recommendation and candidate-job matching tasks. It is computationally efficient and experimentally well-validated in the academic literature (<a href="https://aclanthology.org/2021.nuse-1.6/" target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline">Link</a>). However, it was trained primarily on German job postings, raising questions about its applicability to English-language CVs and U.S.-based job descriptions.
+                        Our initial experiments therefore examined how well CareerBERT generalizes. Specifically, whether a model fine-tuned on German job data could still perform effectively on English CVs and job descriptions. We used CareerBERT to generate semantic embeddings for both CVs and roles, then compared CV–JD pairs using cosine similarity to produce match scores.
                       </p>
                     </div>
                     <div className="flex-shrink-0">
@@ -679,10 +682,10 @@ function App() {
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-4">
                         <img src="/HireVerse_Website/titian.png" alt="Titan" className="w-10 h-10" />
-                        <h4 className="text-xl font-semibold text-[#121826]">Amazon Titan Embeddings</h4>
+                        <h4 className="text-xl font-semibold text-[#121826]">Amazon Titan</h4>
                       </div>
                       <p className="text-[#121826] leading-relaxed">
-                        Titan is AWS's general-purpose text embedding model. The hypothesis was that a more general-purpose embedding model could rival or outperform CareerBERT due to its broader training corpus and better semantic generalization. Additionally, Titan offers seamless integration with S3, Lambda, and Bedrock's security and compliance frameworks, making it an attractive candidate for production deployment.
+                        In the second phase, we tested whether a more general-purpose embedding model could rival or outperform CareerBERT. We applied Amazon Titan Embeddings on Bedrock to create CV and job embeddings and again ranked jobs using cosine similarity (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank" rel="noopener noreferrer" className="text-[#6CC0F9] hover:underline">Link</a>). Titan offered strong operational advantages as a native cloud model, including seamless integration with S3, Lambda, and Bedrock's security and compliance frameworks.
                       </p>
                     </div>
                     <div className="flex-shrink-0">
@@ -695,32 +698,38 @@ function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 border-2 border-[#FF6C5C]">
                   <div className="flex items-center gap-3 mb-4">
                     <img src="/HireVerse_Website/careerBert.png" alt="Multi-stage Pipeline" className="w-10 h-10" />
-                    <h4 className="text-xl font-semibold text-[#121826]">Multi-Stage Agentic Pipeline</h4>
+                    <h4 className="text-xl font-semibold text-[#121826]">Multi-stage matching pipeline</h4>
                   </div>
                   <p className="text-[#121826] leading-relaxed mb-4">
-                    The multi-stage pipeline represents a fundamentally different paradigm. Rather than relying solely on embeddings, it decomposes the matching problem into discrete reasoning steps, each powered by an LLM-based agent.
+                    In the full matching model, both CVs and job descriptions undergo an additional enrichment stage designed to create standardized and interpretable profiles.
                   </p>
                   <div className="flex flex-col md:flex-row gap-6 items-start mb-4">
                     <div className="flex-1">
                       <p className="text-[#121826] leading-relaxed mb-4">
-                        The pipeline begins with a Profile Enricher, which infers metadata that may not be explicitly stated in the CV, such as:
+                        For CVs, the Profile Enricher infers:
                       </p>
                       <ul className="space-y-2 text-[#121826] leading-relaxed ml-5 mb-4">
                         <li className="flex gap-2">
                           <span className="text-[#FF6C5C] mt-1">•</span>
-                          <span>Macroarea (e.g., Software Engineering, Data Science, Legal & Accounting)</span>
+                          <span>The candidate's macroarea (e.g., TECH, ACCOUNTING, LEGAL)</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#FF6C5C] mt-1">•</span>
-                          <span>Seniority level (e.g., Entry, Mid, Senior, Staff)</span>
+                          <span>Their seniority level (JUNIOR, MID, SENIOR)</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-[#FF6C5C] mt-1">•</span>
-                          <span>Primary professional title (e.g., Frontend Engineer, Data Scientist)</span>
+                          <span>A primary professional title such as "Senior Data Scientist"</span>
                         </li>
                       </ul>
+                      <p className="text-[#121826] leading-relaxed mb-4">
+                        These attributes help guide seniority pre-filters, skill relevance scoring, and downstream explainability.
+                      </p>
+                      <p className="text-[#121826] leading-relaxed mb-4">
+                        Job descriptions follow a parallel enrichment flow. Key skills are mapped to a canonical ontology and tagged by importance, while additional profile features, such as seniority expectations, required years of experience, and leadership responsibilities, are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
+                      </p>
                       <p className="text-[#121826] leading-relaxed">
-                        These inferred attributes guide downstream processing, ensuring that job recommendations align with both stated and implicit candidate characteristics. The enriched profile is then passed to the Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores with clear, human-readable reasoning.
+                        Once both sides are enriched, the CV embedding is compared against all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores accompanied by clear, human-readable explanations.
                       </p>
                     </div>
                     <div className="flex-shrink-0 -mt-16">
