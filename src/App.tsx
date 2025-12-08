@@ -722,20 +722,20 @@ function App() {
                           <span>A primary professional title such as "Senior Data Scientist"</span>
                         </li>
                       </ul>
-                      <p className="text-[#121826] leading-relaxed mb-4">
-                        These attributes help guide seniority pre-filters, skill relevance scoring, and downstream explainability.
-                      </p>
-                      <p className="text-[#121826] leading-relaxed mb-4">
-                        Job descriptions follow a parallel enrichment flow. Key skills are mapped to a canonical ontology and tagged by importance, while additional profile features, such as seniority expectations, required years of experience, and leadership responsibilities, are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
-                      </p>
                       <p className="text-[#121826] leading-relaxed">
-                        Once both sides are enriched, the CV embedding is compared against all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores accompanied by clear, human-readable explanations.
+                        These attributes help guide seniority pre-filters, skill relevance scoring, and downstream explainability.
                       </p>
                     </div>
                     <div className="flex-shrink-0 -mt-16">
                       <img src="/HireVerse_Website/model_3.png" alt="Multi-stage Pipeline Model" className="max-w-2xl h-auto rounded-xl shadow-lg" />
                     </div>
                   </div>
+                  <p className="text-[#121826] leading-relaxed mb-4">
+                    Job descriptions follow a parallel enrichment flow. Key skills are mapped to a canonical ontology and tagged by importance, while additional profile features, such as seniority expectations, required years of experience, and leadership responsibilities, are extracted from the job content. Each job is also embedded into the same semantic space as the CVs using Titan embeddings.
+                  </p>
+                  <p className="text-[#121826] leading-relaxed">
+                    Once both sides are enriched, the CV embedding is compared against all job embeddings to retrieve the Top-K most relevant roles. These candidates then pass through seniority checks and the downstream Skills Alignment and Match Decision Engines, which combine semantic and structured signals into final match scores accompanied by clear, human-readable explanations.
+                  </p>
                 </div>
               </div>
             </section>
