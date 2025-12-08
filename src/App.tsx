@@ -171,13 +171,15 @@ function App() {
         {activeTab === 'home' && (
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center px-6">
-              <div className="flex items-center justify-center gap-6 mb-2">
+              <div className="flex items-center justify-center gap-6 mb-8">
                 <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-32" />
-                <h1 className="text-8xl font-bold text-[#121826]">
-                  HireVerse<span className="text-[#121826]">.</span><span className="text-[#121826]">A</span><span className="text-[#121826]">i</span>
-                </h1>
+                <div>
+                  <h1 className="text-8xl font-bold text-[#121826] leading-none mb-1">
+                    HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#6CC0F9]">A</span><span className="text-[#6CC0F9]">i</span>
+                  </h1>
+                  <p className="text-2xl text-[#121826] italic font-semibold">Precise. Transparent. Fair.</p>
+                </div>
               </div>
-              <p className="text-3xl text-[#121826] italic mb-8 font-semibold -mt-2">Precise. Transparent. Fair.</p>
               <p className="text-2xl text-[#121826] max-w-5xl mx-auto leading-relaxed">
                 Connecting talented professionals with their dream opportunities through intelligent AI-powered matching.
                 No more keyword games—just fair, transparent job matching that sees your true potential.
