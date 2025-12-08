@@ -260,13 +260,13 @@ function App() {
                   <h4 className="text-lg font-bold text-[#121826] mb-4">ATS Market</h4>
                   <div className="flex items-center justify-center gap-4 mb-3">
                     <div>
-                      <p className="text-4xl font-bold text-[#8D34F6]">$2.9B</p>
-                      <p className="text-sm text-[#121826]">2024</p>
+                      <p className="text-4xl font-bold text-[#8D34F6]">$2.8B</p>
+                      <p className="text-sm text-[#121826]">2025</p>
                     </div>
                     <span className="text-3xl text-[#121826]">→</span>
                     <div>
-                      <p className="text-4xl font-bold text-[#8D34F6]">$6.3B</p>
-                      <p className="text-sm text-[#121826]">2033</p>
+                      <p className="text-4xl font-bold text-[#8D34F6]">$5.7B</p>
+                      <p className="text-sm text-[#121826]">2034</p>
                     </div>
                   </div>
                 </div>
@@ -281,8 +281,8 @@ function App() {
                     </div>
                     <span className="text-3xl text-[#121826]">→</span>
                     <div>
-                      <p className="text-4xl font-bold text-[#6CC0F9]">$6.2-17B</p>
-                      <p className="text-sm text-[#121826]">2034</p>
+                      <p className="text-4xl font-bold text-[#6CC0F9]">$6.2B</p>
+                      <p className="text-sm text-[#121826]">2032</p>
                     </div>
                   </div>
                 </div>
