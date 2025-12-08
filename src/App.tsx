@@ -260,12 +260,12 @@ function App() {
                   <h4 className="text-lg font-bold text-[#121826] mb-4">ATS Market</h4>
                   <div className="flex items-center justify-center gap-4 mb-3">
                     <div>
-                      <p className="text-4xl font-bold text-[#8D34F6]">$2.9B</p>
+                      <a href="https://www.gminsights.com/industry-analysis/applicant-tracking-system-market" target="_blank" rel="noopener noreferrer" className="text-4xl font-bold text-[#8D34F6] hover:underline">$2.9B</a>
                       <p className="text-sm text-[#121826]">2024</p>
                     </div>
                     <span className="text-3xl text-[#121826]">→</span>
                     <div>
-                      <p className="text-4xl font-bold text-[#8D34F6]">$6.3B</p>
+                      <a href="https://www.gminsights.com/industry-analysis/applicant-tracking-system-market" target="_blank" rel="noopener noreferrer" className="text-4xl font-bold text-[#8D34F6] hover:underline">$6.3B</a>
                       <p className="text-sm text-[#121826]">2033</p>
                     </div>
                   </div>
@@ -276,12 +276,12 @@ function App() {
                   <h4 className="text-lg font-bold text-[#121826] mb-4">Recruitment Software Market</h4>
                   <div className="flex items-center justify-center gap-4 mb-3">
                     <div>
-                      <p className="text-4xl font-bold text-[#6CC0F9]">$3.3B</p>
+                      <a href="https://www.coherentmarketinsights.com/industry-reports/recruitment-software-market" target="_blank" rel="noopener noreferrer" className="text-4xl font-bold text-[#6CC0F9] hover:underline">$3.3B</a>
                       <p className="text-sm text-[#121826]">2025</p>
                     </div>
                     <span className="text-3xl text-[#121826]">→</span>
                     <div>
-                      <p className="text-4xl font-bold text-[#6CC0F9]">$6.2-17B</p>
+                      <a href="https://www.coherentmarketinsights.com/industry-reports/recruitment-software-market" target="_blank" rel="noopener noreferrer" className="text-4xl font-bold text-[#6CC0F9] hover:underline">$6.2-17B</a>
                       <p className="text-sm text-[#121826]">2034</p>
                     </div>
                   </div>
