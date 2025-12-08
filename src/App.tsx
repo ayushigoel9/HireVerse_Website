@@ -700,11 +700,11 @@ function App() {
                     <img src="/HireVerse_Website/careerBert.png" alt="Multi-stage Pipeline" className="w-10 h-10" />
                     <h4 className="text-xl font-semibold text-[#121826]">Multi-stage matching pipeline</h4>
                   </div>
-                  <p className="text-[#121826] leading-relaxed mb-4">
-                    In the full matching model, both CVs and job descriptions undergo an additional enrichment stage designed to create standardized and interpretable profiles.
-                  </p>
                   <div className="flex flex-col md:flex-row gap-6 items-start mb-4">
                     <div className="flex-1">
+                      <p className="text-[#121826] leading-relaxed mb-4">
+                        In the full matching model, both CVs and job descriptions undergo an additional enrichment stage designed to create standardized and interpretable profiles.
+                      </p>
                       <p className="text-[#121826] leading-relaxed mb-4">
                         For CVs, the Profile Enricher infers:
                       </p>
