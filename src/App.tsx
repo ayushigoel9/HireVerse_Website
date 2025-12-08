@@ -289,11 +289,13 @@ function App() {
               </div>
 
               {/* Growth Rate Highlight */}
-              <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 border-2 border-[#8D34F6] text-center">
-                <p className="text-xl font-bold text-[#121826] mb-6">
-                  Average Growth Rate: <span className="text-2xl text-[#8D34F6]">8-10% CAGR</span>
-                </p>
-                <div className="text-left text-sm text-[#121826] space-y-2 max-w-3xl mx-auto">
+              <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg border-2 border-[#8D34F6] text-center overflow-hidden">
+                <div className="p-6">
+                  <p className="text-xl font-bold text-[#121826]">
+                    Average Growth Rate: <span className="text-2xl text-[#8D34F6]">8-10% CAGR</span>
+                  </p>
+                </div>
+                <div className="text-left text-sm text-[#121826] space-y-2 bg-gray-50 p-4">
                   <p className="italic">References:</p>
                   <p>Global Market Insights. (2024). <i>Applicant tracking system market</i>. https://www.gminsights.com/industry-analysis/applicant-tracking-system-market</p>
                   <p>Coherent Market Insights. (2025). <i>Recruitment software market</i>. https://www.coherentmarketinsights.com/industry-reports/recruitment-software-market</p>
