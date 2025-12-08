@@ -173,11 +173,11 @@ function App() {
             <div className="text-center px-6">
               <div className="flex items-center justify-center gap-6 mb-8">
                 <img src="/HireVerse_Website/logo.png" alt="HireVerse.AI" className="h-32" />
-                <div>
+                <div className="text-left">
                   <h1 className="text-8xl font-bold text-[#121826] leading-none mb-1">
-                    HireVerse<span className="text-[#6CC0F9]">.</span><span className="text-[#6CC0F9]">A</span><span className="text-[#6CC0F9]">i</span>
+                    HireVerse<span className="text-[#337295]">.</span><span className="text-[#337295]">A</span><span className="text-[#337295]">i</span>
                   </h1>
-                  <p className="text-2xl text-[#121826] italic font-semibold">Precise. Transparent. Fair.</p>
+                  <p className="text-2xl text-[#121826]">Precise. Transparent. Fair.</p>
                 </div>
               </div>
               <p className="text-2xl text-[#121826] max-w-5xl mx-auto leading-relaxed">
