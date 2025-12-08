@@ -566,7 +566,7 @@ function App() {
                     <h4 className="text-xl font-semibold text-[#121826]">LLM-as-a-Judge</h4>
                   </div>
                   <p className="text-[#121826] leading-relaxed">
-                    A separate model evaluated the top five recommendations for each candidate and ranked the quality of each model's top-five set. This enabled more granular assessment, including seniority matching, domain alignment, and overall role fit.
+                    Using Claude Sonnet 3.7, we evaluated the top five recommendations for each candidate and ranked the quality of each model's top-five set. This enabled more granular assessment, including seniority matching, domain alignment, and overall role fit.
                   </p>
                 </div>
 
