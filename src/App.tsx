@@ -561,10 +561,10 @@ function App() {
             <section className="mb-12">
               <h3 className="text-3xl font-bold text-[#121826] mb-4 text-center">Evaluation Criteria</h3>
               <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
-                To build an effective matching system, the team established a rigorous evaluation framework using nine real, manually labeled CVs, each owned by an actual candidate who later participated in the evaluation, paired with 100 job descriptions across three domains: Legal & Accounting, Data Science, and Software Engineering.
+                To build an effective matching system, the team established a rigorous evaluation framework using nine real, manually labeled CVs, each owned by an actual candidate who later participated in the evaluation, paired with 100 job descriptions across three domains: Legal & Accounting, Data Science, and Software Engineering (see the Data section for details).
               </p>
               <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
-                The team applied three complementary evaluation methods:
+                The evaluation process used three complementary methods to provide a comprehensive assessment of performance:
               </p>
 
               {/* 3 Evaluation Type Cards */}
@@ -576,7 +576,7 @@ function App() {
                     <h4 className="text-xl font-semibold text-[#121826]">Job-Family Classification Accuracy</h4>
                   </div>
                   <p className="text-[#121826] leading-relaxed">
-                    This metric assessed whether the model's recommendations aligned with the candidate's intended professional domain. For each CV, the system generated top 40 recommendations, and accuracy was computed by evaluating whether the correct job families appeared in those results. The scores presented reflect the average accuracy across all CVs in the dataset.
+                    Each model generated the top 40 job recommendations per CV. Accuracy was computed by evaluating whether the correct job families appeared within those 40 recommendations, providing a broad measure of domain-level alignment.
                   </p>
                 </div>
 
@@ -587,7 +587,7 @@ function App() {
                     <h4 className="text-xl font-semibold text-[#121826]">LLM-as-a-Judge</h4>
                   </div>
                   <p className="text-[#121826] leading-relaxed">
-                    To capture nuance beyond job-family labels, an LLM was used to rank the top three job recommendations for each CV. The LLM reviewer had access to both the full CV and all job descriptions, and was prompted to assess relevance, alignment, and overall quality. This human-like evaluation highlighted whether the model surfaced truly compelling matches—not just categorically correct ones.
+                    A separate model evaluated the top five recommendations for each candidate and ranked the quality of each model's top-five set. This enabled more granular assessment, including seniority matching, domain alignment, and overall role fit.
                   </p>
                 </div>
 
@@ -598,7 +598,7 @@ function App() {
                     <h4 className="text-xl font-semibold text-[#121826]">Human Candidate Feedback</h4>
                   </div>
                   <p className="text-[#121826] leading-relaxed">
-                    The ultimate test of model performance came from the candidates themselves. Each candidate reviewed their top three job recommendations and ranked them in order of personal preference. These rankings were then compared directly to the LLM's rankings. This step validated whether the model could predict what real users would find appealing, beyond what can be inferred from resumes alone.
+                    The same nine real candidates, whose CVs served as the golden set, reviewed their top five recommended jobs from each model and rated relevance based on their own career goals and context. This allowed us to benchmark each model's performance against actual human judgment, revealing how well the LLM evaluator aligns with real candidate preferences.
                   </p>
                 </div>
               </div>
@@ -608,7 +608,7 @@ function App() {
             <section className="mb-12">
               <h3 className="text-3xl font-bold text-[#121826] mb-4 text-center">Data Pipeline</h3>
               <p className="text-[#121826] leading-relaxed mb-8 text-center max-w-5xl mx-auto">
-                The HireVerse system relies on a structured preparation process designed to reduce noise, enforce consistency, and standardize inputs, ensuring that downstream models operate on high-quality, uniform data.
+                Before any data entered the matching logic, it underwent a structured preparation process designed to reduce noise, enforce consistency, and standardize inputs. Both CVs and job descriptions were parsed, cleaned, and normalized into structured formats suitable for downstream analysis.
               </p>
 
               {/* Two Processing Boxes Stacked */}
@@ -620,38 +620,11 @@ function App() {
                       <img src="/HireVerse_Website/cv_parser.png" alt="CV Parser" className="max-w-md h-auto rounded-xl shadow-lg" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-xl font-semibold text-[#121826] mb-4">CV Processing</h4>
-                      <p className="text-[#121826] leading-relaxed mb-4">
-                        CVs arrive in PDF format and often vary widely in structure, layout, and formatting. Apache Tika first converts the PDF into clean, machine-readable text. Once extracted, that text is passed through six specialized, LLM-powered agents, each responsible for a distinct extraction task:
-                      </p>
-                      <ul className="space-y-2 text-[#121826] leading-relaxed ml-5 mb-4">
-                        <li className="flex gap-2">
-                          <span className="text-[#8D34F6] mt-1">•</span>
-                          <span><strong>Personal Info Extraction:</strong> Identifies the candidate's name, location, and contact details</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#8D34F6] mt-1">•</span>
-                          <span><strong>Education Extraction:</strong> Captures degree(s), institution(s), and graduation year(s)</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#8D34F6] mt-1">•</span>
-                          <span><strong>Work Experience Extraction:</strong> Extracts job titles, companies, dates, and responsibilities</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#8D34F6] mt-1">•</span>
-                          <span><strong>Projects Extraction:</strong> Identifies notable projects, technologies used, and outcomes</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#8D34F6] mt-1">•</span>
-                          <span><strong>Skills Extraction:</strong> Parses both hard and soft skills mentioned across the CV</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#8D34F6] mt-1">•</span>
-                          <span><strong>Publications Extraction:</strong> Retrieves academic or professional publications, if present</span>
-                        </li>
-                      </ul>
                       <p className="text-[#121826] leading-relaxed">
-                        Each agent operates independently, ensuring modularity and clarity. The outputs are then aggregated into a single, structured JSON object representing the candidate's full professional profile.
+                        When a candidate uploads their résumé, the CV processing pipeline triggers a multi-stage workflow orchestrated by a central system coordinator. Apache Tika first converts the PDF into clean, machine-readable text. This text then passes through a deterministic preprocessing layer that normalizes formatting and produces a standardized base JSON structure.
+                      </p>
+                      <p className="text-[#121826] leading-relaxed mt-4">
+                        Next comes the intelligence layer: six specialized, LLM-powered agents extract distinct résumé components: personal information, summary, education, professional experience, technical and soft skills, and additional sections such as certifications and languages. The orchestrator merges these outputs into a single, comprehensive JSON profile representing the full candidate.
                       </p>
                     </div>
                   </div>
@@ -664,30 +637,8 @@ function App() {
                       <img src="/HireVerse_Website/job_parser.png" alt="Job Parser" className="max-w-md h-auto rounded-xl shadow-lg" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-xl font-semibold text-[#121826] mb-4">Job Description Processing</h4>
-                      <p className="text-[#121826] leading-relaxed mb-4">
-                        Job descriptions were sourced from a hand-curated dataset of 100 high-quality postings across Legal & Accounting, Data Science, and Software Engineering roles. Each job description was cleaned and converted into a structured JSON format that includes:
-                      </p>
-                      <ul className="space-y-2 text-[#121826] leading-relaxed ml-5">
-                        <li className="flex gap-2">
-                          <span className="text-[#6CC0F9] mt-1">•</span>
-                          <span>Job title</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#6CC0F9] mt-1">•</span>
-                          <span>Role description, outlining responsibilities</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#6CC0F9] mt-1">•</span>
-                          <span>Required (minimum) competencies</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-[#6CC0F9] mt-1">•</span>
-                          <span>Nice-to-have skills, when available</span>
-                        </li>
-                      </ul>
-                      <p className="text-[#121826] leading-relaxed mt-4">
-                        This uniform structure allows models to semantically compare CVs and jobs on equal footing, ensuring fair and consistent matching.
+                      <p className="text-[#121826] leading-relaxed">
+                        Job descriptions undergo a similar preparation process. We began with a hand-curated dataset of 100 high-quality postings representing diverse roles across our target industries. Each job description was cleaned and converted into a structured JSON format containing four standardized components: the job title, a role description outlining responsibilities and expectations, required or minimum competencies, and any nice-to-have skills when available.
                       </p>
                     </div>
                   </div>
