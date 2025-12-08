@@ -1151,8 +1151,7 @@ function App() {
                 <p className="text-[#121826] leading-relaxed">
                   To assess the effectiveness of our agent-based parsing and matching pipelines, we assembled a dataset consisting of <strong>47 synthetic CVs</strong> (sourced from{' '}
                   <a href="https://enhancv.com/resume-examples/data-scientist/" target="_blank" rel="noopener noreferrer" className="text-[#8D34F6] hover:underline">Enhancv</a>)
-                  along with <strong>29 real CVs</strong> provided directly by candidates. Because the upload and parsing in the first iteration of the product focused primarily on the CV extraction pipeline,
-                  all CVs were used in their original PDF format to ensure realistic preprocessing and parsing challenges.
+                  along with <strong>29 real CVs</strong> provided directly by candidates. In the first iteration of the product, the upload and parsing features were designed around the CV extraction pipeline. To maintain realistic preprocessing and parsing challenges, all CVs were kept in their original PDF format.
                 </p>
               </div>
 
