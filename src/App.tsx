@@ -825,30 +825,30 @@ function App() {
                       <tbody>
                         <tr className="border-t-2 border-[#CAB9D0]/20">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">1</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
                         </tr>
                         <tr className="border-t border-[#CAB9D0]/10">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">2</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
                         </tr>
                         <tr className="border-t border-[#CAB9D0]/10">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">3</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">CareerBERT</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">CareerBERT</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Amazon Titan</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
                         </tr>
                       </tbody>
                     </table>
@@ -887,15 +887,15 @@ function App() {
                         <tr className="border-t-2 border-[#CAB9D0]/20">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">1</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Multi-Stage</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">CareerBERT</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Amazon Titan</td>
                         </tr>
                         <tr className="border-t border-[#CAB9D0]/10">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">2</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">CareerBERT</td>
@@ -904,12 +904,12 @@ function App() {
                         </tr>
                         <tr className="border-t border-[#CAB9D0]/10">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">3</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#6CC0F9]">CareerBERT</td>
                         </tr>
                       </tbody>
                     </table>
@@ -947,30 +947,30 @@ function App() {
                       <tbody>
                         <tr className="border-t-2 border-[#CAB9D0]/20">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">1</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">CareerBERT</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
                         </tr>
                         <tr className="border-t border-[#CAB9D0]/10">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">2</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Amazon Titan</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
                         </tr>
                         <tr className="border-t border-[#CAB9D0]/10">
                           <td className="px-3 py-2 text-center font-semibold text-[#121826] text-sm bg-white/90">3</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
                           <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">CareerBERT</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
-                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Amazon Titan</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#E8F77B]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">Multi-Stage</td>
+                          <td className="px-3 py-2 text-center text-[#121826] text-sm bg-[#CAB9D0]">CareerBERT</td>
                         </tr>
                       </tbody>
                     </table>
