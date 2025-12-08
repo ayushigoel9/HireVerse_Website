@@ -755,7 +755,7 @@ function App() {
                       <th className="px-6 py-4 text-left font-semibold">Model</th>
                       <th className="px-6 py-4 text-center font-semibold">Classification Accuracy</th>
                       <th className="px-6 py-4 text-center font-semibold">LLM Score</th>
-                      <th className="px-6 py-4 text-center font-semibold">Human Agreement</th>
+                      <th className="px-6 py-4 text-center font-semibold">Human Candidate Feedback</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -763,19 +763,19 @@ function App() {
                       <td className="px-6 py-4 font-semibold text-[#121826]">CareerBERT</td>
                       <td className="px-6 py-4 text-center text-[#121826]">76.67%</td>
                       <td className="px-6 py-4 text-center text-[#121826]">11.11% (1/9)</td>
-                      <td className="px-6 py-4 text-center text-[#121826]">-</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">11.11% (1/9)</td>
                     </tr>
                     <tr className="border-t-2 border-[#CAB9D0]/20 bg-[#CAB9D0]/5">
                       <td className="px-6 py-4 font-semibold text-[#121826]">Amazon Titan</td>
                       <td className="px-6 py-4 text-center text-[#121826]">90.56%</td>
                       <td className="px-6 py-4 text-center text-[#121826]">55.56% (5/9)</td>
-                      <td className="px-6 py-4 text-center text-[#121826]">5/9 (55.56%)</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">55.56% (5/9)</td>
                     </tr>
                     <tr className="border-t-2 border-[#CAB9D0]/20">
                       <td className="px-6 py-4 font-semibold text-[#121826]">Multi-stage Pipeline</td>
                       <td className="px-6 py-4 text-center text-[#121826]">82.78%</td>
                       <td className="px-6 py-4 text-center text-[#121826]">33.33% (3/9)</td>
-                      <td className="px-6 py-4 text-center text-[#121826]">2/9 (22.22%)</td>
+                      <td className="px-6 py-4 text-center text-[#121826]">33.33% (3/9)</td>
                     </tr>
                   </tbody>
                 </table>
